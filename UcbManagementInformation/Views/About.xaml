@@ -1,0 +1,41 @@
+<navigation:Page 
+  x:Class="UcbManagementInformation.About" 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+  xmlns:s="clr-namespace:FirstLook.ServiceModel.DomainServices.Client.Security;assembly=FirstLook.ServiceModel.DomainServices.Client.Security"
+  mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="480"
+  s:Authorization.RequiresAuthentication="True"
+  Style="{StaticResource PageStyle}">
+    <navigation:Page.Resources>
+        
+    </navigation:Page.Resources>
+        <Grid x:Name="LayoutRoot">
+
+        <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}"
+                      Margin="0,22,0,-22">
+
+      <StackPanel x:Name="ContentStackPanel" Style="{StaticResource ContentStackPanelStyle}" MaxWidth="924">
+
+        <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
+                           Text="{Binding Path=ApplicationStrings.AboutPageTitle, Source={StaticResource ResourceWrapper}}"/>
+                <TextBlock Style="{StaticResource HeaderTextStyle}"
+                           Text="Management Console v1.0.03" />
+                <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}" 
+                           Text="The DWP Small systems management console has been built as a single application to centralize management information. Written in Microsoft Silverlight .NET technology, it allows data to be presented in rich graphical formats. It is ideal for dashboards, charting, geographic and other reporting formats. "/>
+                <TextBlock Style="{StaticResource HeaderTextStyle}" Margin="0,20,0,0"
+                            Text="New in this Release" />
+                <TextBlock Style="{StaticResource ContentTextStyle}"
+                           Text="Ad Hoc Reporting - Report Generation" />
+                <TextBlock Style="{StaticResource ContentTextStyle}"
+                           Text="Ad Hoc Reporting - Report Save" />
+                <TextBlock Style="{StaticResource ContentTextStyle}"
+                           Text="Ad Hoc Reporting - Report List" />
+                
+            </StackPanel>
+
+    </ScrollViewer>
+  </Grid>
+
+</navigation:Page>

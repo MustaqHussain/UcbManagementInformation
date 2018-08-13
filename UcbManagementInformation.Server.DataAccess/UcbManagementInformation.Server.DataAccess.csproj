@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05FD2C60-11D5-4106-A3E5-514E4C646C13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UcbManagementInformation.Server.DataAccess</RootNamespace>
+    <AssemblyName>UcbManagementInformation.Server.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IanWork|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\IanWork\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IanHome|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\IanHome\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DaveHome|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DaveHome\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT168|AnyCPU'">
+    <OutputPath>bin\SIT168\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\UcbManagementInformation.Server.DataAccess.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Accessibility|AnyCPU'">
+    <OutputPath>bin\Accessibility\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\UcbManagementInformation.Server.DataAccess.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
+    <OutputPath>bin\Demo\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\UcbManagementInformation.Server.DataAccess.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT207|AnyCPU'">
+    <OutputPath>bin\UAT207\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\UcbManagementInformation.Server.DataAccess.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UcbManagementInformation.Web\Libs\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel.DomainServices.EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionAssemblyInfo.cs">
+      <Link>Properties\SolutionAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BusinessObjects\ColumnSeriesObject.cs" />
+    <Compile Include="BusinessObjects\InputFileErrorSummary.cs" />
+    <Compile Include="BusinessObjects\DoubleSeriesItem.cs" />
+    <Compile Include="BusinessObjects\LocalAuthorityHeatValue.cs" />
+    <Compile Include="BusinessObjects\ReportChartBusinessObject.cs" />
+    <Compile Include="BusinessObjects\ReportChartSeriesBusinessObject.cs" />
+    <Compile Include="BusinessObjects\ReportDefinitionBusinessObject.cs" />
+    <Compile Include="BusinessObjects\ReportFilterBusinessObject.cs" />
+    <Compile Include="BusinessObjects\DoubleSeries.cs" />
+    <Compile Include="EntityExtensions\DataItem.cs" />
+    <Compile Include="EntityExtensions\DataTable.cs" />
+    <Compile Include="EntityExtensions\ICollectionExtensions.cs" />
+    <Compile Include="EntityExtensions\ObjectContext.cs" />
+    <Compile Include="EntityExtensions\IObjectSetExtensions.cs" />
+    <Compile Include="EntityExtensions\ObjectQueryExtensions.cs" />
+    <Compile Include="EntityExtensions\ObjectSetExtensions.cs" />
+    <Compile Include="EntityExtensions\StandardReportExtension.cs" />
+    <Compile Include="EntityExtensions\User.cs" />
+    <Compile Include="EntityModelExtensions\UcbEntites.cs" />
+    <Compile Include="EntityModelExtensions\UcbManagementInformationEntites.cs" />
+    <Compile Include="EntityModels\UcbManagementInformation\Alert.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\Alert.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\AlertUser.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\AlertUser.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IAlert.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IAlertUser.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IInputFileError.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IInputFileHistory.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IJobStep.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IMCRole.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IMCSystemParameter.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IMCUser.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IMCUserRole.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\InputFileError.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\InputFileError.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\InputFileHistory.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\InputFileHistory.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IProviderOrganisation.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IReportDB.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IReportDBLoadHistory.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IUploadJobQueue.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IUploadMonitor.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\JobStep.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\JobStep.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\MCRole.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\MCRole.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\MCSystemParameter.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\MCSystemParameter.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\MCUser.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\MCUser.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\MCUserRole.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\MCUserRole.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ProviderOrganisation.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ProviderOrganisation.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportDB.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportDB.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportDBLoadHistory.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportDBLoadHistory.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UploadJobQueue.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UploadJobQueue.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UploadMonitor.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UploadMonitor.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\Application.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\Application.metadata.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\ApplicationAttribute.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\ApplicationAttribute.metadata.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\IApplication.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\IApplicationAttribute.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\IReportCategory.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\IStandardReport.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\ReportCategory.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\ReportCategory.metadata.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\StandardReport.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\StandardReport.metadata.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FakeObjectSet.cs" />
+    <Compile Include="EntityModels\FixupCollection.cs" />
+    <Compile Include="EntityModels\UcbManagementInformation\Category.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\Category.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\CategoryLog.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\CategoryLog.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataCategory.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataCategory.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataItem.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataItem.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataModel.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataModel.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataTable.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataTable.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataTableJoin.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataTableJoin.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataTableRelationship.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataTableRelationship.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataTableRelationshipJoin.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\DataTableRelationshipJoin.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\Filter.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\Filter.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ICategory.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ICategoryLog.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IDataCategory.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IDataItem.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IDataModel.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IDataTable.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IDataTableJoin.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IDataTableRelationship.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IDataTableRelationshipJoin.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IFilter.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ILog.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IReport.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IReportChart.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IReportChartSery.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IReportDataTableJoin.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IReportGroup.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IReportItem.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\IUserReportGroup.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\Log.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\Log.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UcbManagementInformationPocos.Context.Interface.cs">
+      <DependentUpon>UcbManagementInformationPocos.Context.Interface.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UcbManagementInformationPocos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UcbManagementInformationPocos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UcbManagementInformationPocos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\Report.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\Report.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportChart.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportChart.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportChartSery.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportChartSery.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportDataTableJoin.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportDataTableJoin.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportGroup.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportGroup.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportItem.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\ReportItem.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UserReportGroup.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\UcbManagementInformation\UserReportGroup.metadata.cs">
+      <DependentUpon>UcbManagementInformationPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\IStaff.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\IStaffAttribute.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\Staff.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\Staff.metadata.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\StaffAttribute.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\StaffAttribute.metadata.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\Ucb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ucb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\UcbPocos.Context.cs">
+      <DependentUpon>UcbPocos.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\UcbPocos.Context.Interface.cs">
+      <DependentUpon>UcbPocos.Context.Interface.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="EntityModels\Ucb\UcbPocos.cs">
+      <DependentUpon>UcbPocos.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="ISpecification.cs" />
+    <Compile Include="LongRunningStoredProcedureWrappers\UcbManagementInformationStoredProcedures.cs" />
+    <Compile Include="LongRunningStoredProcedureWrappers\MIStagingStoredProcedures.cs" />
+    <Compile Include="Repositories\DataAccessUtilities.cs" />
+    <Compile Include="Repositories\Generic\IUcbRepository.cs" />
+    <Compile Include="Repositories\Generic\UcbRepository.cs" />
+    <Compile Include="Repositories\Generic\IUcbManagementInformationRepository.cs" />
+    <Compile Include="Repositories\Generic\UcbManagementInformationRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\DataModelRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\IDataItemRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\IDataModelRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\IDataTableJoinRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\IDataTableRelationshipJoinRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\IDataTableRelationshipRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\IDataTableRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\IMCUserRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\MCUserRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\IReportGroupRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\ReportGroupRepository.cs" />
+    <Compile Include="EntityModels\UcbManagementInformation\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\UcbManagementInformation\DataItemRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\DataTableJoinnRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\DataTableRelationshipJoinRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\DataTableRelationshipRepository.cs" />
+    <Compile Include="Repositories\UcbManagementInformation\DataTableRepository.cs" />
+    <Compile Include="Repositories\NullObjectContext.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\IObjectContext.cs" />
+    <Compile Include="Repositories\IUnitOfWork.cs" />
+    <Compile Include="ObjectContextAdapter.cs" />
+    <Compile Include="Repositories\UnitofWork.cs" />
+    <Compile Include="Specification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EntityModels\UcbManagementInformation\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EntityModels\UcbManagementInformation\UcbManagementInformationPocos.Context.Interface.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UcbManagementInformationPocos.Context.Interface.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation.Server.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="EntityModels\UcbManagementInformation\UcbManagementInformationPocos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UcbManagementInformationPocos.Context.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation.Server.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="EntityModels\UcbManagementInformation\UcbManagementInformationPocos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UcbManagementInformationPocos.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation.Server.DataAccess</CustomToolNamespace>
+    </None>
+    <EntityDeploy Include="EntityModels\Ucb\Ucb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Ucb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityModels\Ucb\UcbPocos.Context.Interface.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UcbPocos.Context.Interface.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation.Server.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="EntityModels\Ucb\UcbPocos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UcbPocos.Context.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation.Server.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="EntityModels\Ucb\UcbPocos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UcbPocos.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation.Server.DataAccess</CustomToolNamespace>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UcbManagementInformation.Server.Ioc\UcbManagementInformation.Server.Ioc.csproj">
+      <Project>{81FE96AC-0DF6-4132-83A2-3602A00989FF}</Project>
+      <Name>UcbManagementInformation.Server.Ioc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityModels\ContextMoqReady.txt" />
+    <Content Include="EntityModels\POCOT4Fakes.txt" />
+    <Content Include="EntityModels\POCOT4MoqReady.txt" />
+    <Content Include="EntityModels\InterfaceT4MoqReady.txt" />
+    <Content Include="Repositories\ContextT4MoqReady.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

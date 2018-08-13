@@ -1,0 +1,52 @@
+<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_ISQLService" maxBufferSize="2147483647"
+            maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+        <binding name="CustomBinding_ILoggingService" maxBufferSize="2147483647"
+            maxReceivedMessageSize="2147483647">
+          <security mode="TransportCredentialOnly">
+          </security>
+        </binding>
+      </basicHttpBinding>
+      <customBinding>
+        <binding name="CustomBinding_IXAML">
+          <binaryMessageEncoding />
+          <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+   
+      <endpoint address="../WCFServices/LoggingService.svc"
+          binding="basicHttpBinding" bindingConfiguration="CustomBinding_ILoggingService"
+          contract="Microsoft.Practices.EnterpriseLibrary.Logging.Service.ILoggingService"
+          name="CustomBinding_ILoggingService" />
+      <endpoint address="../WCFServices/SQLService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ISQLService"
+          contract="ServiceReference.UcbManagementInformation.Web.WCFServices.SQLService.ISQLService"
+          name="BasicHttpBinding_ISQLService" />
+      <endpoint address="../WCFServices/XAML.svc"
+          binding="customBinding" bindingConfiguration="CustomBinding_IXAML"
+          contract="ServiceReference.UcbManagementInformation.Web.WCFServices.XAML.IXAML"
+          name="CustomBinding_IXAML" />
+     
+    </client>
+  </system.serviceModel>
+  <!--<system.diagnostics>
+    <sources>
+      <source name="System.ServiceModel"
+   switchValue="Information, ActivityTracing">
+        <listeners>
+          <add name="log"
+     type="System.Diagnostics.XmlWriterTraceListener"
+     initializeData="c:\\logs\\DataConnectorTracesSilverlight.svclog" />
+        </listeners>
+      </source>
+    </sources>
+  </system.diagnostics>-->
+
+</configuration>

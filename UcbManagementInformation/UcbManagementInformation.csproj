@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBDF6C8C-03B2-4618-B836-123CDB5C6F90}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UcbManagementInformation</RootNamespace>
+    <AssemblyName>UcbManagementInformation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>en-US</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>UcbManagementInformation.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>UcbManagementInformation.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>..\UcbManagementInformation.Web\UcbManagementInformation.Web.csproj</LinkedServerProject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IanWork|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\IanWork\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IanHome|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\IanHome\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DaveHome|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DaveHome\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT168|AnyCPU'">
+    <OutputPath>bin\SIT168\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Release\UcbManagementInformation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Accessibility|AnyCPU'">
+    <OutputPath>bin\Accessibility\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Release\UcbManagementInformation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
+    <OutputPath>bin\Demo\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Release\UcbManagementInformation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT207|AnyCPU'">
+    <OutputPath>bin\UAT207\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Release\UcbManagementInformation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Controls, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Expression.Effects, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Maps.MapControl, Version=1.0.1.0, Culture=neutral, PublicKeyToken=498d0d22d7936b73, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Maps.MapControl.Common, Version=1.0.1.0, Culture=neutral, PublicKeyToken=498d0d22d7936b73, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common.Silverlight">
+      <HintPath>..\Packages.Silverlight\Microsoft.Practices.EnterpriseLibrary.Silverlight\Microsoft.Practices.EnterpriseLibrary.Common.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Silverlight">
+      <HintPath>..\Packages.Silverlight\Microsoft.Practices.EnterpriseLibrary.Silverlight\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Silverlight">
+      <HintPath>..\Packages.Silverlight\Microsoft.Practices.EnterpriseLibrary.Silverlight\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Silverlight">
+      <HintPath>..\Packages.Silverlight\Microsoft.Practices.EnterpriseLibrary.Silverlight\Microsoft.Practices.EnterpriseLibrary.Logging.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation.Silverlight">
+      <HintPath>..\Packages.Silverlight\Microsoft.Practices.EnterpriseLibrary.Silverlight\Microsoft.Practices.EnterpriseLibrary.Validation.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Unity.Interception.Silverlight">
+      <HintPath>Libs\Unity\Microsoft.Practices.Unity.Interception.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Silverlight, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="SharpZipLib.Silverlight4, Version=0.0.0.0, Culture=neutral, PublicKeyToken=a37ef23abf01322c, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\System.Windows.Controls.Data.DataForm.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input" />
+    <Reference Include="System.ServiceModel.DomainServices.Client" />
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web" />
+    <Reference Include="System.ServiceModel.Web.Extensions" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Windows.Controls" />
+    <Reference Include="System.Windows.Controls.Navigation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\UcbManagementInformation.Web\Resources\RegistrationDataResources.Designer.cs">
+      <Link>Web\Resources\RegistrationDataResources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrationDataResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\UcbManagementInformation.Web\Resources\ValidationErrorResources.Designer.cs">
+      <Link>Web\Resources\ValidationErrorResources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationErrorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\SolutionAssemblyInfo.cs">
+      <Link>Properties\SolutionAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Resource Include="Assets\FinanceDataPoints.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Compile Include="Assets\Resources\ApplicationStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\Resources\ErrorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="BootStrapper.cs" />
+    <Compile Include="Commanding\DelegateCommand.cs" />
+    <Compile Include="Commanding\IDelegateCommand.cs" />
+    <Compile Include="Commanding\RelayCommand.cs" />
+    <Compile Include="Controls\AutoCompleteComboBox.cs" />
+    <Compile Include="Controls\BindableDialogResult.cs" />
+    <Compile Include="Controls\BoundingRectangleObserver.cs" />
+    <Compile Include="Controls\Carousel2\Carousel.cs" />
+    <Compile Include="Controls\Carousel2\CarouselData.cs" />
+    <Compile Include="Controls\Carousel\Carousel.cs" />
+    <Compile Include="Controls\Carousel\CarouselItem.cs" />
+    <Compile Include="Controls\Carousel\ImageCollection.cs" />
+    <Compile Include="Controls\Carousel\ItemSource.cs" />
+    <Compile Include="Controls\Carousel\ItemSourceCollection.cs" />
+    <Compile Include="Controls\Carousel\ItemViewerControl.cs" />
+    <Compile Include="Controls\Carousel\SelectedItemChangedEventArgs.cs" />
+    <Compile Include="Controls\Carousel\TurnDirection.cs" />
+    <Compile Include="Controls\ContentTicker.cs" />
+    <Compile Include="Controls\SaveFileDialogBehavior.cs" />
+    <Compile Include="Controls\DataContextProxy.cs" />
+    <Compile Include="Controls\FocusExtension.cs" />
+    <Compile Include="Controls\DataGridRightClickBehavior.cs" />
+    <Compile Include="Controls\UcbManagementInformationPage.cs" />
+    <Compile Include="Controls\MapObserver.cs" />
+    <Compile Include="Controls\CustomChart.cs" />
+    <Compile Include="Controls\HeatMapMode.cs" />
+    <Compile Include="Controls\IModalWindow.cs" />
+    <Compile Include="Controls\MenuButton.cs" />
+    <Compile Include="Controls\OfflineMap.cs" />
+    <Compile Include="Controls\OpenFileDialogBehavior.cs" />
+    <Compile Include="Controls\OSMapsTileSource.cs" />
+    <Compile Include="Controls\SortField.cs" />
+    <Compile Include="Controls\Speedo.cs" />
+    <Compile Include="Controls\SplitButton.cs" />
+    <Compile Include="Controls\TreeViewItemExpandedBindable.cs" />
+    <Compile Include="Controls\UpdateOnTextChangedBehavior.cs" />
+    <Compile Include="ExceptionHandling\AsyncServiceRequest.cs" />
+    <Compile Include="ExceptionHandling\AsyncServiceRequestOnCallbackEventArgs.cs" />
+    <Compile Include="ExceptionHandling\DisplayErrorMessageExceptionHandler.cs" />
+    <Compile Include="ExceptionHandling\DisplayErrorMessageExceptionHandlerData.cs" />
+    <Compile Include="ExceptionHandling\ErrorMessageType.cs" />
+    <Compile Include="ExceptionHandling\ErrorMessageViewModel.cs" />
+    <Compile Include="ExceptionHandling\ExceptionHandlingPolicies.cs" />
+    <Compile Include="ExceptionHandling\ExceptionManagerExtensions.cs" />
+    <Compile Include="ExceptionHandling\ExceptionMessageService.cs" />
+    <Compile Include="ExceptionHandling\FunctionalMessageException.cs" />
+    <Compile Include="ExceptionHandling\IAsyncServiceRequest.cs" />
+    <Compile Include="ExceptionHandling\IExceptionMessageService.cs" />
+    <Compile Include="ExceptionHandling\ServiceResult.cs" />
+    <Compile Include="ExceptionHandling\ServiceUnavailableException.cs" />
+    <Compile Include="ExceptionHandling\ValidationErrorException.cs" />
+    <Compile Include="ExceptionHandling\WCFDataServicesExceptionHandler.cs" />
+    <Compile Include="ExceptionHandling\WCFDataServicesExceptionHandlerData.cs" />
+    <Compile Include="Helpers\AdditionConverter.cs" />
+    <Compile Include="Helpers\AlertToVisibleConverter.cs" />
+    <Compile Include="Helpers\ChartDateConverter.cs" />
+    <Compile Include="Helpers\BoolToOpacityConverter.cs" />
+    <Compile Include="Helpers\ChartTypeToMaximumConverter.cs" />
+    <Compile Include="Helpers\Configuration\AsyncXamlConfigMerger.cs" />
+    <Compile Include="Helpers\ExceptionHandling\ExceptionHandlingPolicies.cs" />
+    <Compile Include="Helpers\ImageUriToNavigationUriConverter.cs" />
+    <Compile Include="Helpers\IntToDecodeConverter.cs" />
+    <Compile Include="Helpers\DataItemsToNameConverter.cs" />
+    <Compile Include="Helpers\DataItemToFlagsConverter.cs" />
+    <Compile Include="Helpers\DataTableJoinEqualityComparer.cs" />
+    <Compile Include="Helpers\DaysToBrushConverter.cs" />
+    <Compile Include="Helpers\MenuItemToImageUrlConverter.cs" />
+    <Compile Include="Helpers\Participant.cs" />
+    <Compile Include="Helpers\ParticipantFile.cs" />
+    <Compile Include="Helpers\PeriodToDisplayConverter.cs" />
+    <Compile Include="Helpers\ProviderStatusToVisibilityConverter.cs" />
+    <Compile Include="Helpers\ReportGroupAccessLevelToStringConverter.cs" />
+    <Compile Include="Helpers\StatusToBrushConverter.cs" />
+    <Compile Include="Helpers\StringToDateConverter.cs" />
+    <Compile Include="Helpers\Wkt\WktParser.cs" />
+    <Compile Include="Models\AdjustmentInfo.cs" />
+    <Compile Include="Models\Chunk.cs" />
+    <Compile Include="Models\InputFileHistoryExtensions.cs" />
+    <Compile Include="Models\ListExtensions.cs" />
+    <Compile Include="Models\MainMenuItem.cs" />
+    <Compile Include="Models\Stage.cs" />
+    <Compile Include="MVVM\IMessageBoxService.cs" />
+    <Compile Include="Models\ReportGroupExtensions.cs" />
+    <Compile Include="MVVM\InvokeViewModelMethod.cs" />
+    <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="Helpers\SetterValueBindingHelper.cs" />
+    <Compile Include="Helpers\StandardToStringConverter.cs" />
+    <Compile Include="Helpers\StringToImageConverter.cs" />
+    <Compile Include="Helpers\TitleValueToValueConverter.cs" />
+    <Compile Include="Helpers\TitleValueToTitleConverter.cs" />
+    <Compile Include="Helpers\DecimalToStringConverter.cs" />
+    <Compile Include="Helpers\ObjectToVisibilityConverter.cs" />
+    <Compile Include="Helpers\Navigation\INavigable.cs" />
+    <Compile Include="Controls\ListBoxDragDropTargetExtend.cs" />
+    <Compile Include="Controls\LoadStyle.cs" />
+    <Compile Include="Controls\MapPolygonFillBindable.cs" />
+    <Compile Include="Controls\MapWithModeBindable.cs" />
+    <Compile Include="Helpers\Navigation\Navigator.cs" />
+    <Compile Include="Controls\Properties.cs" />
+    <Compile Include="Controls\SortButton.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Helpers\BoolToVisibilityConverter.cs" />
+    <Compile Include="Helpers\BoundingRectangleConverter.cs" />
+    <Compile Include="Helpers\DummyConverter.cs" />
+    <Compile Include="Helpers\IntToFillColorConverter.cs" />
+    <Compile Include="Helpers\LocationToLatLongConverter.cs" />
+    <Compile Include="Helpers\Navigation\INavigationService.cs" />
+    <Compile Include="Helpers\Navigation\PageNavigationService.cs" />
+    <Compile Include="Helpers\PeriodNameConverter.cs" />
+    <Compile Include="Controls\RestrictedRoadMode.cs" />
+    <Compile Include="Helpers\TreeViewHelper.cs" />
+    <Compile Include="Helpers\VisualTreeUtilities.cs" />
+    <Compile Include="Helpers\MapShapeToMapItemConverter.cs" />
+    <Compile Include="Models\BingPin.cs" />
+    <Compile Include="Models\DataCategory.cs" />
+    <Compile Include="Models\DataItem.cs" />
+    <Compile Include="Models\DataTableJoin.cs" />
+    <Compile Include="Models\Filter.cs" />
+    <Compile Include="Models\ConsoleChart.cs" />
+    <Compile Include="Models\ReportGroup.cs" />
+    <Compile Include="Models\TitleValue.cs" />
+    <Compile Include="Models\IMapShape.cs" />
+    <Compile Include="Models\LatLong.cs" />
+    <Compile Include="Models\LatLongRectangle.cs" />
+    <Compile Include="Models\LoginInfo.cs" />
+    <Compile Include="Models\MapLine.cs" />
+    <Compile Include="Models\MapPoint.cs" />
+    <Compile Include="Models\MapPolygon.cs" />
+    <Compile Include="Models\Operand.cs" />
+    <Compile Include="Models\PanelSelection.cs" />
+    <Compile Include="Models\ReportDefinitionBusinessObjectExtension.cs" />
+    <Compile Include="Models\SearchType.cs" />
+    <Compile Include="MVVM\IModalDialogService.cs" />
+    <Compile Include="MVVM\MessageBoxService.cs" />
+    <Compile Include="MVVM\ModalDialogService.cs" />
+    <Compile Include="MVVM\NotifyProperty.cs" />
+    <Compile Include="Models\UserExtensions.cs" />
+    <Compile Include="Models\RegistrationDataExtensions.cs" />
+    <Compile Include="Controls\BusyIndicator.cs" />
+    <Compile Include="Controls\VisualStates.cs" />
+    <Compile Include="Controls\CustomDataForm.cs" />
+    <Compile Include="Helpers\DataBindingExtensions.cs" />
+    <Compile Include="Helpers\DataFieldExtensions.cs" />
+    <Compile Include="Helpers\NotOperatorValueConverter.cs" />
+    <Compile Include="Helpers\StringFormatValueConverter.cs" />
+    <Compile Include="Helpers\TargetNullValueConverter.cs" />
+    <Compile Include="Helpers\ResourceWrapper.cs" />
+    <Compile Include="Assets\Resources\SecurityQuestions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecurityQuestions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\NotifyPropertyChangedEnabledBase.cs" />
+    <Compile Include="MVVM\StateManager.cs" />
+    <Compile Include="MVVM\ViewModel.cs" />
+    <Compile Include="MVVM\ViewModelLocatorBase.cs" />
+    <Compile Include="Service References\LoggingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceLocation\ISimpleServiceLocator.cs" />
+    <Compile Include="ServiceLocation\SimpleServiceLocator.cs" />
+    <Compile Include="ServiceLocation\UnityServiceLocator.cs" />
+    <Compile Include="TriggerActions\EventInformation.cs" />
+    <Compile Include="TriggerActions\ExecuteCommandAction.cs" />
+    <Compile Include="TriggerActions\InvokeCommand.cs" />
+    <Compile Include="TriggerActions\MapEventToCommand.cs" />
+    <Compile Include="TriggerActions\MapEventToCommandBase.cs" />
+    <Compile Include="TriggerActions\TextBoxEnterKeyTrigger.cs" />
+    <Compile Include="TriggerActions\VisibilityIsChecked.cs" />
+    <Compile Include="ViewModels\Dashboard\ESFTicker\ESFTickerViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\ESFTicker\ESFTickerViewModelLocator.cs" />
+    <Compile Include="ViewModels\Dashboard\ESFTicker\FakeESFTickerViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\ESFTicker\IESFTickerViewModel.cs" />
+    <Compile Include="ViewModels\MainPage\FakeMainPageViewModel.cs" />
+    <Compile Include="ViewModels\MainPage\IMainPageViewModel.cs" />
+    <Compile Include="ViewModels\MainPage\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\MainPage\MainPageViewModelLocator.cs" />
+    <Compile Include="ViewModels\ParticipantMI\JobQueueMonitor\FakeJobQueueMonitorViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\JobQueueMonitor\IJobQueueMonitorViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\JobQueueMonitor\JobQueueMonitorViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\JobQueueMonitor\JobQueueMonitorViewModelLocator.cs" />
+    <Compile Include="ViewModels\ParticipantMI\ParticipantCsvToXmlConverter\FakeParticipantCsvToXmlConverterViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\ParticipantCsvToXmlConverter\IParticipantCsvToXmlConverterViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\ParticipantCsvToXmlConverter\ParticipantCsvToXmlConverterViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\ParticipantCsvToXmlConverter\ParticipantCsvToXmlConverterViewModelLocator.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadDecision\FakeUploadDecisionViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadDecision\IUploadDecisionViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadDecision\UploadDecisionViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadDecision\UploadDecisionViewModelLocator.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadedFileMonitor\FakeUploadedParticipantViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadedFileMonitor\IUploadedFileMonitorViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadedFileMonitor\UploadedFileMonitorViewModelLocator.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadedFileMonitor\UploadedParticipantViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadFile\FakeUploadFileViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadFile\IUploadFileViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadFile\UploadFileViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadFile\UploadFileViewModelLocator.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadHistory\FakeUploadHistoryViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadHistory\IUploadHistoryViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadHistory\UploadHistoryViewModel.cs" />
+    <Compile Include="ViewModels\ParticipantMI\UploadHistory\UploadHistoryViewModelLocator.cs" />
+    <Compile Include="ViewModels\PostCodes\TransferPostCodeFiles\FakeTransferPostCodeFilesViewModel.cs" />
+    <Compile Include="ViewModels\PostCodes\TransferPostCodeFiles\ITransferPostCodeFilesViewModel.cs" />
+    <Compile Include="ViewModels\PostCodes\TransferPostCodeFiles\TransferPostCodeFilesViewModel.cs" />
+    <Compile Include="ViewModels\PostCodes\TransferPostCodeFiles\TransferPostCodeFilesViewModelLocator.cs" />
+    <Compile Include="ViewModels\Reporting\AdvancedJoinViewModel\AdvancedJoinViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\AdvancedJoinViewModel\AdvancedJoinViewModelLocator.cs" />
+    <Compile Include="ViewModels\Reporting\AdvancedJoinViewModel\FakeAdvancedJoinViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\EditDataItemViewModel\FakeEditDataItemViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\AdvancedJoinViewModel\IAdvancedJoinViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\EditDataItemViewModel\EditDataItemViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\EditDataItemViewModel\EditDataItemViewModelLocator.cs" />
+    <Compile Include="ViewModels\Reporting\EditDataItemViewModel\IEditDataItemViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\PublishToUcbViewModel\PublishToUcbViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\PublishToUcbViewModel\PublishToUcbViewModelLocator.cs" />
+    <Compile Include="ViewModels\Reporting\PublishToUcbViewModel\FakePublishToUcbViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\PublishToUcbViewModel\IPublishToUcbViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportGroupPermissionsViewModel\FakeReportGroupPermissionsViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportGroupPermissionsViewModel\IReportGroupPermissionsViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportGroupPermissionsViewModel\ReportGroupPermissionsViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportGroupPermissionsViewModel\ReportGroupPermissionsViewModelLocator.cs" />
+    <Compile Include="ViewModels\Reporting\ReportListViewModel\FakeReportListViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportListViewModel\IReportListViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportListViewModel\ReportListViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportListViewModel\ReportListViewModelLocator.cs" />
+    <Compile Include="ViewModels\Reporting\ReportWizardViewModel\FakeReportWizardViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportWizardViewModel\IReportWizardViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\SelectReportGroupViewModel\FakeSelectReportGroupViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\SelectReportGroupViewModel\ISelectReportGroupViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\SelectReportGroupViewModel\SelectReportGroupViewModelLocator.cs" />
+    <Compile Include="ViewModels\Reporting\SelectReportGroupViewModel\SelectReportGroupViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\SelectReportModelDialogViewModel\FakeSelectReportModelDialogViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\SelectReportModelDialogViewModel\ISelectReportModelDialogViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\SelectReportModelDialogViewModel\SelectReportModelDialogViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\SelectReportModelDialogViewModel\SelectReportModelDialogViewModelLocator.cs" />
+    <Compile Include="ViewModels\Reporting\ReportWizardViewModel\ReportWizardViewModel.cs" />
+    <Compile Include="ViewModels\Reporting\ReportWizardViewModel\ReportWizardViewModelLocator.cs" />
+    <!--<Compile Include="Views\Dashboard\INESNewsReader.xaml.cs">
+      <DependentUpon>INESNewsReader.xaml</DependentUpon>
+    </Compile>-->
+    <Compile Include="ViewModels\UserControls\LogoTimeSpinnerViewModel\FakeLogoTimeSpinnerViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\LogoTimeSpinnerViewModel\ILogoTimeSpinnerViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\LogoTimeSpinnerViewModel\LogoTimeSpinnerViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\LogoTimeSpinnerViewModel\LogoTimeSpinnerViewModelLocator.cs" />
+    <Compile Include="Views\CustomButton.xaml.cs">
+      <DependentUpon>CustomButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\ESFTicker.xaml.cs">
+      <DependentUpon>ESFTicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Login\LoginRegistrationWindowPrompter.cs" />
+    <Compile Include="Views\Login\LoginStatus.xaml.cs">
+      <DependentUpon>LoginStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginForm.xaml.cs">
+      <DependentUpon>LoginForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginRegistrationWindow.xaml.cs">
+      <DependentUpon>LoginRegistrationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\RegistrationForm.xaml.cs">
+      <DependentUpon>RegistrationForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParticipantMI\JobQueueMonitor.xaml.cs">
+      <DependentUpon>JobQueueMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParticipantMI\ParticipantCsvToXmlConverter.xaml.cs">
+      <DependentUpon>ParticipantCsvToXmlConverter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParticipantMI\UploadDecision.xaml.cs">
+      <DependentUpon>UploadDecision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParticipantMI\UploadedFileMonitor.xaml.cs">
+      <DependentUpon>UploadedFileMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParticipantMI\UploadFile.xaml.cs">
+      <DependentUpon>UploadFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParticipantMI\UploadHistory.xaml.cs">
+      <DependentUpon>UploadHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PostCodes\TransferPostCodeFiles.xaml.cs">
+      <DependentUpon>TransferPostCodeFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\AdvancedJoinDialog.xaml.cs">
+      <DependentUpon>AdvancedJoinDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\PublishToUcbDialog.xaml.cs">
+      <DependentUpon>PublishToUcbDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\EditDataItemDialog.xaml.cs">
+      <DependentUpon>EditDataItemDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\ReportGroupPermissions.xaml.cs">
+      <DependentUpon>ReportGroupPermissions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\ReportList.xaml.cs">
+      <DependentUpon>ReportList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\ReportWizard\ReportWizard.xaml.cs">
+      <DependentUpon>ReportWizard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\SelectReportGroupDialog.xaml.cs">
+      <DependentUpon>SelectReportGroupDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reporting\SelectReportModelDialog.xaml.cs">
+      <DependentUpon>SelectReportModelDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\LogoTimeSpinner.xaml.cs">
+      <DependentUpon>LogoTimeSpinner.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Assets\Styles.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Controls\BusyIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Views\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Views\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login\LoginStatus.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login\LoginForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Views\Login\LoginRegistrationWindow.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login\RegistrationForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\UcbManagementInformation.Web.Server.ReportWizardContext.datasource" />
+    <None Include="Properties\DataSources\UcbManagementInformation.Web.Services.AlertContext.datasource" />
+    <None Include="Properties\DataSources\UcbManagementInformation.Web.Services.MIUploadContext.datasource" />
+    <None Include="Properties\DataSources\UcbManagementInformation.Web.UserRegistrationContext.datasource" />
+    <None Include="Service References\LoggingService\LoggingService.wsdl" />
+    <None Include="Service References\LoggingService\LoggingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoggingService\LoggingService1.wsdl" />
+    <None Include="Service References\LoggingService\LoggingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoggingService\LoggingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoggingService\LoggingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoggingService\LoggingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Page Include="Views\ParticipantMI\JobQueueMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParticipantMI\ParticipantCsvToXmlConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParticipantMI\UploadDecision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParticipantMI\UploadedFileMonitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParticipantMI\UploadFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParticipantMI\UploadHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PostCodes\TransferPostCodeFiles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\PublishToUcbDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Reporting\EditDataItemDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\ReportGroupPermissions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\ReportList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\AdvancedJoinDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reporting\SelectReportGroupDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Views\Reporting\SelectReportModelDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\LogoTimeSpinner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <None Include="Properties\AppManifest.xml" />
+    <Page Include="Controls\CustomChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Speedo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Controls\AutoCompleteComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Assets\Images\about.PNG" />
+    <Resource Include="Assets\Images\costanalysis.PNG" />
+    <Resource Include="Assets\Images\fileupload.PNG" />
+    <Resource Include="Assets\Images\heatmap.PNG" />
+    <Resource Include="Assets\Images\home.PNG" />
+    <Resource Include="Assets\Images\INES.PNG" />
+    <Resource Include="Assets\Images\maps.PNG" />
+    <Resource Include="Assets\Images\report.PNG" />
+    <Resource Include="Assets\Images\edit.PNG" />
+    <Resource Include="Assets\Images\Change.PNG" />
+    <Resource Include="Assets\Images\greentick.png" />
+    <Resource Include="Assets\Images\redcross.png" />
+    <Resource Include="Assets\Images\greenfolder.PNG" />
+    <Resource Include="Assets\Images\grayfolder.PNG" />
+    <Resource Include="Assets\Images\redfolder.PNG" />
+    <Resource Include="Assets\Images\Timeline.png" />
+    <Resource Include="Assets\Images\Timeline\Submit.jpg" />
+    <Resource Include="Assets\Images\Timeline\Authorise.jpg" />
+    <Resource Include="Assets\Images\Timeline\Certified.jpg" />
+    <Resource Include="Assets\Images\Timeline\Confirmed.jpg" />
+    <Resource Include="Assets\Images\Timeline\Scrutinised.jpg" />
+    <Resource Include="Assets\Images\bk2a.JPG" />
+    <Resource Include="Assets\Images\help_256.png" />
+    <Resource Include="Assets\Images\lock_48.png" />
+    <Resource Include="Assets\Images\dwp_logo_old.png" />
+    <Resource Include="Assets\Images\ManagementInfo.png" />
+    <Resource Include="Assets\Images\dwplogo_old.png" />
+    <Resource Include="Assets\Images\dwp_logo.png" />
+    <Resource Include="Assets\Images\dwplogo.png" />
+    <Content Include="Libs\BingMaps\Microsoft.Maps.MapControl.Common.dll" />
+    <Content Include="Libs\BingMaps\Microsoft.Maps.MapControl.dll" />
+    <Content Include="Libs\SharpZipLib\SharpZipLib.Silverlight4.dll" />
+    <Content Include="Libs\Unity\Microsoft.Practices.Unity.Interception.Silverlight.dll" />
+    <Content Include="Libs\Unity\Microsoft.Practices.Unity.Silverlight.dll" />
+    <None Include="Service References\LoggingService\LoggingService.disco" />
+    <None Include="Service References\LoggingService\configuration91.svcinfo" />
+    <None Include="Service References\LoggingService\configuration.svcinfo" />
+    <None Include="Service References\LoggingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+    <Page Include="Controls\SortButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\UcbManagementInformation.Web\Resources\RegistrationDataResources.resx">
+      <Link>Web\Resources\RegistrationDataResources.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegistrationDataResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\UcbManagementInformation.Web\Resources\ValidationErrorResources.resx">
+      <Link>Web\Resources\ValidationErrorResources.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationErrorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Resources\ApplicationStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApplicationStrings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Resources\ErrorResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Resources\SecurityQuestions.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SecurityQuestions.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>UcbManagementInformation</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\image1.png" />
+    <Resource Include="Assets\Images\image2.png" />
+    <Resource Include="Assets\Images\image3.png" />
+    <Resource Include="Assets\Images\image4.png" />
+    <Resource Include="Assets\Images\image5.png" />
+    <Resource Include="Assets\Images\image6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="com.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\Unity\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Libs\Unity\Microsoft.Practices.Unity.dll" />
+    <Page Include="Views\CustomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\ESFTicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <!--<Page Include="Views\Dashboard\INESNewsReader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>-->
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Reporting\ReportWizard\ReportWizard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirstLook.ServiceModel.DomainServices.Client.Security\FirstLook.ServiceModel.DomainServices.Client.Security.csproj">
+      <Project>{E644D933-BAD2-42BA-89CF-4BF2BC4DA3FB}</Project>
+      <Name>FirstLook.ServiceModel.DomainServices.Client.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimelineLibrary\TimelineLibrary.csproj">
+      <Project>{52D31DA6-1B1A-4E13-92C7-BD9B647077E7}</Project>
+      <Name>TimelineLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LoggingService\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

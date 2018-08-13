@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="RES_VALIDATION_DATE_INVALID">
+		<value>Date is invalid.</value>
+	</data>
+	<data name="RES_EXCEPTION_CRUD_CREATE_ONLY">
+		<value>'Create only' cannot be used for delete.</value>
+	</data>
+	<data name="RES_VALIDATION_LISTITEM_NOT_SELECTED">
+		<value>No Item is selected in the List.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_DATACATEGORY">
+		<value>Select a Data Category to display its Data Items.</value>
+	</data>
+	<data name="RES_VALIDATION_DATAITEM_NOT_SPECIFIED">
+		<value>No Data Items selected. </value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_AVAILABLEDATAITEM">
+		<value>Select a Data Item to be displayed in a report.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_ITEMSELECTED">
+		<value>A list of data items are displayed in a report.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_ADDFIELD">
+		<value>Add a selected Data Item to the Item Selected list.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_REMOVEFIELD">
+		<value>Remove a selected Data Item from the Item Selected list.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_MOVEUP">
+		<value>A selected Data Item is moved up one position in the Item Selected list.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_MOVEDOWN">
+		<value>A selected Data Item is moved down one position in the Item Selected list.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_NEXT">
+		<value>Go to the Report Totals screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTATTRIBUTES_NAME">
+		<value>Enter a report name.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_DATADEFINITION">
+		<value>View a selected Data Item definition.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTPARAMETERS_AVAILABLEFIELDS">
+		<value>Select a field to be a parameter for a report.</value>
+	</data>
+	<data name="RES_TOOLTIP_CLOSEBUTTON">
+		<value>Exit the application without saving the report.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_VIEWBUTTON">
+		<value>Go to selected report</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_COPYBUTTON">
+		<value>Includes all possible records in a join</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_PASTEBUTTON">
+		<value>Paste a copied report</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_DEFINITIONBUTTON">
+		<value>Go to report definition</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_TREEVIEW">
+		<value>Select a report group</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_LISTVIEW">
+		<value>Select a report</value>
+	</data>
+	<data name="RES_CONSTANT_Y">
+		<value>Y</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_PASTETOSAMEGROUP">
+		<value>Please select a  new report group to paste to.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_NOPASTERIGHT">
+		<value>You do not have sufficient permissions to paste a report to this folder.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_EDITBUTTON">
+		<value>Go to edit report screen</value>
+	</data>
+	<data name="RES_BINDING_PROPERTY_NAME">
+		<value>Name</value>
+	</data>
+	<data name="RES_BINDING_PROPERTY_CAPTION">
+		<value>Caption</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_NOPASTEGROUP">
+		<value>Please select a group to paste to.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_NOGROUPORREPORT">
+		<value>Please select a report to view.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_NOREADACCESS">
+		<value>You do not have permission to view this report.</value>
+	</data>
+	<data name="RES_VALIDATION_HIDE_SHOWCOLUMNTOTALSCHECKBOX">
+		<value>You have to first remove the items in the Column Subtotals list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_AVAILABLEGROUPINGFIELDS">
+		<value>Select a field to be grouped by row or column.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_ROWGROUPINGFIELDS">
+		<value>A list of row grouping fields are selected for a report.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_COLUMNGROUPINGFIELDS">
+		<value>A list of selected column grouping fields for a report.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_ADDROWTOTAL">
+		<value>Add a selected grouping field to the Row Grouping list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_REMOVEROWTOTAL">
+		<value>Remove a selected grouping field from the Row Grouping with subtotals list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_ADDCOLUMNTOTAL">
+		<value>Add a selected grouping field to the Column Grouping list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_REMOVECOLUMNTOTAL">
+		<value>Remove a selected grouping field to the Column Grouping with subtotals list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_PAGEBREAK">
+		<value>Insert page break to row grouping fields on change of the first item.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_DRILLDOWN">
+		<value>Allow drill down on row grouping fields.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_COLUMNS">
+		<value>Allow column grouping.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_BACK">
+		<value>Go back to the Data Selection screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTTOTALS_NEXT">
+		<value>Go to the Report Parameters screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_ADDFILTER">
+		<value>Click to add a selected filter to the \r\nexisting Filters list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTPARAMETERS_PARAMETERFIELDS">
+		<value>A list of selected parameter fields for a report.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTPARAMETERS_ADDPARAMETER">
+		<value>Add a field to the parameter list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTPARAMETERS_REMOVEPARAMETER">
+		<value>Remove the selected parameter from the parameter list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTPARAMETERS_BACK">
+		<value>Go back to the Report Totals screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTPARAMETERS_NEXT">
+		<value>Go to the Report Filters screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_CREATEREPORT_FINISH">
+		<value>Go to the Report Atrributes screen to finish off the created report.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTATTRIBUTES_FOLDER">
+		<value>Select a folder to save the report.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTATTRIBUTES_BACK">
+		<value>Go back to the Report Filters screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTATTRIBUTES_VIEWREPORT">
+		<value>Click to view the report on screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_REPORTFIELD">
+		<value>Select a report field to define your filter.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTATTRIBUTES_DESCRIPTION">
+		<value>Enter a description for the report to be created.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_FILTERFIELD">
+		<value>The selected report field for a filter.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_FILTEROPERAND">
+		<value>Select an operand for a filter.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_FILTERTEXTVALUE">
+		<value>Enter a value for a filter.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_FILTERLISTVALUE">
+		<value>Select a value from the dropdown list for a filter.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_FILTERS">
+		<value>A list of the defined filters that have been added to a report.</value>
+	</data>
+	<data name="RES_VALIDATION_FOLDER_NOT_SELECTED">
+		<value>No folder selected.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_REMOVEFILTER">
+		<value>Click to remove a selected filter from the existing Filters list.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_BACK">
+		<value>Go back to the Report Parameters screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTFILTERS_NEXT">
+		<value>Go to the Report Attributes screen.</value>
+	</data>
+	<data name="RES_QUESTION_EXITAPPLICATION">
+		<value>Are you sure you wish to exit the Application?</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTNAME_INVALID">
+		<value>Invalid Report Name entered.</value>
+	</data>
+	<data name="RES_VALIDATION_&lt;FIELDNAME&gt;_MANDATORY">
+		<value>&lt;FIELDNAME&gt; is not entered.</value>
+	</data>
+	<data name="RES_CONSTANT_&lt;FIELDNAME&gt;">
+		<value>&lt;FIELDNAME&gt;</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTGROUP_NOUPDATEACCESS">
+		<value>You do not have permission to save report in the selected folder.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_COPYBUTTON_NAME">
+		<value>Copy</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_TREEVIEW_NAME">
+		<value>Tree View</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_VIEWBUTTON_NAME">
+		<value>View Button</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_EDITBUTTON_NAME">
+		<value>Edit</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_DEFINITIONBUTTON_NAME">
+		<value>Report Definition</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_PASTEBUTTON_NAME">
+		<value>Paste</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_LISTVIEW_NAME">
+		<value>List View</value>
+	</data>
+	<data name="RES_WARNING_UNABLECOPYREPORT_IN_REPORTINGSERVICE">
+		<value>An error occurred while coping report in report services.</value>
+	</data>
+	<data name="RES_TOOLTIP_CLOSEBUTTON_NAME">
+		<value>Close Button</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_DATADEFINITIONBUTTON">
+		<value>Go to the data definition screen</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_DATADEFINITIONBUTTON_NAME">
+		<value>Data Definition Button</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_BACKBUTTON">
+		<value>Go back to Report List Screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_BACKBUTTON_NAME">
+		<value>Back Button</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_REPORTNAMETEXTBOX">
+		<value>Displays the name of the report</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_REPORTNAMETEXTBOX_NAME">
+		<value>Report Name text box</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_REPORTDESCRIPTIONTEXTBOX_NAME">
+		<value>Report description text box</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_DATALISTVIEW">
+		<value>Displays list of data items for a report</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_DATALISTVIEW_NAME">
+		<value>Data List Box</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_CREATEDBYLABEL">
+		<value>Displays the name of the person that created the report.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_CREATEDBYLABEL_NAME">
+		<value>Created by label</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_CREATEDONLABEL">
+		<value>Displays the date the report created</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_CREATEDONLABEL_NAME">
+		<value>Created on label</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_MODIFIEDBYLABEL">
+		<value>Displays the name of the last person to modify the report</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_MODIFIEDBYLABEL_NAME">
+		<value>Modified by label</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_MODIFIEDONLABEL">
+		<value>Displays the date the report was last modified.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_MODIFIEDONLABEL_NAME">
+		<value>Modified on date label</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_PAGEONLABEL">
+		<value>Displays whether the report starts a new page on a change in first items value.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_PAGEONLABEL_NAME">
+		<value>Page On Yes No Label</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_DRILLDOWNLABEL">
+		<value>Displays whether report allows drill down on totals</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_DRILLDOWNLABEL_NAME">
+		<value>Drill down label</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_REPORTDESCRIPTIONTEXTBOX">
+		<value>Displays a description of the report</value>
+	</data>
+	<data name="RES_EXCEPTION_GENERATE_REPORT_ERROR">
+		<value>An error occurred while generating the new report.</value>
+	</data>
+	<data name="RES_BINDING_PROPERTY_FILTERDEFINITION">
+		<value>FilterDefinition</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTVIEWER_EDITBUTTON">
+		<value>Go to the Create Report screen to edit the report.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTVIEWER_LISTBUTTON">
+		<value>Go to Report List screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_REGIONFILTER">
+		<value>Add/Remove a filter for the User's Region.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_REGIONPARAMETER">
+		<value>Add/Remove a parameter for the User's Region. </value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_REPORTNAMEEXISTS">
+		<value>A report of this name already exists in the folder you have selected.</value>
+	</data>
+	<data name="RES_VALIDATION_MAINTAINREPORTGROUPS_MISSINGGROUP">
+		<value>Please enter a report group name.</value>
+	</data>
+	<data name="RES_VALIDATION_MAINTAINREPORTGROUPS_NOTALPHANUMERIC">
+		<value>Please ensure the group name you have entered contains letters, numbers, whitespace or underscores only.</value>
+	</data>
+	<data name="RES_VALIDATION_MAINTAINREPORTGROUPS_PATHALREADYEXISTS">
+		<value>A folder of that name already exists.</value>
+	</data>
+	<data name="RES_VALIDATION_ALL_INSUFFICIENTACCESSEDIT">
+		<value>You do not have sufficient access rights to edit this folder.</value>
+	</data>
+	<data name="RES_WARNING_MAINTAINREPORTGROUPS_FOLDERTODELETEHASCHILDREN">
+		<value>The folder you have selected and all of its subfolders will be deleted along with all reports contained within them. \r\n Are you sure you want to continue?</value>
+	</data>
+	<data name="RES_WARNING_MAINTAINREPORTGROUPS_FOLDERTODELETEHASNOCHILDREN">
+		<value>The folder you have selected will be deleted along with all reports contained within it.\r\n Are you sure you want to continue?</value>
+	</data>
+	<data name="RES_VALIDATION_FILE_ALREADY_EXIST">
+		<value>The report already exists. Do you want to overwrite it?</value>
+	</data>
+	<data name="RES_VALIDATION_ALL_INSUFFICIENTACCESSDELETE">
+		<value>You do not have sufficient access rights to delete this folder.</value>
+	</data>
+	<data name="RES_VALIDATION_ALL_INSUFFICIENTSERVICEACCESSLEVEL">
+		<value>You do not have a sufficient access level to use this screen.</value>
+	</data>
+	<data name="RES_VALIDATION_USERMAINTENACE_ADDSERVICE">
+		<value>You must select a User, Service and Service Level to add a service.</value>
+	</data>
+	<data name="RES_VALIDATION_USERMAINTENANCE_CAPTION">
+		<value>User Maintenance Error</value>
+	</data>
+	<data name="RES_VALIDATION_USERMAINTENACE_ADDROLE">
+		<value>You must select a User and a Role.</value>
+	</data>
+	<data name="RES_VALIDATION_USERMAINTENACE_REMOVEROLE">
+		<value>You must select a User and a Role to remove.</value>
+	</data>
+	<data name="RES_VALIDATION_USERMAINTENACE_REMOVESERVICE">
+		<value>You must select a User and a non Role based service to remove.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_AVAILABLESERVICESCOMBOBOX">
+		<value>A list of available Services for the current user.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_SELECTEDROLESLISTBOX">
+		<value>A list of Roles that the selected User is a member of.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_USERLISTBOX">
+		<value>A list of all Users known to the system.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_VIEWROLESBUTTON">
+		<value>View the Users Roles.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_VIEWSERVICESBUTTON">
+		<value>View the Users Services.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_AVAILABLEROLESCOMBOBOX">
+		<value>A list of Roles available to the selected User.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_ADDROLEBUTTON">
+		<value>Add the selected Role to the selected User.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_MAINTAINROLESBUTTON">
+		<value>Navigate to the Role Maintenance Screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_REMOVEROLEBUTTON">
+		<value>Remove the selected Role from the selected User.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_SERVICELEVELCOMBOBOX">
+		<value>A list of Levels that can be assigned to a Service for a User.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_REMOVESERVICEBUTTON">
+		<value>Remove the selected Service from the selected User.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_ADDSERVICEBUTTON">
+		<value>Add the selected Service to the selected User.</value>
+	</data>
+	<data name="RES_TOOLTIP_USERMAINTENANCE_SERVICELISTVIEW">
+		<value>A list of Services and Service Levels for the Current User. A flag indicates the service relates to a Role.</value>
+	</data>
+	<data name="RES_TOOLTIP_MAINTAINREPORTGROUPS_ADDREPORTGROUPBUTTON">
+		<value>Adds a new report group to the selected report group.</value>
+	</data>
+	<data name="RES_TOOLTIP_MAINTAINREPORTGROUPS_RENAMEREPORTGROUPBUTTON">
+		<value>Renames the selected report group.</value>
+	</data>
+	<data name="RES_TOOLTIP_MAINTAINREPORTGROUPS_DELETEREPORTGROUPBUTTON">
+		<value>Deletes the selected report group.</value>
+	</data>
+	<data name="RES_TOOLTIP_MAINTAINREPORTGROUPS_ADDREPORTGROUPTEXTBOX">
+		<value>Enter the name of the new report group here.</value>
+	</data>
+	<data name="RES_TOOLTIP_MAINTAINREPORTGROUPS_RENAMEREPORTGROUPTEXTBOX">
+		<value>Enter the new name to give to the selected report group.</value>
+	</data>
+	<data name="RES_TOOLTIP_MAINTAINREPORTGROUPS_REPORTGROUPTREE">
+		<value>The list of report groups available.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTACCESSMAINTENANCE_NOUSERID">
+		<value>Please enter a user ID for the new user.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTACCESSMAINTENANCE_NOGOREGION">
+		<value>Please select a GO region for the new user.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTACCESSMAINTENANCE_DIFFERENTGOREGIONS">
+		<value>You have selected a GO region that does not match your own.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTACCESSMAINTENANCE_NOUSERSELECTED">
+		<value>Please select a user.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATADEFINITION_DATACATEGORY">
+		<value>Select a Data Category to view its Data Items.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATADEFINITION_DESCRIPTION">
+		<value>Definition of the selected data item</value>
+	</data>
+	<data name="RES_TOOLTIP_DATADEFINITION_NAME">
+		<value>Name of a Data Item</value>
+	</data>
+	<data name="RES_TOOLTIP_DATADEFINITION_LOCATIONONSYSTEM">
+		<value>Defines where a Data Item is located on the system.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATADEFINITION_DATATYPE">
+		<value>Data Type of a Data Item</value>
+	</data>
+	<data name="RES_TOOLTIP_DATADEFINITION_ISTOTALLING">
+		<value>Indicate if the Data Item can be used for report grouping.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATADEFINITION_SAVEBUTTON">
+		<value>Click to save any changes made to the definition details of the selected Data Item.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATADEFINITION_AVAILABLEDATAITEM">
+		<value>Select a Data Item to view or edit its definition details.</value>
+	</data>
+	<data name="RES_VALIDATION_&lt;FIELDNAME&gt;_NONALPHANUMERIC">
+		<value>&lt;FIELDNAME&gt; should only contain letters, numbers, whitespace or underscores.</value>
+	</data>
+	<data name="RES_MESSAGE_SAVE_OK">
+		<value>The record has been saved successfully.</value>
+	</data>
+	<data name="RES_VALIDATION_ROLEMAINTENANCE_ADDSERVICE">
+		<value>You must select a Role, Service and Service Level to add a service.</value>
+	</data>
+	<data name="RES_VALIDATION_ROLEMAINTENANCE_CAPTION">
+		<value>Role Maintenance Error</value>
+	</data>
+	<data name="RES_VALIDATION_ROLEMAINTENANCE_REMOVEROLECHECK">
+		<value>Are you sure you wish to delete the role? This will Remove the Links to Users and Services.</value>
+	</data>
+	<data name="RES_VALIDATION_ROLEMAINTENANCE_ROLETEXTBOX">
+		<value>Enter the Name of the Role in the Text Box, it must be unique.</value>
+	</data>
+	<data name="RES_VALIDATION_ROLEMAINTENANCE_REMOVEROLE">
+		<value>You must select a Role to remove.</value>
+	</data>
+	<data name="RES_VALIDATION_ROLEMAINTENANCE_REMOVESERVICE">
+		<value>You must Select a Role and a service to Remove.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_SERVICECOMBOBOX">
+		<value>A list of Available Services for the current role.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_ROLELISTBOX">
+		<value>A list of all roles known to the system.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_ADDROLEBUTTON">
+		<value>Add the entered Role to the System.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_MAINTAINUSERSBUTTON">
+		<value>Navigate to the User Maintenance screen.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_REMOVEROLEBUTTON">
+		<value>Remove the Selected Role from the System.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_SERVICELEVELCOMBOBOX">
+		<value>A list of Levels that can be assigned to a service for a role.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_REMOVESERVICEBUTTON">
+		<value>Remove the selected Service from the selected Role.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_ADDSERVICEBUTTON">
+		<value>Add the selected Service to the selected Role.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_SERVICELISTVIEW">
+		<value>A list of Services and Service Levels for the Current Role.</value>
+	</data>
+	<data name="RES_TOOLTIP_ROLEMAINTENANCE_ROLETEXTBOX">
+		<value>The Name of the Role to add.</value>
+	</data>
+	<data name="RES_EXCEPTION_REPORTACCESSMAINTENANCE_USERNOTFOUND">
+		<value>The user ID entered does not exist on the ESF Active Directory.</value>
+	</data>
+	<data name="RES_WARNING_DATASELECTION_ITEMNOTSELECTABLE">
+		<value>The current item is not selectable for the report.</value>
+	</data>
+	<data name="RES_WARNING_REPORTTOTALS_CANNOTREMOVEROWTOTAL">
+		<value>You have to remove all the column groupings before the last row grouping can be removed.</value>
+	</data>
+	<data name="RES_WARNING_REPORTTOTALS_CANNOTADDCOLUMNTOTAL">
+		<value>You have to define a row grouping before adding a column grouping.</value>
+	</data>
+	<data name="RES_WARNING_REPORTTOTALS_FIELDSLESSTHANTREPORTOTALS">
+		<value>There should be more report fields than the ones selected for the row and column groupings.</value>
+	</data>
+	<data name="RES_WARNING_NOPRINTERINSTALLED">
+		<value>There are no printers installed.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTACCESSMAINTENANCE_INSUFFICIENTACCESSADMIN">
+		<value>You do not have sufficient access rights to change the access level of this report group.</value>
+	</data>
+	<data name="RES_WARNING_REPORTACCESSMAINTENANCE_DELETEUSER">
+		<value>Are you sure you wish to delete this user?</value>
+	</data>
+	<data name="RES_MESSAGE_REPORTACCESSMAINTENANCE_UPDATESUCCESSFUL">
+		<value>The update was completed successfully.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_USERLISTBOX">
+		<value>A list of users who are set up to use the system.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_DELETEUSERBUTTON">
+		<value>Deletes the selected user.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_USERIDTEXTBOX">
+		<value>Enter the user ID of a new user here.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_GOCOMBOBOX">
+		<value>The GO Region that the new user belongs to.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_ADDUSERBUTTON">
+		<value>Click to add a new user.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_REPORTGROUPTREE">
+		<value>A list of report groups available.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_MYACCESSLEVELTEXTBOX">
+		<value>The access level you have to the selected folder.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_USERACCESSLEVELLISTBOX">
+		<value>A list of access levels. The highlighted level is the access level that the selected user has to the selected folder.</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTACCESSMAINTENANCE_UPDATEACCESSLEVELBUTTON">
+		<value>Click to set the access level of the selected folder for the selected user.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTACCESSMAINTENANCE_USERALREADYEXISTS">
+		<value>There already exists a user with that user ID.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTFILTER_INVALIDFILTERVALUE">
+		<value>You must enter a filter value of &lt;DATATYPE&gt;.</value>
+	</data>
+	<data name="RES_REPORT_NOROWSRETURNED">
+		<value>There is no data available for the report information you have requested.</value>
+	</data>
+	<data name="RES_WARNING_DATASELECTION_GOREGIONUNSELECTABLE">
+		<value>GO region cannot be selected because of the currently selected report fields.</value>
+	</data>
+	<data name="RES_EXCEPTION_REPORTPARAMETER_INVALIDDATATYPE">
+		<value>A data item has been passed to ReportParameter that is of an invalid type.</value>
+	</data>
+	<data name="RES_EXCEPTION_QUERYBUILDER_INFINITELOOP">
+		<value>Probable infinite loop encountered in QueryBuilder.OrderTables()</value>
+	</data>
+	<data name="RES_VALIDATION_TREEVIEWNODE_NOT_SELECTED">
+		<value>You must select a folder to view the report. </value>
+	</data>
+	<data name="RES_WARNING_BUSINESS_DATA_NOT_AVAILABLE">
+		<value>The business data is currently being processed. Please try later.</value>
+	</data>
+	<data name="RES_EXCEPTION_QUERYWRAPPER_SINGLETABLENOTRETURNED">
+		<value>Error in QueryWrapper constructor: A single details level table was not returned.</value>
+	</data>
+	<data name="RES_WARNING_UNAUTHORISEDUSER">
+		<value>You are not an authorised Management Information System user.  \r\nPlease consult with your local Administrator.</value>
+	</data>
+	<data name="RES_QUESTION_DELETEREPORT">
+		<value>Are you sure you want to delete the selected report(s)?</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTLIST_DELETEBUTTON">
+		<value>Deletes the selected report(s).</value>
+	</data>
+	<data name="RES_MESSAGE_DELETEREPORT_OK">
+		<value>The report deletion has been completed successfully.</value>
+	</data>
+	<data name="RES_QUESTION_CLOSE_CREATEREPORT">
+		<value>You will lose any change made to the report if you exit the screen.  \r\nAre you sure you want to continue?</value>
+	</data>
+	<data name="RES_VALIDATION_&lt;FIELDNAME&gt;_TEXTTOOLONG">
+		<value>The &lt;FIELDNAME&gt; you have entered is too long.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORT_NOUPDATECCESS">
+		<value>You are not allowed to edit this report.</value>
+	</data>
+	<data name="RES_EXCEPTION_MAINTAINREPORTGROUPS_FOLDERNOTSELECTED">
+		<value>You must select a folder</value>
+	</data>
+	<data name="RES_VALIDATION_USERROLE_NONESUSER">
+		<value>You are only allowed to perform this task for the user of your own region.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTGROUPMAINTAIN_TEMPFOLDER">
+		<value>Cannot Update Temp Folder.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTVIEWER_LOSEREPORT">
+		<value>This report will be lost unless you press Edit to give it a permanent name and location.\r\nDo you wish to continue?</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_NODELETERIGHT">
+		<value>You do not have permission to delete the selected report(s).</value>
+	</data>
+	<data name="RES_VALIDATION_USERMAINTENANCE_DELETECURRENTUSER">
+		<value>You are not allowed to delete your own User ID from the system.</value>
+	</data>
+	<data name="RES_VALIDATION_MAINTAINREPORTGROUPS_REPORTALREADYEXISTS">
+		<value>A report of that name already exists in this folder. Please choose a different name.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTATTRIBUTES_REPORTALREADYEXISTS">
+		<value>A report group of that name already exists in this location. Please choose another name for this report.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_REPORTGROUPALREADYEXISTS">
+		<value>A report group of this name already exists in this location.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTVIEWER_NOUPDATESTDREPORT">
+		<value>You are not allowed to edit standard reports.</value>
+	</data>
+	<data name="RES_VALIDATION_DATASELECTION_COLUMNUSED">
+		<value>You cannot remove the selected item as it may be \r\nused in report grouping, parameters or filters.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_NOCOPYRIGHT">
+		<value>You do not have sufficient permissions to copy a report from this folder.</value>
+	</data>
+	<data name="RES_VALIDATION_REPORTLIST_NOEDITACCESS">
+		<value>You do not have permission to edit a report from the current report folder.</value>
+	</data>
+	<data name="RES_VALIDATION_NOFILTERVALUE">
+		<value>Filter by value is not supplied.</value>
+	</data>
+	<data name="RES_VALIDATION_DATADEFINITION_NOSAVERIGHT">
+		<value>You do not have permission to modify data definition.</value>
+	</data>
+	<data name="RES_EXCEPTION_REPORTACCESSMAINTENANCE_USERNOTADDED">
+		<value>An error occurred while adding the new user.</value>
+	</data>
+	<data name="RES_WARNING_DATASELECTION_PROJECTSTATUSUNSELECTABLE">
+		<value>Project Status cannot be selected because of the currently selected report fields.</value>
+	</data>
+	<data name="RES_VALIDATION_USERMAINTENACE_INSUFFICIENTSERVICELEVEL">
+		<value>You do not have sufficient Service Access Level to add this service or role.</value>
+	</data>
+	<data name="RES_VALIDATION_STANDARDREPORT_ALREADY_EXISTS">
+		<value>You are not allowed to overwrite a standard report.</value>
+	</data>
+	<data name="RES_TOOLTIP_DATASELECTION_OUTERJOIN">
+		<value>Shows only data with a common demoninator eg if PCR data selected then project data shown only for projects with a PCR</value>
+	</data>
+	<data name="RES_TOOLTIP_REPORTDEFINITION_OUTERJOIN">
+		<value>Shows only data with a common demoninator eg if PCR data selected project data will only be shown for projects with a PCR</value>
+	</data>
+</root>

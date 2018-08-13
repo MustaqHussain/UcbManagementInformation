@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9D2992F-2E94-4526-BC1F-C450967855E9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UcbManagementInformation.Web</RootNamespace>
+    <AssemblyName>UcbManagementInformation.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightApplicationList>{CBDF6C8C-03B2-4618-B836-123CDB5C6F90}|..\ManagementConsole\ManagementConsole.csproj|ClientBin|False,{E34E05D3-C187-4DFF-90D4-C8867F5658EB}|..\ManagementConsole.Silverlight.UnitTest\ManagementConsole.Silverlight.UnitTest.csproj|ClientBin|False</SilverlightApplicationList>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT168|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\UcbManagementInformation.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Accessibility|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\UcbManagementInformation.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\UcbManagementInformation.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT207|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\UcbManagementInformation.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Microsoft.Practices.EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Microsoft.Practices.EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Microsoft.Practices.EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Microsoft.Practices.EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Microsoft.Practices.EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Microsoft.Practices.EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Microsoft.Practices.EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Service, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Microsoft.Practices.EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Logging.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UcbManagementInformation.Server.Ioc\Libs\Unity\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UcbManagementInformation.Server.Ioc\Libs\Unity\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UcbManagementInformation.Server.Ioc\Libs\Unity\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.ServiceModel.DomainServices.EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ServiceModel.DomainServices.Server" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.DomainServices.Hosting" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientAccessPolicy.xml" />
+    <Content Include="ClientBin\UcbManagementInformation.Silverlight.UnitTest.xap" />
+    <Content Include="ClientBin\UcbManagementInformation.xap" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\dwplogo.png" />
+    <Content Include="Images\dwp_logo.png" />
+    <Content Include="Images\esf_logo1.gif" />
+    <Content Include="Images\esf_site_logo.png" />
+    <Content Include="Libs\EntityFramework.dll" />
+    <Content Include="Libs\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Libs\log4net.dll" />
+    <Content Include="ManagementConsole.Silverlight.UnitTestTestPage.aspx" />
+    <Content Include="ManagementConsole.Silverlight.UnitTestTestPage.html" />
+    <Content Include="ManagementConsoleProxyHost.aspx" />
+    <Content Include="UcbManagementInformationHost.aspx" />
+    <Content Include="ManagementConsoleHost.html" />
+    <Content Include="Models\esf_logo1.gif" />
+    <Content Include="ReportViewer2010.aspx" />
+    <Content Include="Silverlight.js" />
+    <Content Include="WCFServices\LoggingService.svc" />
+    <Content Include="WCFServices\SQLService.svc" />
+    <Content Include="WCFServices\Tile.svc" />
+    <Content Include="WCFServices\XAML.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionAssemblyInfo.cs">
+      <Link>Properties\SolutionAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BootStrapper.cs" />
+    <Compile Include="ExceptionHandling\ExceptionHandlingPolicies.cs" />
+    <Compile Include="ExceptionHandling\SystemUnavailableFault.cs" />
+    <Compile Include="FaultContracts\SystemUnavailableFault.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ManagementConsoleProxyHost.aspx.cs">
+      <DependentUpon>ManagementConsoleProxyHost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementConsoleProxyHost.aspx.designer.cs">
+      <DependentUpon>ManagementConsoleProxyHost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MIFileUpload\IEnhancedDataReader.cs" />
+    <Compile Include="MIFileUpload\JobQueue\Jobs\ClearUploadDataJob.cs" />
+    <Compile Include="MIFileUpload\JobQueue\Jobs\CopyToValidJob.cs" />
+    <Compile Include="MIFileUpload\JobQueue\Jobs\FileUploadJob.cs" />
+    <Compile Include="MIFileUpload\JobQueue\IJob.cs" />
+    <Compile Include="MIFileUpload\JobQueue\IJobStep.cs" />
+    <Compile Include="MIFileUpload\JobQueue\JobQueue.cs" />
+    <Compile Include="MIFileUpload\JobQueue\JobStep.cs" />
+    <Compile Include="MIFileUpload\JobQueue\Jobs\JobBase.cs" />
+    <Compile Include="MIFileUpload\JobQueue\Jobs\PostCodeUpdateJob.cs" />
+    <Compile Include="MIFileUpload\LookUp.cs" />
+    <Compile Include="MIFileUpload\LookUpDataReader.cs" />
+    <Compile Include="MIFileUpload\Participant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MIFileUpload\ParticipantDataReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MIFileUpload\ParticipantFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MIFileUpload\PostCode.cs" />
+    <Compile Include="MIFileUpload\PostCodeDataReader.cs" />
+    <Compile Include="Models\EsfTickerItemDto.cs" />
+    <Compile Include="Models\ObjectConcurrencyHolder.cs" />
+    <Compile Include="Models\Shared\ReportGroupForUser.shared.cs" />
+    <Compile Include="Models\ReportGroupForUserList.cs" />
+    <Compile Include="Models\UpdateResponse.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\IReportingServices.cs" />
+    <Compile Include="Reporting\ReportingServices.cs" />
+    <Compile Include="ReportViewer2010.aspx.cs">
+      <DependentUpon>ReportViewer2010.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewer2010.aspx.designer.cs">
+      <DependentUpon>ReportViewer2010.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ValidationErrorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationErrorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\RegistrationDataResources.Designer.cs">
+      <DependentUpon>RegistrationDataResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\RegistrationData.cs" />
+    <Compile Include="Services\AlertService.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\CustomAuthenticationService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\MIUploadService.cs" />
+    <Compile Include="ServiceContracts\ISQLService.cs" />
+    <Compile Include="ServiceContracts\ITile.cs" />
+    <Compile Include="ServiceContracts\IXAML.cs" />
+    <Compile Include="Services\LoggingDomainService.cs" />
+    <Compile Include="Services\ManagementConsoleDomainServiceFactory.cs" />
+    <Compile Include="Services\ReportWizardService.cs" />
+    <Compile Include="Services\UserRegistrationService.cs" />
+    <Compile Include="Models\Shared\User.shared.cs" />
+    <Compile Include="Services\WKTService.cs" />
+    <Compile Include="Models\UploadContainer.cs" />
+    <Compile Include="UploadFileHandler.ashx.cs">
+      <DependentUpon>UploadFileHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WCFServices\ExtendedLoggingService.cs" />
+    <Compile Include="WCFServices\LoadStyle.cs" />
+    <Compile Include="WCFServices\LoggingService.svc.cs">
+      <DependentUpon>LoggingService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WCFServices\SQLService.svc.cs">
+      <DependentUpon>SQLService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WCFServices\Tile.svc.cs">
+      <DependentUpon>Tile.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WCFServices\XAML.svc.cs">
+      <DependentUpon>XAML.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ReportingService2010\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ValidationErrorResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationErrorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RegistrationDataResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegistrationDataResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="MIFileUpload\JobQueue\Jobs\JobSteps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UcbManagementInformation.Server.DataAccess\UcbManagementInformation.Server.DataAccess.csproj">
+      <Project>{05FD2C60-11D5-4106-A3E5-514E4C646C13}</Project>
+      <Name>UcbManagementInformation.Server.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UcbManagementInformation.Server.Ioc\UcbManagementInformation.Server.Ioc.csproj">
+      <Project>{81FE96AC-0DF6-4132-83A2-3602A00989FF}</Project>
+      <Name>UcbManagementInformation.Server.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UcbManagementInformation.Server.RDL2003Engine\UcbManagementInformation.Server.RDL2003Engine.csproj">
+      <Project>{1D80FFF8-39F4-4A79-882E-52AB48D445B7}</Project>
+      <Name>UcbManagementInformation.Server.RDL2003Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration\UcbManagementInformation.Silverlight.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\gdsc\AddressTypes-v1-4.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\gdsc\AddressTypes-v1-4.xsx">
+      <DependentUpon>AddressTypes-v1-4.xsd</DependentUpon>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\gdsc\BS7666-v1-4.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\gdsc\BS7666-v1-4.xsx">
+      <DependentUpon>BS7666-v1-4.xsd</DependentUpon>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\gdsc\CommonSimpleTypes-v1-3.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\gdsc\CommonSimpleTypes-v1-3.xsx">
+      <DependentUpon>CommonSimpleTypes-v1-3.xsd</DependentUpon>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\gdsc\ContactTypes-v1-3.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\gdsc\ContactTypes-v1-3.xsx">
+      <DependentUpon>ContactTypes-v1-3.xsd</DependentUpon>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\gdsc\OrganisationIdentifierTypes-v1-1.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\gdsc\OrganisationIdentifierTypes-v1-1.xsx">
+      <DependentUpon>OrganisationIdentifierTypes-v1-1.xsd</DependentUpon>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\gdsc\PersonDescriptiveTypes-v1-1.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\gdsc\PersonDescriptiveTypes-v1-1.xsx">
+      <DependentUpon>PersonDescriptiveTypes-v1-1.xsd</DependentUpon>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\gdsc\ReligionAndEthnicity-v1-0.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\gdsc\ReligionAndEthnicity-v1-0.xsx">
+      <DependentUpon>ReligionAndEthnicity-v1-0.xsd</DependentUpon>
+    </None>
+    <None Include="MIFileUpload\Schemas\Participant\ParticipantMappingXSD06062008.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MIFileUpload\Schemas\Participant\ParticipantMappingXSD06062008.xsx">
+      <DependentUpon>ParticipantMappingXSD06062008.xsd</DependentUpon>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\ParticipantMappingXSD22102008.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\ParticipantMappingXSD22102008.xsx">
+      <DependentUpon>ParticipantMappingXSD22102008.xsd</DependentUpon>
+    </None>
+    <None Include="MIFileUpload\Schemas\Participant\ParticipantXSD06062008.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MIFileUpload\Schemas\Participant\ParticipantXSD06062008.xsx">
+      <DependentUpon>ParticipantXSD06062008.xsd</DependentUpon>
+    </None>
+    <None Include="MIFileUpload\Schemas\Participant\ParticipantXSD22052008.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MIFileUpload\Schemas\Participant\ParticipantXSD22052008.xsx">
+      <DependentUpon>ParticipantXSD22052008.xsd</DependentUpon>
+    </None>
+    <Content Include="MIFileUpload\Schemas\Participant\ParticipantXSD22102008.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MIFileUpload\Schemas\Participant\ParticipantXSD22102008.xsx">
+      <DependentUpon>ParticipantXSD22102008.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="UploadFileHandler.ashx" />
+    <None Include="Web References\ReportingService2010\ActiveState.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\CacheRefreshPlan.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\CacheRefreshPlanState.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\CatalogItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\DataRetrievalPlan.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\DataSetDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\DataSource.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\DataSourceDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\DataSourcePrompt.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Event.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ExpirationDefinition.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Extension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ExtensionParameter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ExtensionSettings.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ItemHistorySnapshot.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ItemParameter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ItemReferenceData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Job.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ModelCatalogItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ModelDrillthroughReport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ModelItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ParameterValue.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ParameterValueOrFieldReference.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Policy.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Property.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReportingService2010\ReportService2010.wsdl" />
+    <None Include="Web References\ReportingService2010\Role.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Schedule.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\ScheduleDefinitionOrReference.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Subscription.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Task.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReportingService2010\Warning.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <Content Include="Web.SIT168.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Demo.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.UAT207.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Accessibility.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\UcbManagementInformation.Silverlight.Config.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\SplashScreen.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/ReportServer_ADEPDEV/ReportService2010.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportingService2010\</RelPath>
+      <UpdateFromURL>http://localhost/ReportServer_ADEPDEV/ReportService2010.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>UcbManagementInformation_Web_ReportingService2010_ReportingService2010</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>9999</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/UcbManagementInformationWeb</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost/ManagementConsole.Web</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

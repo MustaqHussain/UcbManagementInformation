@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:el="http://schemas.microsoft.com/practices/2011/entlib"
+                    xmlns:inf="clr-namespace:UcbManagementInformation.ExceptionHandling;assembly=UcbManagementInformation">
+  <el:ExceptionHandlingSettings x:Key="exceptionHandling">
+    <el:ExceptionHandlingSettings.ExceptionPolicies>
+      <el:ExceptionPolicyData Name="Unhandled Exception">
+        <el:ExceptionPolicyData.ExceptionTypes>
+          <el:ExceptionTypeData Name="All Exceptions" TypeName="System.Exception, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e" PostHandlingAction="None">
+            <el:ExceptionTypeData.ExceptionHandlers>
+              <el:LoggingExceptionHandlerData LogCategory="Exception" EventId="5" Severity="Critical" Title="Unhandled exception in Management Information client application" FormatterTypeName="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.TextExceptionFormatter, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Silverlight, Version=5.0.505.0, Culture=neutral, PublicKeyToken=null" Priority="-1" Name="Logging Exception Handler" />
+              <inf:DisplayErrorMessageExceptionHandlerData Name="displayerror" ErrorMessageType="TechnicalErrorMessage"/>
+             </el:ExceptionTypeData.ExceptionHandlers>
+          </el:ExceptionTypeData>
+        </el:ExceptionPolicyData.ExceptionTypes>
+      </el:ExceptionPolicyData>
+      <el:ExceptionPolicyData Name="Service Exception">
+        <el:ExceptionPolicyData.ExceptionTypes>
+          <el:ExceptionTypeData Name="WCF RIA Services Exception" TypeName="System.ServiceModel.CommunicationException, System.ServiceModel, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" PostHandlingAction="None">
+            <el:ExceptionTypeData.ExceptionHandlers>
+              <el:WrapHandlerData WrapExceptionTypeName="UcbManagementInformation.ExceptionHandling.ServiceUnavailableException, UcbManagementInformation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Name="Wrap Handler" />
+              <inf:DisplayErrorMessageExceptionHandlerData Name="displayerror" ErrorMessageType="TechnicalErrorMessage"/>
+            </el:ExceptionTypeData.ExceptionHandlers>
+          </el:ExceptionTypeData>
+        </el:ExceptionPolicyData.ExceptionTypes>
+      </el:ExceptionPolicyData>
+    </el:ExceptionHandlingSettings.ExceptionPolicies>
+  </el:ExceptionHandlingSettings>
+  <el:LoggingSettings DefaultCategory="default" LogWarningWhenNoCategoriesMatch="False" x:Key="loggingConfiguration">
+    <el:LoggingSettings.TraceListeners>
+            <el:RemoteServiceTraceListenerData LoggingServiceFactory="CustomBinding_ILoggingService" SubmitInterval="00:01:00" MaxElementsInBuffer="200" IsolatedStorageBufferMaxSizeInKilobytes="256" Name="service" />
+      <el:NotificationTraceListenerData Name="event" />
+      <el:IsolatedStorageTraceListenerData RepositoryName="LogMessagesInIsolatedStorage" Name="isolated" />
+    </el:LoggingSettings.TraceListeners>
+    <el:LoggingSettings.TraceSources>
+      <el:TraceSourceData DefaultLevel="Warning" Name="default">
+        <el:TraceSourceData.TraceListeners>
+          <el:TraceListenerReferenceData Name="isolated" />
+        </el:TraceSourceData.TraceListeners>
+      </el:TraceSourceData>
+      <el:TraceSourceData DefaultLevel="Error" Name="Exception">
+        <el:TraceSourceData.TraceListeners>
+          <el:TraceListenerReferenceData Name="service" />
+          <el:TraceListenerReferenceData Name="isolated" />
+        </el:TraceSourceData.TraceListeners>
+      </el:TraceSourceData>
+      <el:TraceSourceData Name="Validation">
+        <el:TraceSourceData.TraceListeners>
+          <el:TraceListenerReferenceData Name="service" />
+          <el:TraceListenerReferenceData Name="isolated" />
+        </el:TraceSourceData.TraceListeners>
+      </el:TraceSourceData>
+    </el:LoggingSettings.TraceSources>
+    <el:LoggingSettings.SpecialTraceSources>
+      <el:SpecialTraceSourcesData>
+        <el:SpecialTraceSourcesData.AllEventsTraceSource>
+          <el:TraceSourceData Name="All Events">
+            <el:TraceSourceData.TraceListeners>
+              <el:TraceListenerReferenceData Name="event" />
+            </el:TraceSourceData.TraceListeners>
+          </el:TraceSourceData>
+        </el:SpecialTraceSourcesData.AllEventsTraceSource>
+        <el:SpecialTraceSourcesData.NotProcessedTraceSource>
+          <el:TraceSourceData Name="Unprocessed Category">
+            <el:TraceSourceData.TraceListeners>
+              <el:TraceListenerReferenceData Name="isolated" />
+            </el:TraceSourceData.TraceListeners>
+          </el:TraceSourceData>
+        </el:SpecialTraceSourcesData.NotProcessedTraceSource>
+        <el:SpecialTraceSourcesData.ErrorsTraceSource>
+          <el:TraceSourceData Name="Logging Errors &amp; Warnings">
+            <el:TraceSourceData.TraceListeners>
+              <el:TraceListenerReferenceData Name="event" />
+            </el:TraceSourceData.TraceListeners>
+          </el:TraceSourceData>
+        </el:SpecialTraceSourcesData.ErrorsTraceSource>
+      </el:SpecialTraceSourcesData>
+    </el:LoggingSettings.SpecialTraceSources>
+  </el:LoggingSettings>
+</ResourceDictionary>

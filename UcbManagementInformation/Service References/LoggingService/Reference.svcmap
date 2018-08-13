@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ac213ff2-4640-4f3b-ad34-06e8eb961fa0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9999/WCFServices/LoggingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LoggingService.xsd" MetadataType="Schema" ID="33810d1c-6e7d-4108-958d-d6edf781761e" SourceId="1" SourceUrl="http://localhost:9999/WCFServices/LoggingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LoggingService1.xsd" MetadataType="Schema" ID="ac1bdcb1-9f70-40e5-8f20-46d055d9f259" SourceId="1" SourceUrl="http://localhost:9999/WCFServices/LoggingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="LoggingService.disco" MetadataType="Disco" ID="fe2c0cf8-8377-48c6-a747-9a9bddd74755" SourceId="1" SourceUrl="http://localhost:9999/WCFServices/LoggingService.svc?disco" />
+    <MetadataFile FileName="LoggingService.wsdl" MetadataType="Wsdl" ID="0e428fd5-dd6a-4e6d-b748-3025a7ca9390" SourceId="1" SourceUrl="http://localhost:9999/WCFServices/LoggingService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="LoggingService2.xsd" MetadataType="Schema" ID="fe7bcade-af23-4c89-8b57-79b34b78e16b" SourceId="1" SourceUrl="http://localhost:9999/WCFServices/LoggingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LoggingService3.xsd" MetadataType="Schema" ID="52f2fe91-9485-4048-8e5f-a077bfca7479" SourceId="1" SourceUrl="http://localhost:9999/WCFServices/LoggingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="LoggingService1.wsdl" MetadataType="Wsdl" ID="052ad946-42b5-4be1-b5b2-e56acba0bc42" SourceId="1" SourceUrl="http://localhost:9999/WCFServices/LoggingService.svc?wsdl" />
+    <MetadataFile FileName="LoggingService4.xsd" MetadataType="Schema" ID="eec60880-2d52-461f-a731-fb93967bfe73" SourceId="1" SourceUrl="http://localhost:9999/WCFServices/LoggingService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

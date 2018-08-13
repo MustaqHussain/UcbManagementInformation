@@ -1,0 +1,215 @@
+<ManConsCon:UcbManagementInformationPage xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                                  x:Class="UcbManagementInformation.Views.ParticipantMI.JobQueueMonitor"
+                                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                  xmlns:ec="http://schemas.microsoft.com/expression/2010/controls"
+                                  xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                                  mc:Ignorable="d"
+                                  xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+                                  d:DesignWidth="1024"
+                                  d:DesignHeight="768"
+                                  Title="JobQueueMonitor Page"
+                                  xmlns:ManConsCon="clr-namespace:UcbManagementInformation.Controls"
+                                  xmlns:ManCon="clr-namespace:UcbManagementInformation"
+                                  xmlns:viewModels="clr-namespace:UcbManagementInformation.ViewModels"
+                                  xmlns:s="clr-namespace:FirstLook.ServiceModel.DomainServices.Client.Security;assembly=FirstLook.ServiceModel.DomainServices.Client.Security"
+                                  d:DataContext="{Binding Source={StaticResource viewModelLocator}, Path=ViewModel}"
+                                  s:Authorization.RequiresAuthentication="True">
+    <ManConsCon:UcbManagementInformationPage.Resources>
+        <ManConsCon:DataContextProxy x:Key="dataContextProxy" />
+        <ManCon:StatusToBrushConverter x:Key="statusToBrushConverter" />
+        <viewModels:JobQueueMonitorViewModelLocator x:Key="viewModelLocator" />
+    </ManConsCon:UcbManagementInformationPage.Resources>
+    <ManConsCon:UcbManagementInformationPage.DataContext>
+        <Binding Source="{StaticResource viewModelLocator}"
+                 Path="ViewModel" />
+    </ManConsCon:UcbManagementInformationPage.DataContext>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+        	<RowDefinition Height="80" />
+            <RowDefinition Height="Auto"                           />
+            <RowDefinition Height="Auto"                           />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+		
+		<StackPanel Grid.Row="0">
+			<TextBlock Text="Job Queue Monitor" Margin="50,20,0,0" HorizontalAlignment="Left" Width="250" Style="{StaticResource SectionHeaderStyle}" VerticalAlignment="Stretch" />
+		</StackPanel>
+        
+		<Grid Grid.Row="1"
+              MaxHeight="250" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Todays Completed Jobs"
+                       FontWeight="Bold"
+                       FontSize="14"
+                       Grid.Row="0" />
+            <sdk:DataGrid Grid.Row="1"
+                          ItemsSource="{Binding Path=CompletedJobs}"
+                          SelectedItem="{Binding SelectedCompletedJob,Mode=TwoWay}"
+                          AutoGenerateColumns="False"
+						  Style="{StaticResource Datagrid1}"
+						  ColumnHeaderStyle="{StaticResource DataGridHeaderGlassEffect}"
+                          HorizontalAlignment="Right" 
+                          Width="817"
+                          Margin="0,0.003,100,-0.003" 
+                          RenderTransformOrigin="0.5,0.5" 
+                          CanUserReorderColumns="False"
+                          CanUserResizeColumns="False"
+                          IsReadOnly="True"
+                          UseLayoutRounding="False" 
+                          d:LayoutRounding="Auto">
+            	<sdk:DataGrid.RenderTransform>
+            		<CompositeTransform SkewY="-0.07" TranslateY="0.499"/>
+            	</sdk:DataGrid.RenderTransform>
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTextColumn Header="Name"
+                                            Binding="{Binding Path=Description}" />
+                    <sdk:DataGridTextColumn Header="User"
+                                            Binding="{Binding Path=UserId}" />
+                    <sdk:DataGridTextColumn Header="Started"
+                                            Binding="{Binding Path=StartTime,StringFormat='HH:mm:ss'}" />
+                    <sdk:DataGridTextColumn Header="Added"
+                                            Binding="{Binding Path=AddedTime,StringFormat='HH:mm:ss'}" />
+                    <sdk:DataGridTextColumn Header="Finished"
+                                            Binding="{Binding Path=EndTime,StringFormat='HH:mm:ss'}" />
+                    <sdk:DataGridTextColumn Header="Status"
+                                            Binding="{Binding Path=Status}" />
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+
+        </Grid>
+		
+        <Grid Grid.Row="2" Margin="1"
+              MaxHeight="200">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Job Queue" FontWeight="Bold" FontSize="14"
+                       Grid.Row="0" />
+            <sdk:DataGrid Grid.Row="1"
+                          ItemsSource="{Binding Path=JobQueue}"
+                          SelectedItem="{Binding SelectedActiveJob,Mode=TwoWay}"
+                          AutoGenerateColumns="False"
+						  Style="{StaticResource Datagrid1}"
+                          ColumnHeaderStyle="{StaticResource DataGridHeaderGlassEffect}"
+                          Margin="100,0"
+                          CanUserReorderColumns="False"
+                          CanUserResizeColumns="False"
+                          IsReadOnly="True">
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTextColumn Header="Name"
+                                            Binding="{Binding Path=Description}" />
+                    <sdk:DataGridTextColumn Header="User"
+                                            Binding="{Binding Path=UserId}" />
+                    <sdk:DataGridTextColumn Header="Started"
+                                            Binding="{Binding Path=StartTime,StringFormat='HH:mm:ss'}"
+                                             />
+                    <sdk:DataGridTextColumn Header="Added"
+                                            Binding="{Binding Path=AddedTime,StringFormat='HH:mm:ss'}" />
+                    <sdk:DataGridTextColumn Header="Finished"
+                                            Binding="{Binding Path=EndTime,StringFormat='HH:mm:ss'}" />
+                    <sdk:DataGridTextColumn Header="Status"
+                                            Binding="{Binding Path=Status}" />
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+        </Grid>
+        <ListBox Grid.Row="3"
+                 Width="1000"
+                 ItemsSource="{Binding Path=CurrentJobSteps}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border CornerRadius="10"
+                            BorderBrush="#4297D7"
+                            BorderThickness="0"
+                            Background="{Binding Path=Status,Converter={StaticResource statusToBrushConverter}}">
+                        <Grid>
+                            <Rectangle>
+                                <Rectangle.Fill>
+                                    <RadialGradientBrush Center="0.5,1" RadiusX="1" RadiusY=".75">
+                                        <GradientStop Color="#FFFFFFFF"
+                                                      Offset="0" />
+                                        <GradientStop Color="#00FFFFFF"
+                                                      Offset="1" />
+
+                                    </RadialGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold"
+                                           FontSize="14"
+                                           Text="{Binding Path=Name}"
+                                           Padding="1"></TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontWeight="Bold"
+                                               Text="Percent Complete"
+                                               Padding="1"></TextBlock>
+                                    <TextBlock Text="{Binding Path=PercentComplete}"
+                                               Padding="1"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Padding="1" FontWeight="Bold" Text="Start"></TextBlock>
+                                    <TextBlock Text="{Binding Path=StartTime,StringFormat='dd/MM/yyyy HH:mm:ss'}"
+                                               Padding="1"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Padding="1"
+                                               FontWeight="Bold"
+                                               Text="End"></TextBlock>
+
+                                    <TextBlock Text="{Binding Path=EndTime,StringFormat='dd/MM/yyyy HH:mm:ss'}"
+                                               Padding="2"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <toolkit:WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <!--<ec:PathListBox Grid.Row="2"
+                        HorizontalAlignment="Left"
+                        Name="pathListBox1"
+                        VerticalAlignment="Top"
+                        Margin="50,50,0,0"
+                        ItemsSource="{Binding Path=CurrentJobSteps}">
+
+            <ec:PathListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border CornerRadius="10"
+                            BorderBrush="#4297D7"
+                            BorderThickness="0"
+                            Background="{Binding Path=Status,Converter={StaticResource statusToBrushConverter}}">
+                        <Grid>
+                            <TextBlock Text="{Binding Path=Name}"
+                                       Padding="5"></TextBlock>
+                        </Grid>
+
+                    </Border>
+                </DataTemplate>
+            </ec:PathListBox.ItemTemplate>
+            <ec:PathListBox.LayoutPaths>
+                <ec:LayoutPath Distribution="Even"
+                               Orientation="OrientToPath">
+                    <ec:LayoutPath.SourceElement>
+                        <Ellipse x:Name="Circle"
+                                 Height="500"
+                                 Width="500" />
+                        </ec:LayoutPath.SourceElement>
+                </ec:LayoutPath>
+            </ec:PathListBox.LayoutPaths>
+        </ec:PathListBox>-->
+    </Grid>
+</ManConsCon:UcbManagementInformationPage>

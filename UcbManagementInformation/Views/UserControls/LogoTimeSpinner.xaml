@@ -1,0 +1,331 @@
+<UserControl x:Class="UcbManagementInformation.Views.UserControls.LogoTimeSpinner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:viewModels="clr-namespace:UcbManagementInformation.ViewModels"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <viewModels:LogoTimeSpinnerViewModelLocator x:Key="viewModelLocator" />
+        </UserControl.Resources>
+            <UserControl.DataContext>
+        <Binding Source="{StaticResource viewModelLocator}"
+                 Path="ViewModel" />
+                </UserControl.DataContext>
+    <Grid x:Name="LayoutRoot"
+          Background="White"
+          Width="300"
+          Height="50">
+
+        <Border BorderBrush="#4297D7"
+                BorderThickness="0"
+                Width="300"
+                Height="70"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0"
+                                     EndPoint="0.5,1">
+                    <GradientStopCollection>
+                        <GradientStop Color="#FF0C4772"
+                                      Offset="0"></GradientStop>
+                        <GradientStop Color="White"
+                                      Offset="0.75"></GradientStop>
+                        <GradientStop Color="#FF0C4772"
+                                      Offset="1"></GradientStop>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Triggers>
+                <EventTrigger>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           RepeatBehavior="Forever"
+                                                           Duration="00:00:40"
+                                                           Storyboard.TargetName="Rotation"
+                                                           Storyboard.TargetProperty="RotationX">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                      Value="0"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:9"
+                                                      Value="0"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:10"
+                                                      Value="90"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:19"
+                                                      Value="90"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:20"
+                                                      Value="180"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:29"
+                                                      Value="180"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:30"
+                                                      Value="270"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:39"
+                                                      Value="270"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:40"
+                                                      Value="360"></SplineDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Border.Projection>
+                <PlaneProjection x:Name="Rotation"
+                                 RotationX="0"
+                                 RotationY="0"
+                                 RotationZ="0"
+                                 CenterOfRotationZ="-20">
+
+                </PlaneProjection>
+            </Border.Projection>
+            <TextBlock x:Name="DateTimeBlock"
+                       FontSize="15"
+                       Foreground="#FFEAF5F7"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Text="{Binding Path=DateTimeString}">
+                            <TextBlock.Effect>
+                        <DropShadowEffect Color="Black"
+                                          BlurRadius="5" />
+                    </TextBlock.Effect>
+            </TextBlock>
+        </Border>
+        <Border BorderBrush="#4297D7"
+                BorderThickness="0"
+                Width="300"
+                Height="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0"
+                                     EndPoint="0.5,1">
+                    <GradientStopCollection>
+                        <GradientStop Color="#FF0C4772"
+                                      Offset="0"></GradientStop>
+                        <GradientStop Color="White"
+                                      Offset="0.75"></GradientStop>
+                        <GradientStop Color="#FF0C4772"
+                                      Offset="1"></GradientStop>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Triggers>
+                <EventTrigger>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           RepeatBehavior="Forever"
+                                                           Duration="00:00:40"
+                                                           Storyboard.TargetName="Rotation1"
+                                                           Storyboard.TargetProperty="RotationX">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                      Value="90"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:9"
+                                                      Value="90"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:10"
+                                                      Value="180"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:19"
+                                                      Value="180"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:20"
+                                                      Value="270"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:29"
+                                                      Value="270"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:30"
+                                                      Value="360"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:39"
+                                                      Value="360"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:40"
+                                                      Value="450"></SplineDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Border.Projection>
+                <PlaneProjection x:Name="Rotation1"
+                                 RotationX="0"
+                                 RotationY="0"
+                                 RotationZ="0"
+                                 CenterOfRotationZ="-20">
+
+                </PlaneProjection>
+            </Border.Projection>
+            <Grid HorizontalAlignment="Stretch">
+                
+                <!--<Image HorizontalAlignment="Left"
+                       Margin="3,3,3,3"
+                       Source="../../Assets/Images/dwplogo.png"
+                       Stretch="UniformToFill"></Image>-->
+                <TextBlock 
+                           FontSize="15"
+                           Foreground="#FFEAF5F7"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           Text="Ucb System">
+                            <TextBlock.Effect>
+                        <DropShadowEffect Color="Black"
+                                          BlurRadius="5" />
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Grid>
+            <!--<TextBlock FontSize="20" Foreground="#FFEAF5F7" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Capgemini UK Plc">
+                            <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="5" />
+                    </TextBlock.Effect>
+                        </TextBlock>-->
+        </Border>
+        <Border BorderBrush="#4297D7"
+                BorderThickness="0"
+                Width="300"
+                Height="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0"
+                                     EndPoint="0.5,1">
+                    <GradientStopCollection>
+                        <GradientStop Color="#FF0C4772"
+                                      Offset="0"></GradientStop>
+                        <GradientStop Color="White"
+                                      Offset="0.75"></GradientStop>
+                        <GradientStop Color="#FF0C4772"
+                                      Offset="1"></GradientStop>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Triggers>
+                <EventTrigger>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           RepeatBehavior="Forever"
+                                                           Duration="00:00:40"
+                                                           Storyboard.TargetName="Rotation2"
+                                                           Storyboard.TargetProperty="RotationX">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                      Value="180"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:9"
+                                                      Value="180"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:10"
+                                                      Value="270"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:19"
+                                                      Value="270"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:20"
+                                                      Value="360"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:29"
+                                                      Value="360"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:30"
+                                                      Value="450"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:39"
+                                                      Value="450"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:40"
+                                                      Value="540"></SplineDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Border.Projection>
+                <PlaneProjection x:Name="Rotation2"
+                                 RotationX="0"
+                                 RotationY="0"
+                                 RotationZ="0"
+                                 CenterOfRotationZ="-20">
+
+                </PlaneProjection>
+            </Border.Projection>
+            <TextBlock x:Name="DateTimeBlock1"
+                       FontSize="15"
+                       Foreground="#FFEAF5F7"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Text="{Binding Path=DateTimeString}">
+                            <TextBlock.Effect>
+                        <DropShadowEffect Color="Black"
+                                          BlurRadius="5" />
+                    </TextBlock.Effect>
+            </TextBlock>
+        </Border>
+        <Border BorderBrush="#4297D7"
+                BorderThickness="0"
+                Width="300"
+                Height="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0"
+                                     EndPoint="0.5,1">
+                    <GradientStopCollection>
+                        <GradientStop Color="#FF0C4772"
+                                      Offset="0"></GradientStop>
+                        <GradientStop Color="White"
+                                      Offset="0.75"></GradientStop>
+                        <GradientStop Color="#FF0C4772"
+                                      Offset="1"></GradientStop>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Triggers>
+                <EventTrigger>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                           RepeatBehavior="Forever"
+                                                           Duration="00:00:40"
+                                                           Storyboard.TargetName="Rotation3"
+                                                           Storyboard.TargetProperty="RotationX">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                      Value="270"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:9"
+                                                      Value="270"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:10"
+                                                      Value="360"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:19"
+                                                      Value="360"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:20"
+                                                      Value="450"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:29"
+                                                      Value="450"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:30"
+                                                      Value="540"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:39"
+                                                      Value="540"></SplineDoubleKeyFrame>
+                                <SplineDoubleKeyFrame KeyTime="00:00:40"
+                                                      Value="630"></SplineDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Border.Projection>
+                <PlaneProjection x:Name="Rotation3"
+                                 RotationX="0"
+                                 RotationY="0"
+                                 RotationZ="0"
+                                 CenterOfRotationZ="-20">
+
+                </PlaneProjection>
+            </Border.Projection>
+            <Grid HorizontalAlignment="Stretch">
+                
+                <Image HorizontalAlignment="Left"
+                       Margin="3,3,3,3"
+                       Source="../../Assets/Images/dwplogo.png"
+                       Stretch="Uniform"></Image>
+                <!--<TextBlock 
+                           FontSize="15"
+                           Foreground="#FFEAF5F7"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           Text="DWP Small Systems">
+                            <TextBlock.Effect>
+                        <DropShadowEffect Color="Black"
+                                          BlurRadius="5" />
+                    </TextBlock.Effect>
+                </TextBlock>-->
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,581 @@
+<navigation:Page x:Class="UcbManagementInformation.Views.Reporting.ReportList"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:viewModels="clr-namespace:UcbManagementInformation.ViewModels"
+                 xmlns:manCons="clr-namespace:UcbManagementInformation"
+                 xmlns:manConsTrig="clr-namespace:UcbManagementInformation.TriggerActions"
+                 xmlns:manConsControls="clr-namespace:UcbManagementInformation.Controls"
+                 mc:Ignorable="d"
+                 xmlns:manConsHelp="clr-namespace:UcbManagementInformation.Helpers"
+                 xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+                 d:DesignWidth="1024"
+                 d:DesignHeight="768"
+                 Title="ReportList Page"
+                 xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                 xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                 xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                 xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+                 xmlns:s="clr-namespace:FirstLook.ServiceModel.DomainServices.Client.Security;assembly=FirstLook.ServiceModel.DomainServices.Client.Security"
+                 manConsHelp:Navigator.Source="{Binding}" 
+                 d:DataContext="{Binding Source={StaticResource viewModelLocator}, Path=ViewModel}"
+                 s:Authorization.RequiresAuthentication="True">
+    <!--s:Authorization.NavigationMode="Redirect"-->
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding InitializeCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <navigation:Page.Resources>
+        <viewModels:ReportListViewModelLocator x:Key="viewModelLocator" />
+        <manCons:StringToImageConverter x:Key="stringToImageConverter" />
+        <manCons:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+        <manCons:StandardToStringConverter x:Key="standardToStringConverter" />
+
+        <sdk:HierarchicalDataTemplate x:Key="ChildTemplate"
+                                      ItemsSource="{Binding Path=Children}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Path=Color,Converter={StaticResource stringToImageConverter}}">
+
+                </Image>
+                <Grid>
+                <TextBlock Text="{Binding Path=Name}"
+                           Foreground="#FF000000"
+                           Margin="5,10,0,0" />
+                    <TextBox Text="{Binding Path=Name,Mode=TwoWay}"
+                             Visibility="{Binding Path=IsRenaming,Converter={StaticResource boolToVisibilityConverter}}"
+                             manConsControls:FocusBehavior.IsFocused="{Binding Path=IsRenaming}">
+                        <i:Interaction.Triggers>
+                            <manConsTrig:TextBoxEnterKeyTrigger>
+                                <manConsTrig:ExecuteCommandAction Command="{Binding Path=DataContext.RenamingCompleteCommand,ElementName=LayoutRoot}"
+                                                                  CommandParameter="{Binding}">
+                                </manConsTrig:ExecuteCommandAction>
+                            </manConsTrig:TextBoxEnterKeyTrigger>
+                        </i:Interaction.Triggers>
+
+                    </TextBox>
+                </Grid>
+                <toolkit:ContextMenuService.ContextMenu>
+                    <toolkit:ContextMenu>
+                        <toolkit:MenuItem Header="New Folder..."
+                                          Command="{Binding Path=DataContext.NewFolderCommand, ElementName=LayoutRoot}"
+                                          CommandParameter="{Binding}" />
+                        <toolkit:MenuItem Header="Rename"
+                                          Command="{Binding Path=DataContext.RenameFolderCommand, ElementName=LayoutRoot}" 
+                                          CommandParameter="{Binding}"/>
+                        <toolkit:Separator></toolkit:Separator>
+                        <toolkit:MenuItem Header="Change permissions..."
+                                          Command="{Binding Path=DataContext.ChangeFolderPermissionsCommand, ElementName=LayoutRoot}"
+                                          CommandParameter="{Binding}" />
+                        <toolkit:Separator></toolkit:Separator>
+                        <toolkit:MenuItem Header="Delete Folder..."
+                                          Command="{Binding Path=DataContext.DeleteFolderCommand, ElementName=LayoutRoot}"
+                                          CommandParameter="{Binding}" />
+                    </toolkit:ContextMenu>
+                </toolkit:ContextMenuService.ContextMenu>
+            </StackPanel>
+        </sdk:HierarchicalDataTemplate>
+        <!--<sdk:HierarchicalDataTemplate x:Key="NameTemplate"
+                                      ItemsSource="{Binding Path=Children}"
+                                      ItemTemplate="{StaticResource NameTemplate}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Path=Color,Converter={StaticResource stringToImageConverter}}">
+                    
+                </Image> 
+                <TextBlock Text="{Binding Path=Name}" Foreground="#FFEAF5F7" Margin="5,10,0,0" />
+                
+            </StackPanel>
+        </sdk:HierarchicalDataTemplate>-->
+        
+        <Style x:Key="DataGridStyle"
+           TargetType="sdk:DataGrid">
+        <Setter Property="RowBackground"
+                Value="#FFFFFFFF" />
+        <Setter Property="AlternatingRowBackground"
+                Value="#FFD7D7F5" />
+        <Setter Property="RowHeight"
+                Value="20" />
+        <Setter Property="GridLinesVisibility"
+                Value="All" />
+        <Setter Property="HeadersVisibility"
+                Value="Column" />
+        <Setter Property="HorizontalGridLinesBrush"
+                Value="#CCCCCC" />
+        <Setter Property="HorizontalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="VerticalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="SelectionMode"
+                Value="Single" />
+        <Setter Property="CanUserReorderColumns"
+                Value="False" />
+        <Setter Property="CanUserResizeColumns"
+                Value="True" />
+        <Setter Property="CanUserSortColumns"
+                Value="True" />
+        <Setter Property="AutoGenerateColumns"
+                Value="True" />
+         <Setter Property="Background">
+             <Setter.Value>
+                    <SolidColorBrush Color="#FFFFFFFF">
+                    </SolidColorBrush>
+            </Setter.Value>
+         </Setter>
+        <Setter Property="RowBackground" Value="#FFFFFFFF">
+            
+        </Setter>
+            <Setter Property="AlternatingRowBackground" Value="#FFD7D7F5">
+                
+            </Setter>
+    </Style >
+        
+        <Style TargetType="sdk:DataGridRow" x:Key="DataRowStyle">                
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Template">             
+                <Setter.Value>                      
+                    <ControlTemplate TargetType="sdk:DataGridRow">            
+                        <sdk:DataGridFrozenGrid Name="Root">    
+                            <VisualStateManager.VisualStateGroups>   
+                                <VisualStateGroup x:Name="CommonStates">  
+                                    <VisualStateGroup.Transitions>       
+                                        <VisualTransition GeneratedDuration="0" /> 
+                                    </VisualStateGroup.Transitions>   
+                                    <VisualState x:Name="Normal" /> 
+                                    <VisualState x:Name="Normal AlternatingRow"> 
+                                        <Storyboard> 
+                                            <DoubleAnimation Storyboard.TargetName="BackgroundRectangle" 
+                                                             Storyboard.TargetProperty="Opacity" Duration="0" To="0"/> 
+                                        </Storyboard>                                        
+                                    </VisualState>                       
+                                    <VisualState x:Name="MouseOver">     
+                                        <Storyboard>                            
+                                            <DoubleAnimation Storyboard.TargetName="BackgroundRectangle" 
+                                                             Storyboard.TargetProperty="Opacity" Duration="0" To=".5"/> 
+                                        </Storyboard>                                         
+                                    </VisualState>                    
+                                    <VisualState x:Name="Normal Selected">     
+                                        <Storyboard>                                     
+                                            <DoubleAnimation Storyboard.TargetName="BackgroundRectangleSelected" 
+                                                             Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                                        </Storyboard>                                      
+                                    </VisualState>                                      
+                                    <VisualState x:Name="MouseOver Selected">     
+                                        <Storyboard>           
+                                            <DoubleAnimation Storyboard.TargetName="BackgroundRectangleSelected" 
+                                                             Storyboard.TargetProperty="Opacity" Duration="0" To="1"/>  
+                                        </Storyboard>                                       
+                                    </VisualState>                                      
+                                    <VisualState x:Name="Unfocused Selected">      
+                                        <Storyboard>                                                
+                                            <DoubleAnimation Storyboard.TargetName="BackgroundRectangleSelected"
+                                                             Storyboard.TargetProperty="Opacity" Duration="0" To="1"/>  
+                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="0" 
+                                                                          Storyboard.TargetName="BackgroundRectangleSelected" 
+                                                                          Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">      
+                                                <SplineColorKeyFrame KeyTime="0" Value="#FFF2F29B"/>  
+                                            </ColorAnimationUsingKeyFrames>  
+                                        </Storyboard>                                
+                                    </VisualState>    
+                                </VisualStateGroup>            
+                            </VisualStateManager.VisualStateGroups> 
+                            <Grid.RowDefinitions>    
+                                <RowDefinition Height="*"/> 
+                                <RowDefinition Height="Auto"/>    
+                                <RowDefinition Height="Auto"/>      
+                            </Grid.RowDefinitions>   
+                            <Grid.ColumnDefinitions>    
+                                <ColumnDefinition Width="Auto" />     
+                                <ColumnDefinition Width="*" />      
+                            </Grid.ColumnDefinitions>      
+                            <Grid.Resources>          
+                                <Storyboard x:Key="DetailsVisibleTransition"> 
+                                    <DoubleAnimation Storyboard.TargetName="DetailsPresenter" 
+                                                     Storyboard.TargetProperty="ContentHeight" Duration="00:00:0.1" /> 
+                                </Storyboard>                                
+                            </Grid.Resources>                                
+                            <Rectangle x:Name="BackgroundRectangle" Grid.RowSpan="2" 
+                                       Grid.ColumnSpan="2" Opacity="0" Fill="#FF005DB3"/>   
+                            <Rectangle x:Name="BackgroundRectangleSelected" Grid.RowSpan="2" 
+                                       Grid.ColumnSpan="2" Opacity="0" Fill="#FF0070CC"/>  
+                            <sdk:DataGridRowHeader Grid.RowSpan="3" Name="RowHeader" 
+                                                               sdk:DataGridFrozenGrid.IsFrozen="True" />  
+                            <sdk:DataGridCellsPresenter Margin="2" Grid.Column="1"
+                                                                    Name="CellsPresenter" 
+                                                        sdk:DataGridFrozenGrid.IsFrozen="True" />     
+                            <sdk:DataGridDetailsPresenter Grid.Row="1" Grid.Column="1" 
+                                                                      Name="DetailsPresenter" /> 
+                            <Rectangle Grid.Row="2" Grid.Column="1" Name="BottomGridLine" 
+                                       HorizontalAlignment="Stretch" Height="1" />    
+                        </sdk:DataGridFrozenGrid>                       
+                    </ControlTemplate>                 
+                </Setter.Value>                
+            </Setter>           
+        </Style>
+
+
+
+        <Style TargetType="sdk:DataGridColumnHeader"
+               x:Key="DataGridHeaderGlassEffect">
+            <Setter Property="FontSize"
+                    Value="12" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="Foreground"
+                    Value="#EAF5F7" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="sdk:DataGridColumnHeader">
+                        <Grid Name="Root">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Rectangle x:Name="BackgroundRectangle"
+                                       Stretch="Fill"
+                                       Grid.ColumnSpan="2"
+                                       Grid.RowSpan="2"
+                                       Fill="#FF005DB3">
+                                <!--<Rectangle.Fill>
+                                
+                <LinearGradientBrush StartPoint="0.5,0"
+                                             EndPoint="0.5,1">
+                            <GradientStop Offset="0"
+                                          Color="#FF3D6565" />
+                            <GradientStop Offset="1"
+                                          Color="#FF96B2F8" />
+                        </LinearGradientBrush>
+            
+                            </Rectangle.Fill>-->
+                            </Rectangle>
+
+                            <Border BorderBrush="Transparent"
+                                    BorderThickness="1,1,1,1"
+                                    Grid.ColumnSpan="3"
+                                    Grid.RowSpan="3">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="0.5*" />
+                                        <RowDefinition Height="0.5*" />
+                                    </Grid.RowDefinitions>
+                                    <!--dark-->
+                                    <Border HorizontalAlignment="Stretch"
+                                            Margin="0,0,0,0"
+                                            x:Name="dark"
+                                            Width="Auto"
+                                            Grid.ColumnSpan="3"
+                                            Grid.RowSpan="3"
+                                            Background="#66000000"
+                                            Opacity="0" />
+                                    <!--glow-->
+                                    <Border Opacity="0"
+                                            HorizontalAlignment="Stretch"
+                                            x:Name="glow"
+                                            Width="Auto"
+                                            Grid.RowSpan="3"
+                                            Grid.ColumnSpan="3"
+                                            Background="#FF0070CC">
+
+                                    </Border>
+                                    <!--shine-->
+                                    <Border HorizontalAlignment="Stretch"
+                                            Margin="0,0,0,0"
+                                            x:Name="shine"
+                                            Width="Auto"
+                                            Grid.ColumnSpan="3"
+                                            Grid.RowSpan="3"
+                                            Background="#FF005DB3">
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="HeaderText"
+                                              Grid.RowSpan="2"
+                                              Content="{TemplateBinding Content}"
+                                              Cursor="{TemplateBinding Cursor}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" />
+                            <Rectangle Name="VerticalSeparator"
+                                       Grid.RowSpan="2"
+                                       Grid.Column="2"
+                                       Width="1"
+                                       VerticalAlignment="Stretch"
+                                       Fill="{TemplateBinding SeparatorBrush}"
+                                       Visibility="{TemplateBinding SeparatorVisibility}" />
+                            <Path Grid.RowSpan="2"
+                                  Name="SortIcon"
+                                  RenderTransformOrigin=".5,.5"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Center"
+                                  Opacity="0"
+                                  Grid.Column="1"
+                                  Stretch="Uniform"
+                                  Width="8"
+                                  Data="F1 M -3,3 L 3,3 L 0,0 Z ">
+                                <Path.Fill>
+                                    <SolidColorBrush Color="#FFEAF5F7" />
+                                </Path.Fill>
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform x:Name="SortIconTransform" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SortStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="00:00:0.1" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Unsorted" />
+                                    <VisualState x:Name="SortAscending">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="SortIcon"
+                                                             Storyboard.TargetProperty="Opacity"
+                                                             Duration="0"
+                                                             To="1.0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="SortDescending">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="SortIcon"
+                                                             Storyboard.TargetProperty="Opacity"
+                                                             Duration="0"
+                                                             To="1.0" />
+                                            <DoubleAnimation Storyboard.TargetName="SortIconTransform"
+                                                             Storyboard.TargetProperty="ScaleY"
+                                                             Duration="0"
+                                                             To="-1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                           Storyboard.TargetName="glow"
+                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000"
+                                                                      Value="1" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="shine"
+                                                                           Storyboard.TargetProperty="Opacity">
+                                                <SplineDoubleKeyFrame KeyTime="0"
+                                                                      Value="0" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                           Storyboard.TargetName="dark"
+                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.0000000"
+                                                                      Value="1" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                           Duration="00:00:00.0010000"
+                                                                           Storyboard.TargetName="glow"
+                                                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </navigation:Page.Resources>
+    <navigation:Page.DataContext>
+        <Binding Source="{StaticResource viewModelLocator}"
+                 Path="ViewModel" />
+    </navigation:Page.DataContext>
+    <Grid x:Name="LayoutRoot">
+        <toolkit:BusyIndicator IsBusy="{Binding Path=IsSubmittingContext}">
+
+            <toolkit:DockPanel HorizontalAlignment="Stretch"
+                               Name="dockPanel1"
+                               VerticalAlignment="Stretch"
+                               LastChildFill="True">
+                   <sdk:TreeView HorizontalAlignment="Left"
+                                      Name="treeView1"
+                                      MinWidth="150"
+                                      VerticalAlignment="Stretch"
+                                      toolkit:DockPanel.Dock="Left"
+                                      ItemsSource="{Binding Path=RootGroups}"
+                                      BorderBrush="Transparent"
+                                      ItemTemplate="{StaticResource ChildTemplate}"
+                                      SelectedItem="{Binding Path=SelectedReportGroup,Mode=TwoWay}">
+                            <sdk:TreeView.ItemContainerStyle>
+                                <Style TargetType="sdk:TreeViewItem">
+                                    <Setter Property="manCons:SetterValueBindingHelper.PropertyBinding">
+                                        <Setter.Value>
+                                            <manCons:SetterValueBindingHelper Property="IsExpanded"
+                                                                              Binding="{Binding Path=IsExpanded}" />
+                                   
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="manCons:SetterValueBindingHelper.PropertyBinding">
+                                <Setter.Value>
+                                    <manCons:SetterValueBindingHelper Property="IsSelected"
+                                                                      Binding="{Binding Path=IsJustAdded}" />
+
+                                </Setter.Value>
+                            </Setter>
+                            
+                        </Style>
+                            </sdk:TreeView.ItemContainerStyle>
+                        </sdk:TreeView>
+                   
+
+                <StackPanel toolkit:DockPanel.Dock="Bottom"
+                            Orientation="Horizontal">
+                    
+                    <Border Margin="5,5,0,14"
+                            CornerRadius="5"
+                            BorderBrush="#FFCCCCCC"
+                            BorderThickness="1">
+                        
+                        <StackPanel Orientation="Vertical">
+                            <Border
+                                Background="#FF005DB3">
+                            <TextBlock  Margin="5,0,0,0"
+                                        FontSize="12"
+                                        Text="Key: "
+                                        TextWrapping="Wrap"
+                                        FontFamily="Verdana"
+                                        FontWeight="bold"
+                                        Foreground="#FFEAF5F7">
+
+                                </TextBlock>
+                            </Border>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="2,0,3,0">
+
+                                <Image Source="../../Assets/Images/greenfolder.png">
+
+                                </Image>
+                                <TextBlock FontFamily="Verdana"
+                                           MaxWidth="250"
+                                           TextWrapping="Wrap"
+                                           FontWeight="bold"
+                                           Text="Access to this folder is allowed"
+                                           VerticalAlignment="Center">
+                                </TextBlock>
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="2,0,3,0">
+                                <Image Source="../../Assets/Images/grayfolder.png">
+
+                                </Image>
+                                <TextBlock FontFamily="Verdana"
+                                           MaxWidth="250"
+                                           TextWrapping="Wrap"
+                                           FontWeight="bold"
+                                           Text="Access to this folder and all sub folders is denied"
+                                           VerticalAlignment="Center">
+                                </TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="2,0,3,0">
+                                <Image Source="../../Assets/Images/redfolder.png">
+
+                                </Image>
+                                <TextBlock FontFamily="Verdana"
+                                           MaxWidth="250"
+                                           TextWrapping="Wrap"
+                                           FontWeight="bold"
+                                           Text="Access to this folder is denied but a sub folder can be accessed"
+                                           VerticalAlignment="Center">
+                                </TextBlock>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                    <Button Content="View Report"
+                            Width="100"
+                            Height="50"
+                            Margin="10,5,10,5"
+                            Command="{Binding Path=ViewReportCommand}"
+                            VerticalAlignment="Top"></Button>
+                    <Button Content="Edit Report"
+                            Width="100"
+                            Height="50"
+                            Margin="0,5,10,5"
+                            Command="{Binding Path=EditReportCommand}"
+                            VerticalAlignment="Top"></Button>
+                    <Button Content="Delete Report"
+                            Width="100"
+                            Height="50"
+                            Margin="0,5,10,5"
+                            Command="{Binding Path=DeleteReportCommand}"
+                            VerticalAlignment="Top"></Button>
+                    <Button Content="Publish Report"
+                            Width="100"
+                            Height="50"
+                            Margin="0,5,10,5"
+                            Command="{Binding Path=PublishReportCommand}"
+                            VerticalAlignment="Top"></Button>
+                </StackPanel>
+
+                
+                    <sdk:DataGrid AutoGenerateColumns="False"
+                                  Style="{StaticResource DataGridStyle}"
+                                  ColumnHeaderStyle="{StaticResource DataGridHeaderGlassEffect}"
+                                  RowStyle="{StaticResource DataRowStyle}"
+                                  ItemsSource="{Binding Path=Reports}"
+                                  SelectedItem="{Binding Path=SelectedReport, Mode=TwoWay}"
+                                  HorizontalAlignment="Stretch"
+                                  Name="dataGrid1"
+                                  VerticalAlignment="Stretch"
+                                  toolkit:DockPanel.Dock="Left"
+                                  IsReadOnly="True"
+                                  SelectionMode="Single">
+
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn Width="400"
+                                                    Header="Name"
+                                                    Binding="{Binding Path=Name}">
+
+                            </sdk:DataGridTextColumn>
+                            <sdk:DataGridTextColumn Width="195"
+                                                    Header="Standard Report? (Y/N)"
+                                                    Binding="{Binding Path=IsStandard,Converter={StaticResource standardToStringConverter}}">
+
+                            </sdk:DataGridTextColumn>
+                            <sdk:DataGridTextColumn Width="200"
+                                                    Header="Date Created"
+                                                    Binding="{Binding Path=CreationDate}">
+
+                            </sdk:DataGridTextColumn>
+                            <sdk:DataGridTextColumn Width="200"
+                                                    Header="Date Modified"
+                                                    Binding="{Binding Path=ModifiedDate}">
+
+                            </sdk:DataGridTextColumn>
+
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+              
+            </toolkit:DockPanel>
+        </toolkit:BusyIndicator>
+    </Grid>
+</navigation:Page>

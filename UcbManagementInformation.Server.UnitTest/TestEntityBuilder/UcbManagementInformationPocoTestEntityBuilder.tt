@@ -1,0 +1,262 @@
+<#
+//*********************************************************
+//
+//    Copyright (c) Microsoft. All rights reserved.
+//    This code is licensed under the Microsoft Public License.
+//    THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+//    ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+//    IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+//    PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+#>
+<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#><#@
+ output extension=".cs"#><#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+
+string inputFile = @"..\..\UcbManagementInformation.Server.DataAccess\EntityModels\UcbManagementInformation\Model1.edmx";
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = code.VsNamespaceSuggestion();
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+// Write out support code to primary template output file
+WriteHeader(fileManager, "UcbManagementInformation.Server.DataAccess");
+BeginNamespace(namespaceName, code);
+//WriteCustomObservableCollection();
+EndNamespace(namespaceName);
+
+// Emit Entity Types
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+	//string[] ExistingFiles = Directory.GetFiles(this.Host.ResolvePath("."), entity.Name + "Builder.Generated.cs");
+	//if (ExistingFiles.Count()==0)
+	{
+	fileManager.StartNewFile(entity.Name + "Builder.Generated.cs");
+    BeginNamespace(namespaceName, code);
+#>
+<#=Accessibility.ForType(entity)#> <#=code.SpaceAfter(code.AbstractOption(entity))#>static partial class <#=code.Escape(entity)#>Builder
+{
+<# 
+    region.Begin("Create Method");
+#>
+    public static <#=code.Escape(entity)#> Create()
+    {
+        return new <#=code.Escape(entity)#>
+        {
+<#
+
+		string PreviousParameter = null;
+		foreach (EdmProperty edmProperty in entity.Properties.Where(p => p.DeclaringType == entity))
+	    {
+			if (!string.IsNullOrEmpty(PreviousParameter))
+			{
+#>
+				<#=code.Escape(PreviousParameter)#>,
+<#
+			}
+			string InstantiationCode = "";
+			switch (edmProperty.TypeUsage.EdmType.Name)
+			{
+				case "Guid":
+					InstantiationCode = "Guid.NewGuid()";
+					break;
+				case "Int32":
+					InstantiationCode = "100";
+					break;
+				case "Decimal":
+					InstantiationCode = "1111.11M";
+					break;
+				case "String":
+					InstantiationCode = "\"test " + edmProperty.Name+"\"";
+					break;
+				case "Binary":
+					InstantiationCode = "null";
+					break;
+				case "Boolean":
+					InstantiationCode = "false";
+					break;
+				case "DateTime":
+					InstantiationCode = "DateTime.Now";
+					break;
+				default:
+					InstantiationCode =  "new " + edmProperty.TypeUsage.EdmType.Name + "()";
+					break;
+			}
+			PreviousParameter =  edmProperty.Name + " = " + InstantiationCode;	
+		}
+#>
+				<#=code.Escape(PreviousParameter)#>
+        };
+    }
+<#
+
+    region.End();
+#>
+
+<#
+    region.Begin("With Methods");
+
+	foreach (EdmProperty edmProperty in entity.Properties.Where(p => p.DeclaringType == entity && p.TypeUsage.EdmType.Name != "Binary"))
+	{
+#>
+   	public static <#=code.Escape(entity)#> With<#=code.Escape(edmProperty.Name)#>(this <#=code.Escape(entity.Name)#> <#=code.CamelCase(entity.Name)#>, <#=code.Escape(edmProperty.TypeUsage.EdmType.Name)#> <#=code.CamelCase(edmProperty.Name)#>)
+    {
+        <#=code.CamelCase(entity.Name)#>.<#=code.Escape(edmProperty.Name)#> = <#=code.CamelCase(edmProperty.Name)#>;
+        return <#=code.CamelCase(entity.Name)#>;
+    }
+<#
+	}
+	foreach (NavigationProperty navProperty in entity.NavigationProperties.Where(np => np.DeclaringType == entity))
+	{
+		if (navProperty.TypeUsage.EdmType.Name.StartsWith("collection"))
+		{
+#>
+   	public static <#=code.Escape(entity)#> With<#=code.Escape(navProperty.Name)#>(this <#=code.Escape(entity.Name)#> <#=code.CamelCase(entity.Name)#>, ICollection< <#=code.Escape(navProperty.ToEndMember.GetEntityType())#>> <#=code.CamelCase(navProperty.Name)#>)
+    {
+        <#=code.CamelCase(entity.Name)#>.<#=code.Escape(navProperty.Name)#> = <#=code.CamelCase(navProperty.Name)#>;
+        return <#=code.CamelCase(entity.Name)#>;
+    }
+
+<#
+		}
+		else
+		{
+#>
+   	public static <#=code.Escape(entity)#> With<#=code.Escape(navProperty.Name)#>(this <#=code.Escape(entity.Name)#> <#=code.CamelCase(entity.Name)#>, <#=code.Escape(navProperty.TypeUsage.EdmType.Name)#> <#=code.CamelCase(navProperty.Name)#>)
+    {
+        <#=code.CamelCase(entity.Name)#>.<#=code.Escape(navProperty.Name)#> = <#=code.CamelCase(navProperty.Name)#>;
+        return <#=code.CamelCase(entity.Name)#>;
+    }
+
+<#
+		}
+			
+	}
+    region.End();
+	
+#>
+}
+<#
+    EndNamespace(namespaceName);
+	}
+}
+fileManager.Process();
+
+#>
+<#+
+void WriteHeader(EntityFrameworkTemplateFileManager thisFileManager, params string[] extraUsings)
+{
+    thisFileManager.StartHeader();
+#>
+//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated from a template.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+<#=String.Join(String.Empty, extraUsings.Select(u => "using " + u + ";" + Environment.NewLine).ToArray())#>
+<#+
+    thisFileManager.EndBlock();
+}
+
+void BeginNamespace(string namespaceName, CodeGenerationTools code)
+{
+    CodeRegion region = new CodeRegion(this);
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+#>
+namespace <#=code.EscapeNamespace(namespaceName)#>
+{
+<#+
+        PushIndent(CodeRegion.GetIndent(1));
+    }
+}
+
+
+void EndNamespace(string namespaceName)
+{
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+        PopIndent();
+#>
+}
+<#+
+    }
+}
+
+bool IsReadWriteAccessibleProperty(EdmMember member)
+{
+    string setter = Accessibility.ForWriteOnlyProperty(member);
+    string getter = Accessibility.ForReadOnlyProperty(member);
+
+    return getter != "private" && getter != "protected" && setter != "private" && setter != "protected";
+}
+
+string PropertyVirtualModifier(string accessibility)
+{
+    return accessibility + (accessibility != "private" ? " virtual" : "");
+}
+
+void WriteCustomObservableCollection()
+{
+#>
+// An System.Collections.ObjectModel.ObservableCollection that raises
+// individual item removal notifications on clear and prevents adding duplicates.
+public class FixupCollection<T> : ObservableCollection<T>
+{
+    protected override void ClearItems()
+    {
+        new List<T>(this).ForEach(t => Remove(t));
+    }
+
+    protected override void InsertItem(int index, T item)
+    {
+        if (!this.Contains(item))
+        {
+            base.InsertItem(index, item);
+        }
+    }
+}
+<#+
+}
+
+bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)
+{
+    Dictionary<string, bool> alreadySeen = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+    foreach(StructuralType type in itemCollection.GetItems<StructuralType>())
+    {
+        if (!(type is EntityType || type is ComplexType))
+        {
+            continue;
+        }
+
+        if (alreadySeen.ContainsKey(type.FullName))
+        {
+            Error(String.Format(CultureInfo.CurrentCulture, "This template does not support types that differ only by case, the types {0} are not supported", type.FullName));
+            return false;
+        }
+        else
+        {
+            alreadySeen.Add(type.FullName, true);
+        }
+
+    }
+
+    return true;
+
+}
+#>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by Richard (Department For Education & Skills) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bs7666="http://www.govtalk.gov.uk/people/bs7666" xmlns:core="http://www.govtalk.gov.uk/core" xmlns:pdt="http://www.govtalk.gov.uk/people/PersonDescriptives" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.2" id="ESF2007-ParticipantInformation"
+           xmlns:sql="urn:schemas-microsoft-com:mapping-schema">
+	<xs:import namespace="http://www.govtalk.gov.uk/people/bs7666" schemaLocation="gdsc\BS7666-v1-4.xsd"/>
+	<xs:import namespace="http://www.govtalk.gov.uk/people/PersonDescriptives" schemaLocation="gdsc\PersonDescriptiveTypes-v1-1.xsd"/>
+	<xs:import namespace="http://www.govtalk.gov.uk/core" schemaLocation="gdsc\CommonSimpleTypes-v1-3.xsd"/>
+
+  <xs:annotation>
+    <xs:appinfo>
+      <sql:relationship name="InputFileRegion"
+            parent="InputFile"
+            parent-key="ProvidingOrganisation TransferDate"
+            child="Region"
+            child-key="ProvidingOrganisation TransferDate" />
+      <sql:relationship name="RegionAgreement"
+            parent="Region"
+            parent-key="ProvidingOrganisation TransferDate RegionCode"
+            child="Agreement"
+            child-key="ProvidingOrganisation TransferDate RegionCode" />
+      <sql:relationship name="AgreementProject"
+            parent="Agreement"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID"
+            child="Project"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID" />
+      <sql:relationship name="ProjectParticipant"
+            parent="Project"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding"
+            child="Participant"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding" />
+      <sql:relationship name="ParticipantLeaver"
+            parent="Participant"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID"
+            child="Leaver"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID" />
+      <sql:relationship name="LeaverP1P4Leaver"
+            parent="Leaver"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID"
+            child="P1P4Leaver"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID" />
+      <sql:relationship name="P1P4LeaverESFP1P4Qualification"
+            parent="P1P4Leaver"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID"
+            child="ESFP1P4Qualification"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID" />
+      <sql:relationship name="ESFP1P4QualificationP1P4QualificationGained"
+            parent="ESFP1P4Qualification"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID"
+            child="P1P4QualificationGained"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID" />
+      <sql:relationship name="LeaverP2P5Leaver"
+            parent="Leaver"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID"
+            child="P2P5Leaver"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID" />
+      <sql:relationship name="P2P5LeaverESFP2P5Qualification"
+            parent="P2P5Leaver"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID"
+            child="ESFP2P5Qualification"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID" />
+      <sql:relationship name="ESFP2P5QualificationP2P5QualificationGained"
+            parent="ESFP2P5Qualification"
+            parent-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID"
+            child="P2P5QualificationGained"
+            child-key="ProvidingOrganisation TransferDate RegionCode AgreementID ProviderProjectID Funding ParticipantReferenceID" />
+      </xs:appinfo>
+  </xs:annotation>
+
+
+  <xs:element name="ParticipantInformation" sql:relation="InputFile">
+    <xs:annotation>
+      <xs:documentation>ESF2007 Participant training event information</xs:documentation>
+      <xs:appinfo>
+        <Creator>Project ESF2007</Creator>
+        <Created>2008-05-20</Created>
+        <Modified>2008-05-22</Modified>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ProvidingOrganisation" >
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="TransferDate" type="core:DateType" sql:datatype="dateTime"/>
+        <xs:element ref="Region" maxOccurs="unbounded" sql:relation="Region"
+                            sql:relationship="InputFileRegion"/>
+      </xs:sequence>
+      <xs:attribute name="SchemaVersion" type="xs:NMTOKEN" use="required" fixed="0.2"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Region" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="RegionCode" type="RegionCodeType" />
+        <xs:element name="RegionName">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element ref="Agreement" maxOccurs="unbounded" sql:relation="Agreement"
+              sql:relationship="RegionAgreement"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Agreement" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AgreementID">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="9"/>
+              <xs:maxLength value="9"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ProviderProjectReference" type="ProviderProjectReferenceType" maxOccurs="unbounded" sql:relation="Project"
+              sql:relationship="AgreementProject"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ProviderProjectReferenceType" >
+    <xs:sequence>
+      <xs:element name="ProviderProjectID" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Funding" type="ParticipantFundingType" minOccurs="0"/>
+      <xs:element name="Participant" type="ParticipantType" maxOccurs="unbounded" sql:relation="Participant"
+              sql:relationship="ProjectParticipant"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParticipantType" >
+    <xs:sequence>
+      <xs:element name="ParticipantReferenceID">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="StartDate" type="core:DateType" sql:datatype="dateTime"/>
+      <xs:element name="Gender" type="pdt:GenderCurrentType"/>
+      <xs:element name="DOB" type="core:DateType" sql:datatype="dateTime"/>
+      <xs:element name="Postcode" type="bs7666:PostCodeType"/>
+      <xs:element name="EmploymentStatus" type="EmploymentStatusType"/>
+      <xs:element name="UnemployedMonths" type="UnemploymentLenghBandsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Required if unemployed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Ethnicity" type="ESFEthnicity"/>
+      <xs:element name="Disability" type="core:YesNoType"/>
+      <xs:element name="QualificationHeld" type="QualificationHeldType"/>
+      <xs:element name="Leaver" type="LeaverType" minOccurs="0" sql:relation="Leaver"
+                  sql:relationship="ParticipantLeaver">
+        <xs:annotation>
+          <xs:documentation>Required for a leaver</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LeaverType">
+    <xs:sequence>
+      <xs:element name="LeavingDate" type="core:DateType" sql:datatype="dateTime"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="P1P4Leaver" type="P1P4LeaverType" sql:relation="P1P4Leaver"
+                  sql:relationship="LeaverP1P4Leaver"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="P2P5Leaver" type="P2P5LeaverType" sql:relation="P2P5Leaver"
+                  sql:relationship="LeaverP2P5Leaver"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="P1P4LeaverType">
+    <xs:sequence>
+      <xs:element name="P1P4LeavingStatus" type="EmploymentStatusType"/>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="P1P4NoQualificationGained" type="core:YesNoType"/>
+        <xs:element name="ESFP1P4Qualification" maxOccurs="unbounded" sql:relation="ESFP1P4Qualification"
+                    sql:relationship="P1P4LeaverESFP1P4Qualification" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="P1P4QualificationGained" type="P1P4QualificationGainedType" sql:relation="P1P4QualificationGained"
+                    sql:relationship="ESFP1P4QualificationP1P4QualificationGained"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="P2P5LeaverType">
+    <xs:sequence>
+      <xs:element name="P2P5IntoEducationOrTraining" type="core:YesNoType"/>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="P2P5NoQualificationGained" type="core:YesNoType"/>
+        <xs:element name="ESFP2P5Qualification" maxOccurs="unbounded" sql:relation="ESFP2P5Qualification"
+                    sql:relationship="P2P5LeaverESFP2P5Qualification">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="P2P5QualificationGained" type="P2P5QualificationGainedType"  sql:relation="P2P5QualificationGained"
+                    sql:relationship="ESFP2P5QualificationP2P5QualificationGained"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ESFP1P4QualificationType"/>
+	<xs:simpleType name="EmploymentStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Employed"/>
+			<xs:enumeration value="Unemployed"/>
+			<xs:enumeration value="Economically Inactive"/>
+			<xs:enumeration value="Full time Education or Training"/>
+			<xs:enumeration value="14-19 NEET"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UnemploymentLenghBandsType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Less than 6 Months"/>
+			<xs:enumeration value="6 - 11 Months"/>
+			<xs:enumeration value="12 - 23 Months"/>
+			<xs:enumeration value="24 - 35 Months"/>
+			<xs:enumeration value="36 Months or more"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ESFEthnicity">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="White-British"/>
+			<xs:enumeration value="White-Irish"/>
+			<xs:enumeration value="White-Other"/>
+			<xs:enumeration value="Mixed-White and Black Caribbean"/>
+			<xs:enumeration value="Mixed-White and Black African"/>
+			<xs:enumeration value="Mixed-White and Asian"/>
+			<xs:enumeration value="Mixed-Other mixed background"/>
+			<xs:enumeration value="Asian or Asian British-Indian"/>
+			<xs:enumeration value="Asian or Asian British-Pakistani"/>
+			<xs:enumeration value="Asian or Asian British-Bangladeshi"/>
+			<xs:enumeration value="Asian or Asian British-Other Asian background"/>
+			<xs:enumeration value="Black or Black British-Caribbean"/>
+			<xs:enumeration value="Black or Black British-African"/>
+			<xs:enumeration value="Black or Black British-Other Black background "/>
+			<xs:enumeration value="Chinese-Chinese"/>
+			<xs:enumeration value="Other Ethnic group"/>
+			<xs:enumeration value="Not Stated"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="QualificationHeldType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Not Known"/>
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="Below level 1"/>
+			<xs:enumeration value="Level 1 or equivalent"/>
+			<xs:enumeration value="Level 2 or equivalent"/>
+			<xs:enumeration value="Level 3 or equivalent"/>
+			<xs:enumeration value="Level 4 or equivalent"/>
+			<xs:enumeration value="Level 5 or equivalent or higher"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ParticipantFundingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ESF"/>
+			<xs:enumeration value="Matched"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="P2P5QualificationGainedType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Gained Basic Skills"/>
+			<xs:enumeration value="Gained level 1"/>
+			<xs:enumeration value="Gained unit or module of level 2"/>
+			<xs:enumeration value="Gained level 2"/>
+			<xs:enumeration value="Gained unit or module of level 3"/>
+			<xs:enumeration value="Gained level 3"/>
+			<xs:enumeration value="Gained unit or module of level 4"/>
+			<xs:enumeration value="Gained level 4"/>
+			<xs:enumeration value="Gained level 5 or higher"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="P1P4QualificationGainedType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Gained basic skill qualification"/>
+			<xs:enumeration value="Gained level 1"/>
+			<xs:enumeration value="Gained level 2"/>
+			<xs:enumeration value="Gained level 3"/>
+			<xs:enumeration value="Gained level 4"/>
+			<xs:enumeration value="Gained level 5 or higher"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RegionCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EE"/>
+			<xs:enumeration value="EM"/>
+			<xs:enumeration value="ES"/>
+			<xs:enumeration value="LN"/>
+			<xs:enumeration value="NE"/>
+			<xs:enumeration value="NW"/>
+			<xs:enumeration value="SE"/>
+			<xs:enumeration value="SW"/>
+			<xs:enumeration value="WM"/>
+			<xs:enumeration value="YH"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,890 @@
+<UserControl x:Class="UcbManagementInformation.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+             xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
+             xmlns:dataControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.DataForm.Toolkit"
+             xmlns:views="clr-namespace:UcbManagementInformation.Views.UserControls"
+             xmlns:s="clr-namespace:FirstLook.ServiceModel.DomainServices.Client.Security;assembly=FirstLook.ServiceModel.DomainServices.Client.Security"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:mcons="clr-namespace:UcbManagementInformation.Controls"
+             xmlns:manCons="clr-namespace:UcbManagementInformation"
+             xmlns:manConsHelp="clr-namespace:UcbManagementInformation.Helpers"
+             xmlns:manConsTrig="clr-namespace:UcbManagementInformation.TriggerActions"
+             xmlns:carousel="clr-namespace:UcbManagementInformation.Controls.Carousel"
+             xmlns:carousel2="clr-namespace:UcbManagementInformation.Controls.Carousel2"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:views2="clr-namespace:UcbManagementInformation.Views.Dashboard"
+             xmlns:viewModels="clr-namespace:UcbManagementInformation.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="768" Loaded="UserControl_Loaded">
+
+	<UserControl.Resources>
+        <viewModels:MainPageViewModelLocator x:Key="viewModelLocator" />
+        <manCons:DummyConverter x:Key="dummyConverter" />
+        <manCons:MenuItemToImageUrlConverter x:Key="menuItemToImageUrlConverter" />
+        <manCons:AlertToVisibleConverter x:Key="alertToVisibleConverter" />
+        <manCons:ImageUriToNavigationUriConverter x:Key="imageUriToNavigationUriConverter"></manCons:ImageUriToNavigationUriConverter>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <Binding Source="{StaticResource viewModelLocator}" Path="ViewModel"></Binding>
+    </UserControl.DataContext>
+    
+        <Grid x:Name="LayoutRoot"
+          Width="1024"
+          Height="768"
+          s:Authorization.RequiresRole="UCB-MI-USER">
+        
+        <Grid.Background>
+            <!--<ImageBrush ImageSource="Assets/Images/bk2a.JPG"
+                        Stretch="Fill"></ImageBrush>-->
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                <GradientStop Color="#ffffffff" Offset="0"></GradientStop>
+                <GradientStop Color="#ffffffff" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.Clip>
+            <RectangleGeometry Rect="0,0,1024,768" />
+
+        </Grid.Clip>
+        
+        <VisualStateManager.VisualStateGroups>
+
+            <VisualStateGroup x:Name="MenuStates">
+                <VisualState x:Name="Showing">
+                    <Storyboard>
+                        <DoubleAnimation Duration="00:00:00.0"
+                                         To="0"
+                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                         Storyboard.TargetName="MenuCanvas" />
+                        <DoubleAnimation Duration="00:00:00.5"
+                                         To="1"
+                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                         Storyboard.TargetName="MenuCanvas" />
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Hidden">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                       Storyboard.TargetName="MenuCanvas">
+                            <DiscreteDoubleKeyFrame KeyTime="00:00:00.99"
+                                                    Value="0">
+                            </DiscreteDoubleKeyFrame>
+                            <DiscreteDoubleKeyFrame KeyTime="00:00:01.0"
+                                                    Value="1200">
+                            </DiscreteDoubleKeyFrame>
+                        </DoubleAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="00:00:01.0"
+                                         To="0"
+                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                         Storyboard.TargetName="MenuCanvas" />
+                    </Storyboard>
+                </VisualState>
+
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="MessageStates">
+                <VisualState x:Name="MessageShowing">
+                    <Storyboard>
+                        <DoubleAnimation Duration="00:00:00.5"
+                                         To="0"
+                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                         Storyboard.TargetName="MessageCanvas" />
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="MessageHidden">
+                    <Storyboard>
+                        <DoubleAnimation Duration="00:00:00.5"
+                                         To="170"
+                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                         Storyboard.TargetName="MessageCanvas" />
+                    </Storyboard>
+                </VisualState>
+
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="MessengerStates">
+                <VisualState x:Name="MessengerShowing">
+                    <Storyboard>
+                        <DoubleAnimation Duration="00:00:00.5"
+                                         To="0"
+                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                         Storyboard.TargetName="MessengerCanvas" />
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="MessengerHidden">
+                    <Storyboard>
+                        <DoubleAnimation Duration="00:00:00.5"
+                                         To="370"
+                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                         Storyboard.TargetName="MessengerCanvas" />
+                    </Storyboard>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+            
+        <Border x:Name="ContentBorder"
+                Margin="0,76,0,30" s:Authorization.RequiresRole="UCB-MI-USER">
+            <navigation:Frame x:Name="ContentFrame"
+                              Source="{Binding Path=CurrentUrl,Mode=TwoWay}"
+                              Navigated="ContentFrame_Navigated"
+                              NavigationFailed="ContentFrame_NavigationFailed"
+                              Style="{StaticResource ContentFrameStyle}"
+                              s:Authorization.NavigationMode="Redirect">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Navigating">
+                        <ei:GoToStateAction StateName="Hidden"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+                <navigation:Frame.UriMapper>
+                    <uriMapper:UriMapper>
+                        <uriMapper:UriMapping Uri=""
+                                              MappedUri="/Views/Home.xaml" />
+                        <uriMapper:UriMapping Uri="/{pageName}"
+                                              MappedUri="/Views/{pageName}.xaml" />
+                    </uriMapper:UriMapper>
+                </navigation:Frame.UriMapper>
+            </navigation:Frame>
+        </Border>
+		
+		<!-- Message Canvas -->
+		<!--<Canvas VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Height="200"
+                Width="1024"
+                x:Name="MessageCanvas">
+           
+                <Grid  Height="200" Width="1024">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource LongGlassButtonStyle}" x:Name="ToggleMessages" Click="ToggleMessages_Click">
+                	<StackPanel Orientation="Horizontal">
+						<Canvas Width="29.5951" Height="29.0625" Clip="F1 M 0,0L 29.5951,0L 29.5951,29.0625L 0,29.0625L 0,0" HorizontalAlignment="Left">
+							<Canvas x:Name="Layer_10" Width="200.26" Height="200.431" Canvas.Left="0" Canvas.Top="0">
+								<Path x:Name="Path" Width="29.5951" Height="29.0625" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" StrokeThickness="1.5" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Fill="#FF160B76" Data="F1 M 5.75,0.75L 23.8451,0.75C 26.6065,0.75 28.8451,2.98858 28.8451,5.75002L 28.8451,23.3125C 28.8451,26.0739 26.6065,28.3125 23.8451,28.3125L 5.75,28.3125C 2.98857,28.3125 0.75,26.0739 0.75,23.3125L 0.75,5.75002C 0.75,2.98858 2.98857,0.75 5.75,0.75 Z "/>
+								<Path x:Name="Path_0" Width="20.1417" Height="5.99663" Canvas.Left="4.67799" Canvas.Top="19.7194" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 5.67799,19.7194L 23.8197,19.7194C 24.372,19.7194 24.8197,20.1671 24.8197,20.7194L 24.8197,24.716C 24.8197,25.2683 24.372,25.716 23.8197,25.716L 5.67799,25.716C 5.12571,25.716 4.67799,25.2683 4.67799,24.716L 4.67799,20.7194C 4.67799,20.1671 5.12571,19.7194 5.67799,19.7194 Z "/>
+								<Path x:Name="Path_1" Width="16.711" Height="14.8225" Canvas.Left="6.55935" Canvas.Top="3.14669" Stretch="Fill" Fill="#FFFFFFFF" Data="F1 M 7.55935,3.14669L 22.2704,3.14669C 22.8227,3.14669 23.2704,3.59441 23.2704,4.14669L 23.2704,16.9692C 23.2704,17.5214 22.8227,17.9692 22.2704,17.9692L 7.55935,17.9692C 7.00707,17.9692 6.55935,17.5214 6.55935,16.9692L 6.55935,4.14669C 6.55935,3.59441 7.00707,3.14669 7.55935,3.14669 Z "/>
+								<Path x:Name="Path_2" Width="12.7158" Height="11.0345" Canvas.Left="8.60675" Canvas.Top="4.94262" Stretch="Fill" Fill="#FF1F128D" Data="F1 M 9.60675,4.94262L 20.3226,4.94262C 20.8748,4.94262 21.3225,5.39034 21.3225,5.94262L 21.3225,14.9771C 21.3225,15.5294 20.8748,15.9771 20.3226,15.9771L 9.60675,15.9771C 9.05447,15.9771 8.60675,15.5294 8.60675,14.9771L 8.60675,5.94262C 8.60675,5.39034 9.05447,4.94262 9.60675,4.94262 Z "/>
+								<Path x:Name="Line" Width="6.3121" Height="1" Canvas.Left="9.82212" Canvas.Top="6.51294" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Data="F1 M 10.3221,7.01294L 15.6342,7.01294"/>
+								<Path x:Name="Line_3" Width="6.3121" Height="1" Canvas.Left="9.82212" Canvas.Top="9.169" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Data="F1 M 10.3221,9.669L 15.6342,9.669"/>
+								<Path x:Name="Line_4" Width="6.3121" Height="1" Canvas.Left="9.82212" Canvas.Top="11.825" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Data="F1 M 10.3221,12.325L 15.6342,12.325"/>
+								<Path x:Name="Path_5" Width="28.2142" Height="12.0658" Canvas.Left="0.520851" Canvas.Top="0.968781" Stretch="Fill" Data="F1 M 5.54205,0.968781L 23.7139,0.968781C 26.487,0.968781 28.735,3.20736 28.735,5.96878L 28.735,12.8355C 25.4199,10.2649 20.3877,8.625 14.7535,8.625C 8.97506,8.625 3.82992,10.3499 0.520851,13.0346L 0.520851,5.96878C 0.520851,3.20736 2.76891,0.968781 5.54205,0.968781 Z ">
+									<Path.Fill>
+										<LinearGradientBrush StartPoint="0.5,1.66425" EndPoint="0.5,-0.664245">
+											<LinearGradientBrush.GradientStops>
+												<GradientStop Color="#FFFFFFFF" Offset="0.230366"/>
+												<GradientStop Color="#00000000" Offset="1"/>
+											</LinearGradientBrush.GradientStops>
+										</LinearGradientBrush>
+									</Path.Fill>
+								</Path>
+								<Path x:Name="Path_6" Width="27.9167" Height="26.8646" Canvas.Left="0.520847" Canvas.Top="1.05209" Stretch="Fill" Data="F1 M 5.52085,1.05209L 23.4375,1.05209C 26.1989,1.05209 28.4375,3.29067 28.4375,6.05209L 28.4375,22.9167C 28.4375,25.6781 26.1989,27.9167 23.4375,27.9167L 5.52085,27.9167C 2.75943,27.9167 0.520847,25.6781 0.520847,22.9167L 0.520847,6.05209C 0.520847,3.29067 2.75943,1.05209 5.52085,1.05209 Z ">
+									<Path.Fill>
+										<LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,-2.83994e-007">
+											<LinearGradientBrush.GradientStops>
+												<GradientStop Color="#00FFFFFF" Offset="0"/>
+												<GradientStop Color="#4DFFFFFF" Offset="0.989529"/>
+											</LinearGradientBrush.GradientStops>
+										</LinearGradientBrush>
+									</Path.Fill>
+								</Path>
+							</Canvas>
+						</Canvas>
+                        <TextBlock VerticalAlignment="Center" Text="System Messages" Foreground="#FFEAF5F7" Margin="10,0,0,0"></TextBlock>
+                 	</StackPanel>
+				</Button>
+                <Border x:Name="MessageBorder"
+                        Background="#DD000000"
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Opacity="1"
+                        CornerRadius="5"
+                        BorderBrush="DarkGray"
+                        BorderThickness="1">
+                    <ListBox Margin="10"
+                             Background="Transparent"
+                             Width="530"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                             Foreground="#FFEAF5F7"
+                             ItemsSource="{Binding Path=AlertItems}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding Path=CompletedDate,StringFormat='dd/MM/yyyy hh:mm:ss'}"></TextBlock>
+                                    <TextBlock Text="{Binding Path=Message}" TextWrapping="Wrap"></TextBlock>
+                                </StackPanel>
+                                 
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        
+                    </ListBox>
+                </Border>
+            </Grid>
+            <Canvas.RenderTransform>
+                <TranslateTransform x:Name="MessageTranslateTrans" Y="170" />
+            </Canvas.RenderTransform>
+        </Canvas>-->
+		<!-- End of Message Canvas -->
+		
+        <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                x:Name="Untitled2"
+                Width="1024"
+                Height="768"
+                Clip="F1 M 0,0L 1024,0L 1024,768L 0,768L 0,0">
+            <Canvas x:Name="Layer_1"
+                    Width="1024"
+                    Height="768"
+                    Canvas.Left="0"
+                    Canvas.Top="0">
+				<!--Button Width="1024" Height="75" Style="{StaticResource LongGlassButtonStyle}"/-->
+				<!--TextBlock Text="Management Console" FontFamily="Verdana" FontStretch="ExtraExpanded" Foreground="#FFEAF5F7" FontSize="25" Canvas.Left="104" Canvas.Top="17">
+					<TextBlock.Effect>
+						<BlurEffect Radius="2"></BlurEffect>
+					</TextBlock.Effect>
+				</TextBlock-->
+                <!--Button Width="1024" Height="75" Style="{StaticResource LongGlassButtonStyle}"/-->
+            	<Rectangle x:Name="Rectangle_2"
+            		Width="1024"
+            		Height="84"
+            		Stretch="Fill"
+            		StrokeLineJoin="Round" Opacity="0.95" RadiusX="10" RadiusY="10" Stroke="White" Canvas.Top="-10">
+            		<Rectangle.Fill>
+            			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                            <GradientStop Color="#c8d6e3" Offset="0"/>
+                            <GradientStop Color="#c8d6e3"/>
+                            <GradientStop Color="#c8d6e3" Offset="1"/>
+            			</LinearGradientBrush>
+            		</Rectangle.Fill>
+            	</Rectangle>
+				<!--TextBlock Text="Management Console" FontFamily="Verdana" FontStretch="ExtraExpanded" Foreground="#FFEAF5F7" FontSize="25" Canvas.Left="104" Canvas.Top="17">
+					<TextBlock.Effect>
+						<BlurEffect Radius="2"></BlurEffect>
+					</TextBlock.Effect>
+				</TextBlock-->
+                
+                    <TextBlock x:Name="Title"
+                               Width="314"
+                    Height="35"
+            		Canvas.Left="100"
+            		Canvas.Top="20"
+                               FontSize="18"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontWeight="Bold"
+                               Text="Management Information"></TextBlock>
+                
+                <Image x:Name="Image_6"
+            		Source="../Assets/Images/image3.png"
+            		Width="63"
+            		Height="41"
+            		Canvas.Left="33"
+            		Canvas.Top="33" />
+            	<Viewbox x:Name="Group"
+            		Width="40.1055"
+            		Height="53.9531"
+            		Canvas.Left="45.6268"
+            		Canvas.Top="8.49127">
+            		<Canvas Width="40.1055"
+            			Height="53.9531">
+            			<Path x:Name="Path_7"
+            				Width="14.6846"
+            				Height="53.9531"
+            				Canvas.Left="0"
+            				Canvas.Top="0"
+            				Stretch="Fill"
+            				StrokeThickness="2"
+            				StrokeLineJoin="Round"
+            				Stroke="#FF230FD2"
+            				Data="F1 M 1,6.04095L 13.4105,1L 13.6846,47.9121L 1.27418,52.9531L 1,6.04095 Z ">
+            				<Path.Fill>
+            					<LinearGradientBrush StartPoint="-0.0144415,0.551019"
+            						EndPoint="1.01949,0.551019">
+            						<LinearGradientBrush.RelativeTransform>
+            							<TransformGroup>
+            								<SkewTransform CenterX="-0.0144415"
+            									CenterY="0.551019"
+            									AngleX="-4.29246"
+            									AngleY="0" />
+            								<RotateTransform CenterX="-0.0144415"
+            									CenterY="0.551019"
+            									Angle="-5.66373" />
+            							</TransformGroup>
+            						</LinearGradientBrush.RelativeTransform>
+            						<GradientStop Color="#FF22168D"
+            							Offset="0.344828" />
+            						<GradientStop Color="#FFFFFFFF"
+            							Offset="0.719828" />
+            					</LinearGradientBrush>
+            				</Path.Fill>
+            			</Path>
+            			<Path x:Name="Path_8"
+            				Width="14.5097"
+            				Height="24.0146"
+            				Canvas.Left="25.5958"
+            				Canvas.Top="19.5272"
+            				Stretch="Fill"
+            				StrokeThickness="2"
+            				StrokeLineJoin="Round"
+            				Stroke="#FF230FD2"
+            				Data="F1 M 26.5958,25.5682L 39.0063,20.5272L 39.1055,37.5009L 26.695,42.5419L 26.5958,25.5682 Z ">
+            				<Path.Fill>
+            					<LinearGradientBrush StartPoint="-0.0216373,0.620403"
+            						EndPoint="1.04907,0.620403">
+            						<LinearGradientBrush.RelativeTransform>
+            							<TransformGroup>
+            								<SkewTransform CenterX="-0.0216373"
+            									CenterY="0.620403"
+            									AngleX="-12.4078"
+            									AngleY="0" />
+            								<RotateTransform CenterX="-0.0216373"
+            									CenterY="0.620403"
+            									Angle="-12.9971" />
+            							</TransformGroup>
+            						</LinearGradientBrush.RelativeTransform>
+            						<GradientStop Color="#FF5F168D"
+            							Offset="0.344828" />
+            						<GradientStop Color="#FFFFFFFF"
+            							Offset="0.719828" />
+            					</LinearGradientBrush>
+            				</Path.Fill>
+            			</Path>
+            			<Path x:Name="Path_9"
+            				Width="14.575"
+            				Height="35.1883"
+            				Canvas.Left="13.1206"
+            				Canvas.Top="13.4799"
+            				Stretch="Fill"
+            				StrokeThickness="2"
+            				StrokeLineJoin="Round"
+            				Stroke="#FF230FD2"
+            				Data="F1 M 14.1206,19.5209L 26.531,14.4799L 26.6955,42.6272L 14.2851,47.6682L 14.1206,19.5209 Z ">
+            				<Path.Fill>
+            					<LinearGradientBrush StartPoint="-0.0189282,0.579864"
+            						EndPoint="1.03115,0.579864">
+            						<LinearGradientBrush.RelativeTransform>
+            							<TransformGroup>
+            								<SkewTransform CenterX="-0.0189282"
+            									CenterY="0.579864"
+            									AngleX="-7.86557"
+            									AngleY="0" />
+            								<RotateTransform CenterX="-0.0189282"
+            									CenterY="0.579864"
+            									Angle="-8.74926" />
+            							</TransformGroup>
+            						</LinearGradientBrush.RelativeTransform>
+            						<GradientStop Color="#FF8D1616"
+            							Offset="0.344828" />
+            						<GradientStop Color="#FFFFFFFF"
+            							Offset="0.719828" />
+            					</LinearGradientBrush>
+            				</Path.Fill>
+            			</Path>
+            		</Canvas>
+            	</Viewbox>
+            	<Path x:Name="Path_10"
+            		Width="14.4446"
+            		Height="12.9752"
+            		Canvas.Left="45.4524"
+            		Canvas.Top="60.643"
+            		Stretch="Fill"
+            		StrokeThickness="2"
+            		StrokeLineJoin="Round"
+            		Stroke="#4D230FD2"
+            		Data="F1 M 58.836,72.1284L 58.897,61.643L 46.4865,66.7412L 46.4524,72.6182">
+            		<Path.Fill>
+            			<LinearGradientBrush StartPoint="-0.0340056,2.62391"
+            				EndPoint="1.12291,2.62391">
+            				<LinearGradientBrush.RelativeTransform>
+            					<TransformGroup>
+            						<SkewTransform CenterX="-0.0340056"
+            							CenterY="2.62391"
+            							AngleX="-25.2705"
+            							AngleY="0" />
+            						<RotateTransform CenterX="-0.0340056"
+            							CenterY="2.62391"
+            							Angle="-24.9766" />
+            					</TransformGroup>
+            				</LinearGradientBrush.RelativeTransform>
+            				<GradientStop Color="#4D22168D"
+            					Offset="0.344828" />
+            				<GradientStop Color="#4DFFFFFF"
+            					Offset="0.719828" />
+            			</LinearGradientBrush>
+            		</Path.Fill>
+            	</Path>
+            	<Path x:Name="Path_11"
+            		Width="14.5005"
+            		Height="22.7499"
+            		Canvas.Left="71.8173"
+            		Canvas.Top="49.2854"
+            		Stretch="Fill"
+            		StrokeThickness="2"
+            		StrokeLineJoin="Round"
+            		Stroke="#4D230FD2"
+            		Data="F1 M 76.2235,71.0353L 85.2186,67.3401L 85.3178,50.2854L 72.9074,55.3837L 72.8173,70.8669">
+            		<Path.Fill>
+            			<LinearGradientBrush StartPoint="-0.0223843,0.662997"
+            				EndPoint="1.05315,0.662997">
+            				<LinearGradientBrush.RelativeTransform>
+            					<TransformGroup>
+            						<SkewTransform CenterX="-0.0223843"
+            							CenterY="0.662997"
+            							AngleX="-14.4537"
+            							AngleY="0" />
+            						<RotateTransform CenterX="-0.0223843"
+            							CenterY="0.662997"
+            							Angle="-13.9004" />
+            					</TransformGroup>
+            				</LinearGradientBrush.RelativeTransform>
+            				<GradientStop Color="#4D5F168D"
+            					Offset="0.344828" />
+            				<GradientStop Color="#4DFFFFFF"
+            					Offset="0.719828" />
+            			</LinearGradientBrush>
+            		</Path.Fill>
+            	</Path>
+            	<Path x:Name="Path_12"
+            		Width="14.4714"
+            		Height="17.5706"
+            		Canvas.Left="58.4366"
+            		Canvas.Top="55.2978"
+            		Stretch="Fill"
+            		StrokeThickness="2"
+            		StrokeLineJoin="Round"
+            		Stroke="#4D230FD2"
+            		Data="F1 M 71.8174,71.8672L 71.9079,56.2978L 59.4975,61.3961L 59.4366,71.8683">
+            		<Path.Fill>
+            			<LinearGradientBrush StartPoint="-0.0273918,1.24406"
+            				EndPoint="1.07428,1.24406">
+            				<LinearGradientBrush.RelativeTransform>
+            					<TransformGroup>
+            						<SkewTransform CenterX="-0.0273918"
+            							CenterY="1.24406"
+            							AngleX="-18.6291"
+            							AngleY="0" />
+            						<RotateTransform CenterX="-0.0273918"
+            							CenterY="1.24406"
+            							Angle="-18.2131" />
+            					</TransformGroup>
+            				</LinearGradientBrush.RelativeTransform>
+            				<GradientStop Color="#4D8D1616"
+            					Offset="0.344828" />
+            				<GradientStop Color="#4DFFFFFF"
+            					Offset="0.719828" />
+            			</LinearGradientBrush>
+            		</Path.Fill>
+            	</Path>
+            	<Path x:Name="Path_13"
+            		Width="40.0899"
+            		Height="35.843"
+            		Canvas.Left="45.7823"
+            		Canvas.Top="8"
+            		Stretch="Fill"
+            		Data="M 46.7823,14.041L 59.1927,9L 59.3479,35.5483C 58.3959,35.5068 57.4342,35.4856 56.4643,35.4856C 53.1678,35.4856 49.9674,35.7299 46.9117,36.1898L 46.7823,14.041 Z M 72.3781,33.5684L 84.7885,28.5273L 84.8722,42.843C 78.5364,38.7912 69.7702,36.0971 59.9499,35.5775L 59.9028,27.521L 72.3133,22.48L 72.3781,33.5684 Z "
+            		StrokeThickness="2"
+            		StrokeLineJoin="Round">
+            		<Path.Stroke>
+            			<LinearGradientBrush StartPoint="0.5,1.05925"
+            				EndPoint="0.5,-0.0592438">
+            				<GradientStop Color="#1FFFFFFF"
+            					Offset="0.518325" />
+            				<GradientStop Color="#1FFFFFFF"
+            					Offset="1" />
+            			</LinearGradientBrush>
+            		</Path.Stroke>
+            		<Path.Fill>
+            			<LinearGradientBrush StartPoint="0.5,1.0923"
+            				EndPoint="0.5,-0.0922932">
+            				<GradientStop Color="#2FFFFFFF"
+            					Offset="0.471204" />
+            				<GradientStop Color="#9AFFFFFF"
+            					Offset="1" />
+            			</LinearGradientBrush>
+            		</Path.Fill>
+            	</Path>
+                <!--Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        x:Name="Document"
+                        Width="605.451"
+                        Height="102.134"
+                        Clip="F1 M 0,0L 605.451,0L 605.451,102.134L 0,102.134L 0,0">
+                </Canvas-->
+            </Canvas>
+        </Canvas>
+		
+		<!-- Menu Canvas-->
+        <Canvas VerticalAlignment="Top"
+                Margin="0,100,0,0"
+                Height="500"
+                Width="1000"
+                x:Name="MenuCanvas"
+                Opacity="0">
+            <Canvas.RenderTransform>
+                <TranslateTransform x:Name="MenuTranslateTrans" X="1200" />
+            </Canvas.RenderTransform>
+			<Ellipse Height="500" Width="610" Fill="#005DB3" Opacity=".8" Canvas.Left="185" Canvas.Top="-53"/>
+			<Ellipse Height="500" Width="610" Opacity="100" Canvas.Left="185" Canvas.Top="-53">
+				<Ellipse.Effect>
+					<DropShadowEffect BlurRadius="8" Opacity=".5" Color="Navy" ShadowDepth="2"></DropShadowEffect>
+				</Ellipse.Effect>
+				<Ellipse.Stroke>
+					<LinearGradientBrush StartPoint="0.5,1.68855" EndPoint="0.5,-0.688551">
+					<LinearGradientBrush.GradientStops>
+						<GradientStop Color="#E6FFFFFF" Offset="0.39267"/>
+						<GradientStop Color="#E6C8C9EF" Offset="0.683274"/>
+						<GradientStop Color="#E69194E0" Offset="1"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+				</Ellipse.Stroke>
+				<Ellipse.Fill>
+					<LinearGradientBrush StartPoint="0.5,1.70068" EndPoint="0.5,-0.700679">
+					<LinearGradientBrush.GradientStops>
+						<GradientStop Color="#B3FFFFFF" Offset="0"/>
+						<GradientStop Color="#B38181B9" Offset="0.109948"/>
+						<GradientStop Color="#B3040474" Offset="0.774869"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+				</Ellipse.Fill>
+			 </Ellipse>            
+            <Grid Margin="240,-50,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>              
+                <Grid x:Name="NavigationGrid"
+                  Height="410"
+                  Width="500"
+                  HorizontalAlignment="Right"
+                  Grid.Row="1">
+                        <ItemsControl ItemsSource="{Binding Level1MenuList}"><!--SelectedItem="{Binding CurrentLevel1Menu,Mode=TwoWay}" Background="Transparent"-->
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <carousel2:CarouselPanel x:Name="cPanel"
+                                                             Grid.Row="1"
+                                                             Speed="0"
+                                                             Width="500"
+                                                             Height="410"
+                                                             UseMousePosition="False"
+                                                             ScalePerspective="0.6"
+                                                             ItemSize="80"
+                                                             Background="Transparent">
+
+                                    </carousel2:CarouselPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="DarkBlue"
+                                            BorderThickness="0" 
+                                            Background="Transparent">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="20" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                            <Border Grid.Column="0" >
+                                                <Border.Background>
+                                                    <LinearGradientBrush StartPoint="0.5,0"
+                                                                         EndPoint="0.5,1">
+                                                    <GradientStop Color="#FF005DB3"
+                                                                      Offset="0" />
+                                                    <GradientStop Color="#FF005DB3"
+                                                                      Offset="1" />
+
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFEAF5F7" Text="{Binding Path=Name}" />
+                                            </Border>
+                                                <Image Grid.Row="1"
+                                                   Source="{Binding Path=ImageUrl}"
+                                                   Stretch="Fill">
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                        <i:InvokeCommandAction Command="{Binding Path=DataContext.TopLevelSelectedCommand,ElementName=LayoutRoot}"
+                                                                               CommandParameter="{Binding}" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </Image>
+                                        </Grid></Border><!--</HyperlinkButton>-->
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        <Border x:Name="SelectedItemBorder"
+	                        BorderBrush="Gray"
+	                        BorderThickness="0"
+	                        Width="300"
+	                        Height="150"
+	                        Margin="0,100,0,0"
+	                        HorizontalAlignment="Center"
+	                        VerticalAlignment="Top"
+	                        Background="Transparent">
+                    	<Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="140" />
+                                            <ColumnDefinition Width="160" />
+                                        </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding Path=DataContext.CurrentLevel1Menu,ElementName=LayoutRoot,Mode=TwoWay,Converter={StaticResource menuItemToImageUrlConverter}}"
+                                           Grid.Column="0"
+                                           Stretch="Fill"></Image>
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="*" />
+
+                                        </Grid.RowDefinitions>
+                                        <Border Height="30" Grid.Row="0">
+                                            <Border.Background>
+                                                <LinearGradientBrush StartPoint="0.5,0"
+                                                                     EndPoint="0.5,1">
+                                                <GradientStop Color="#005DB3"
+                                                                  Offset="0" />
+                                                <GradientStop Color="#005DB3"
+                                                                  Offset="1" />
+
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <TextBlock Text="{Binding Path=DataContext.CurrentLevel1Menu.Name,ElementName=LayoutRoot,Mode=TwoWay}"
+                                                       Foreground="#EAF5F7"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <ListBox BorderBrush="#4297D7" BorderThickness="0"  Grid.Row="1"
+                                                 ItemsSource="{Binding Path=Level2MenuList}"
+                                                 VerticalAlignment="Stretch"><!--SelectedItem="{Binding CurrentLevel2Menu,Mode=TwoWay}-->
+                                            <ListBox.Background>
+                                                <LinearGradientBrush StartPoint="0.5,0" EndPoint=".5,1">
+                                                    <GradientStop Offset="0"
+                                                                  Color="White" />
+                                                    <GradientStop Offset="1"
+                                                                  Color="White" />
+                                                </LinearGradientBrush>
+                                            </ListBox.Background>
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <HyperlinkButton TargetName="ContentFrame"
+                                                                         NavigateUri="{Binding Path=Url}"
+                                                                         >
+                                                    <TextBlock Text="{Binding Path=Name}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black">
+                                                            
+                                                    </TextBlock>
+                                                    </HyperlinkButton>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+
+                                    </Grid>
+                                </Grid>
+                    </Grid>
+                </Border>
+            </Grid></Grid>
+        </Canvas>
+		<!-- End of Menu Canvas-->
+		
+		<Grid VerticalAlignment="Top"
+              HorizontalAlignment="Left"
+              Margin="725,60,0,0">
+
+            <Border x:Name="loginContainer"
+                    CornerRadius="5"
+                    BorderBrush="#4297D7"
+                    BorderThickness="0">
+                <!-- LoginStatus will be added here in code behind. This is required for the designer view to work -->
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,0"
+                                         StartPoint="0.5,1">
+                        <GradientStop Color="#FF3D6565" />
+                        <GradientStop Color="#FF96B2F8"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect></DropShadowEffect>
+                </Border.Effect>
+            </Border>
+        </Grid>
+		
+		<!-- Alert Canvas -->
+        <Canvas x:Name="AlertCanvas"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Margin="0,200,0,0"
+                Height="300"
+                Width="700"
+                Visibility="{Binding Path=TopUnAcknowledgedAlertItem,Converter={StaticResource alertToVisibleConverter}}">
+
+            <Border Style="{StaticResource SectionPanel}" Canvas.Left="-37">
+            	<Border.Background>
+            		<LinearGradientBrush EndPoint="0.5,-0.700679004192352" StartPoint="0.5,1.70068001747131">
+            			<GradientStop Color="#B3FFFFFF" Offset="0"/>
+            			<GradientStop Color="#B38181B9" Offset="0.109948"/>
+            			<GradientStop Color="#B3040474" Offset="0.774869"/>
+            		</LinearGradientBrush>
+            	</Border.Background>
+                <!--Border.Background>
+                    <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
+                        <GradientStop Offset="0" Color="#FF005DB3"></GradientStop>
+                        <GradientStop Offset="1"
+                                      Color="DarkBlue"></GradientStop>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect Color="#FF301089" Opacity="0.5"  />
+                </Border.Effect-->
+                <Grid Background="Transparent"
+                      Width="700"
+                      Margin="10"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                	<Grid.ColumnDefinitions>
+                		<ColumnDefinition Width="0*"/>
+                		<ColumnDefinition Width="0*"/>
+                		<ColumnDefinition/>
+                	</Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="ALERT!"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#FFEAF5F7"></TextBlock>
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               FontSize="14"
+                               Text="{Binding Path=TopUnAcknowledgedAlertItem.CompletedDate,StringFormat='dd/MM/yyyy HH:mm:ss'}" Foreground="#FFEAF5F7"
+                               TextWrapping="Wrap" Grid.Column="2" d:LayoutOverrides="GridBox"></TextBlock>
+                    <TextBlock Grid.Row="3"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               FontSize="12"
+                               Text="{Binding Path=TopUnAcknowledgedAlertItem.Message}"
+                               Foreground="#FFEAF5F7"
+                               TextWrapping="Wrap" Grid.Column="2"/>
+
+                    <Button Grid.Row="3" Background="Green"
+                            Content="OK" Command="{Binding Path=AlertOKCommand}" Width="50" Height="30"
+                            CommandParameter="{Binding Path=TopUnAcknowledgedAlertItem}" Grid.Column="2" HorizontalAlignment="Left" Margin="59,10,0,10" d:LayoutOverrides="HorizontalAlignment, Width"/>
+                </Grid>
+            </Border>
+        </Canvas>
+		<!-- End of Alert Canvas -->
+		
+        <!--<views2:ESFTicker Height="20" Width="1024" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="438,12,0,0"/>-->
+		
+		<!-- Menu Button -->
+        <Button x:Name="MenuButton"
+        	HorizontalAlignment="Right"
+        	VerticalAlignment="Top"
+        	Margin="0,45,384,0"
+        	s:Authorization.RequiresAuthentication="True">
+                
+        	<i:Interaction.Triggers>
+        		<i:EventTrigger EventName="Click">
+        			<ic:GoToStateAction StateName="Showing" />
+        		</i:EventTrigger>
+        	</i:Interaction.Triggers>
+        	<Button.Template>
+        		<ControlTemplate TargetType="Button">
+        			<StackPanel Orientation="Horizontal">
+        				<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="Document" Width="274" Height="34" Clip="F1 M 0,0L 274,0L 274,34L 0,34L 0,0">
+							<Canvas x:Name="Layer_1" Width="200" Height="200" Canvas.Left="0" Canvas.Top="0">
+								<Path x:Name="Path" Width="265.037" Height="25.8334" Canvas.Left="3.79668" Canvas.Top="3.12663" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FFFFFFFF" Data="F1 M 136.315,3.12663C 194.479,3.12663 244.785,13.6575 268.833,28.96L 3.79668,28.96C 27.8449,13.6575 78.1509,3.12663 136.315,3.12663 Z ">
+									<Path.Fill>
+										<LinearGradientBrush StartPoint="0.5,4.35525" EndPoint="0.5,-3.35525">
+											<LinearGradientBrush.GradientStops>
+												<GradientStop Color="#7FFFFFFF" Offset="0.329843"/>
+												<GradientStop Color="#FFFFFFFF" Offset="0.675393"/>
+											</LinearGradientBrush.GradientStops>
+										</LinearGradientBrush>
+									</Path.Fill>
+									<Path.Effect>
+										<DropShadowEffect BlurRadius="8" ShadowDepth="1.88976" Opacity="0.400002" Color="#FF000000" Direction="315"/>
+									</Path.Effect>
+								</Path>
+								<Path x:Name="Path_0" Width="184.129" Height="13.8712" Canvas.Left="43.7985" Canvas.Top="4.36691" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#80FFFFFF" Data="F1 M 136.465,18.2382C 170.937,18.2382 202.676,16.2912 227.928,13.0222C 211.314,8.95128 191.836,5.95361 170.583,4.36691L 100.497,4.36691C 79.5195,5.93309 60.2706,8.87398 43.7985,12.8648C 69.2418,16.2286 101.443,18.2382 136.465,18.2382 Z ">
+									<Path.Fill>
+										<LinearGradientBrush StartPoint="0.5,6.21914" EndPoint="0.5,-5.21915">
+											<LinearGradientBrush.GradientStops>
+												<GradientStop Color="#80FFFFFF" Offset="0.429319"/>
+												<GradientStop Color="#00FFFFFF" Offset="0.534031"/>
+											</LinearGradientBrush.GradientStops>
+										</LinearGradientBrush>
+									</Path.Fill>
+								</Path>
+								<TextBlock x:Name="TextBlock" TextAlignment="Left" FontFamily="Verdana"
+								FontSize="12" Width="Auto" Height="Auto" Canvas.Left="0" Canvas.Top="0">
+									<TextBlock.RenderTransform>
+										<TransformGroup>
+											<MatrixTransform Matrix="1,0,0,1,95.917,8.75001"/>
+										</TransformGroup>
+									</TextBlock.RenderTransform>
+									<Run Text="Show Menu" Foreground="Navy"/>
+								</TextBlock>
+							</Canvas>
+						</Canvas>
+        			</StackPanel>
+        		</ControlTemplate>
+        	</Button.Template>
+        </Button>
+		
+		<Canvas Width="300"
+                Height="50"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="0,0,0,0">
+            <TextBlock Text="{Binding Path=HostUri}" TextWrapping="Wrap" MaxWidth="300" />
+            <views:LogoTimeSpinner/>
+        </Canvas>
+		
+        <Grid.Resources>
+            <StackPanel x:Name="Stuff">
+                <StackPanel.Resources>
+                    <Storyboard x:Name="st">
+                        <DoubleAnimation Storyboard.TargetName="ScaleTrans"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         Duration="0:0:0.1"
+                                         From="1"
+                                         To="1.1">
+                        </DoubleAnimation>
+                        <DoubleAnimation Storyboard.TargetName="ScaleTrans"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         Duration="0:0:0.1"
+                                         From="1"
+                                         To="1.1">
+                        </DoubleAnimation>
+                    </Storyboard>
+                    <Storyboard x:Name="st1">
+                        <DoubleAnimation Storyboard.TargetName="ScaleTrans"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         Duration="0:0:0.1"
+                                         From="1.1"
+                                         To="1">
+                        </DoubleAnimation>
+                        <DoubleAnimation Storyboard.TargetName="ScaleTrans"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         Duration="0:0:0.1"
+                                         From="1.1"
+                                         To="1">
+                        </DoubleAnimation>
+                    </Storyboard>
+                </StackPanel.Resources>
+            </StackPanel>
+        </Grid.Resources>
+        </Grid>
+
+</UserControl>

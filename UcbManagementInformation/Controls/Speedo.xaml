@@ -1,0 +1,1247 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:appControls="clr-namespace:UcbManagementInformation.Controls"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <Style TargetType="appControls:Speedo"
+           x:Key="speedoDefaultStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="appControls:Speedo">
+                    <Canvas Height="290"
+                            Width="290"
+                            Canvas.Left="0"
+                            Canvas.Top="0"
+                            x:Name="GaugeAll">
+                        <Ellipse Height="250"
+                                 x:Name="GaugeFace"
+                                 Width="250"
+                                 Stroke="{x:Null}"
+                                 Canvas.Left="20"
+                                 Canvas.Top="20">
+                            <Ellipse.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1"
+                                                     StartPoint="0.5,0">
+                                    <GradientStop x:Name="GaugeColorDark"
+                                                  Color="#FF041436" />
+                                    <GradientStop x:Name="GaugeColorLight"
+                                                  Color="#FF46B6FE"
+                                                  Offset="1" />
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock Canvas.Left="89.044"
+                                   Canvas.Top="169.502"
+                                   TextWrapping="Wrap"
+                                   FontSize="6"><Run FontSize="7"
+                                                     Text="www.DesignWithSilverlight.com" /></TextBlock>
+                        <Ellipse Height="265"
+                                 x:Name="InnerBezel"
+                                 Width="265"
+                                 Fill="{x:Null}"
+                                 StrokeThickness="15"
+                                 Canvas.Left="12.5"
+                                 Canvas.Top="12.5">
+                            <Ellipse.Stroke>
+                                <LinearGradientBrush EndPoint="0.5,1"
+                                                     StartPoint="0.5,0">
+                                    <GradientStop Color="#FF333333" />
+                                    <GradientStop Color="#FFFFFFFF"
+                                                  Offset="1" />
+                                </LinearGradientBrush>
+                            </Ellipse.Stroke>
+                        </Ellipse>
+                        <Ellipse Height="290"
+                                 x:Name="OuterBezel"
+                                 Width="290"
+                                 Fill="{x:Null}"
+                                 StrokeThickness="14">
+                            <Ellipse.Stroke>
+                                <LinearGradientBrush EndPoint="0.5,0"
+                                                     StartPoint="0.5,1">
+                                    <GradientStop Color="#FF333333" />
+                                    <GradientStop Color="#FFFFFFFF"
+                                                  Offset="1" />
+                                </LinearGradientBrush>
+                            </Ellipse.Stroke>
+                        </Ellipse>
+                        <Canvas Height="210"
+                                Width="210"
+                                x:Name="GaugeDial"
+                                Clip="M215.63,79.370995 C215.63,79.370995 178.5,13.750004 178.5,13.750004 C178.5,13.750004 103,-8.3019972 103,-8.3019972 C103,-8.3019972 -3.499999,24.947994 -3.499999,24.947994 C-3.499999,24.947994 -6.0310044,160.198 -6.0310044,160.198 C-6.0310044,160.198 55.827007,200.584 55.827007,200.584 C55.827007,200.584 74.252151,177.63248 74.252151,177.63248 C75.707588,177.55099 107.16655,169.96951 108.62856,169.88803 C108.62856,169.88803 136.01884,176.54907 136.01884,176.54907 C143.38922,185.98038 150.7596,192.9117 158.12997,202.343 C158.12997,202.343 207.5,149.75 207.5,149.75 C207.5,149.75 215.63,79.370995 215.63,79.370995 z"
+                                Canvas.Left="40"
+                                Canvas.Top="40">
+                            <Ellipse Height="210"
+                                     Width="210"
+                                     Fill="{x:Null}"
+                                     Stroke="#FFFFFFFF"
+                                     StrokeLineJoin="Round"
+                                     StrokeThickness="3"
+                                     x:Name="OuterWhiteRing" />
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas01"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5"
+                                    Canvas.Left="0">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-80" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas02"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-70" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash1"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas03"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-50" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash2"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas04"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-40" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash3"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas05"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-20" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash4"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas06"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-10" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash5"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas07"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-20" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash6"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas08"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-10" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash7"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas09"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="10" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash8"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas10"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="20" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash9"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas11"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="40" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash10"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas12"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="50" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash11"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas13"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="70" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash12"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas14"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="80" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash13"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas15"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="100" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash14"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas16"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="110" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash15"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas17"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="130" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash16"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas18"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="140" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash17"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas19"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="160" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash18"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas20"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="170" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash19"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas21"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="190" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash20"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas22"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="200" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash21"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas23"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="220" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash22"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas24"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="230" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash23"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas25"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="250" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash24"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="SmallDashCanvas26"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="260" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="15"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="3"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="ShortDash25"
+                                      Canvas.Top="104.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round"
+                                      RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="0" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas01"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-90" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_2"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas02"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-60" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_1"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas03"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-30" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_3"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas04"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="0" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_4"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas05"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="30" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_5"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas06"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="60" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_6"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas07"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="90" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_7"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas08"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="120" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_8"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas09"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="150" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_9"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas10"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="180" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_10"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas11"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="210" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_11"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="210"
+                                    x:Name="DashCanvas12"
+                                    Width="210"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Canvas.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="240" />
+                                    </TransformGroup>
+                                </Canvas.RenderTransform>
+                                <Path Height="3"
+                                      Width="25"
+                                      Stretch="Fill"
+                                      Stroke="#FFFFFFFF"
+                                      Data="M54.333332,92.666656 L67.683327,92.666656"
+                                      StrokeThickness="5"
+                                      StrokeDashCap="Flat"
+                                      StrokeEndLineCap="Round"
+                                      x:Name="LongDash_12"
+                                      Canvas.Top="103.5"
+                                      Canvas.Left="8"
+                                      StrokeStartLineCap="Round" />
+                            </Canvas>
+                            <Canvas Height="124.584"
+                                    Width="135.758"
+                                    Canvas.Left="37.5"
+                                    Canvas.Top="43.5"
+                                    x:Name="TextLabels">
+                                <TextBlock x:Name="Txt_0"
+                                           Canvas.Left="37.236"
+                                           Canvas.Top="100.822"
+                                           FontFamily="Verdana"
+                                           FontSize="12"
+                                           Foreground="#FFFFFFFF"
+                                           Text="0"
+                                           TextWrapping="Wrap" />
+                                <TextBlock x:Name="Txt_20"
+                                           FontFamily="Verdana"
+                                           FontSize="12"
+                                           Foreground="#FFFFFFFF"
+                                           Text="20"
+                                           TextWrapping="Wrap"
+                                           Canvas.Top="55"
+                                           Canvas.Left="6.001" />
+                                <TextBlock x:Name="Txt_40"
+                                           FontFamily="Verdana"
+                                           FontSize="12"
+                                           Foreground="#FFFFFFFF"
+                                           Text="40"
+                                           TextWrapping="Wrap"
+                                           Canvas.Left="28.382"
+                                           Canvas.Top="7.413" />
+                                <TextBlock x:Name="Txt_60"
+                                           FontFamily="Verdana"
+                                           FontSize="12"
+                                           Foreground="#FFFFFFFF"
+                                           Text="60"
+                                           TextWrapping="Wrap"
+                                           Canvas.Left="89.118"
+                                           Canvas.Top="7.766" />
+                                <TextBlock x:Name="Txt_80"
+                                           FontFamily="Verdana"
+                                           FontSize="12"
+                                           Foreground="#FFFFFFFF"
+                                           Text="80"
+                                           TextWrapping="Wrap"
+                                           Height="15"
+                                           Canvas.Left="107.889"
+                                           Canvas.Top="55.208" />
+                                <TextBlock x:Name="Txt_100"
+                                           FontFamily="Verdana"
+                                           FontSize="12"
+                                           Foreground="#FFFFFFFF"
+                                           Text="100"
+                                           TextWrapping="Wrap"
+                                           Canvas.Left="85.618"
+                                           Canvas.Top="100.175" />
+                            </Canvas>
+                        </Canvas>
+                        <Ellipse Height="141"
+                                 x:Name="Gloss"
+                                 Width="185.288"
+                                 Stroke="{x:Null}"
+                                 Canvas.Left="52.644"
+                                 Canvas.Top="35">
+                            <Ellipse.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1"
+                                                     StartPoint="0.5,0">
+                                    <GradientStop Color="#BFFFFFFF" />
+                                    <GradientStop Color="#19FFFFFF"
+                                                  Offset="1" />
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Canvas Height="250"
+                                Width="250"
+                                x:Name="Needle"
+                                RenderTransformOrigin="0.5,0.5"
+                                Canvas.Left="20"
+                                Canvas.Top="20">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform x:Name="NeedleRotate"
+                                                     Angle="0" />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                            <Ellipse Height="35"
+                                     Width="35"
+                                     Fill="#FF000000"
+                                     Stroke="{x:Null}"
+                                     Canvas.Left="107.5"
+                                     Canvas.Top="107.5"
+                                     x:Name="Center" />
+                            <Path Height="3"
+                                  Width="45"
+                                  Stretch="Fill"
+                                  Stroke="#FFF73631"
+                                  Data="M54.333332,92.666656 L67.683327,92.666656"
+                                  StrokeThickness="3"
+                                  StrokeDashCap="Triangle"
+                                  StrokeEndLineCap="Triangle"
+                                  x:Name="DialArm_Copy"
+                                  StrokeStartLineCap="Triangle"
+                                  Canvas.Left="87.75"
+                                  Canvas.Top="161.5"
+                                  RenderTransformOrigin="0.5,0.5">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform />
+                                        <SkewTransform />
+                                        <RotateTransform Angle="118" />
+                                        <TranslateTransform X="-9.40316755694073"
+                                                            Y="4.4667341317112337" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path Height="3"
+                                  Width="15"
+                                  Stretch="Fill"
+                                  Stroke="#FF000000"
+                                  Data="M54.333332,92.666656 L67.683327,92.666656"
+                                  StrokeThickness="5"
+                                  StrokeDashCap="Flat"
+                                  StrokeEndLineCap="Round"
+                                  x:Name="DialArm"
+                                  StrokeStartLineCap="Round"
+                                  Canvas.Left="75.5"
+                                  Canvas.Top="159.5"
+                                  RenderTransformOrigin="0.5,0.5">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform />
+                                        <SkewTransform />
+                                        <RotateTransform Angle="118" />
+                                        <TranslateTransform X="31.8248113760289"
+                                                            Y="-17.502039779246665" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Canvas>
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

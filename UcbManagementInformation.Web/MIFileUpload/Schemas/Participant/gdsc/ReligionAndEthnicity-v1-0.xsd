@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="ReligionAndEthnicity-v1-0" xmlns:core="http://www.govtalk.gov.uk/core" xmlns="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<Metadata xmlns="http://www.govtalk.gov.uk/metadata/egms">
+				<Contributor Href="mailto:colin@elecmc.com">Colin Mackenzie, Electronic Media Consultants Ltd</Contributor>
+				<Creator>Project Nomad</Creator>
+				<Created>2004-07-01</Created>
+				<Modified>2004-07-01</Modified>
+				<Description>Architectural schema used for Ethnicity and Religion (for England and Wales) until such time as a Government Data Standards Catalogue definition is complete</Description>
+				<Format Scheme="http://www.iana.org/assignments/media-types/">text/xml</Format>
+				<Identifier Href="http://www.govtalk.gov.uk/gdsc/schemas/ReligionAndEthnicity-v1-0.xsd">ReligionAndEthnicity-v1-0</Identifier>
+				<Language codeListID="ISO639-2">eng</Language>
+				<Publisher Href="mailto:govtalk@cabinet-office.x.gsi.gov.uk">Delivery and Transformation Group, Cabinet Office, UK Government</Publisher>
+				<ConformsTo>http://www.w3.org/2001/XMLSchema</ConformsTo>	
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">EWethnicCategory</ProvidesDefinitionOf>
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">EWethnicCategoryStructure</ProvidesDefinitionOf>
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">OtherSpecifiedEthnicCategory</ProvidesDefinitionOf>
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">EWethnicCategoryType</ProvidesDefinitionOf>
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">EWreligion</ProvidesDefinitionOf>
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">EWreligionStructure</ProvidesDefinitionOf>
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">OtherSpecifiedReligion</ProvidesDefinitionOf>
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">EWreligionType</ProvidesDefinitionOf>
+				<ProvidesDefinitionOf Namespace="http://www.govtalk.gov.uk/people/ReligionAndEthnicity-200407">CommonEthnicCategoryType</ProvidesDefinitionOf>
+				<Requires>http://www.govtalk.gov.uk/gdsc/schemas/{http://www.govtalk.gov.uk/core}CommonSimpleTypes-v1-3.xsd</Requires>
+				<Copyright>Crown copyright 2004</Copyright>
+				<ProtectiveMarking>unclassified</ProtectiveMarking>
+				<Status>approved</Status>
+				<StatusDescription>as part of the Project Nomad CAT Schemas package</StatusDescription>
+				<Version>1.0</Version>
+				<Category codeListID="GCL">People, communities and living</Category>
+				<Project>Project Nomad</Project>
+				<Title>Project Nomad Religion And Ethnicity Common Schema</Title>
+				<Type>architectural</Type>
+			</Metadata>
+		</xsd:appinfo>
+		<xsd:documentation>This schema should be replaced by GDSC definitions once they are established.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.govtalk.gov.uk/core" schemaLocation="CommonSimpleTypes-v1-3.xsd"/>
+	<!--
+	<xsd:complexType name="ethnicCategoryStructure">
+		<xsd:choice>
+			<xsd:element ref="EWethnicCategory"/>
+			<xsd:element ref="NIethnicCategory"/>
+			<xsd:element ref="SethnicCategory"/>
+			<xsd:element ref="UKethnicCategory"/>
+			<xsd:element ref="GBethnicCategory"/>
+		</xsd:choice>	
+	</xsd:complexType>
+-->
+	<xsd:element name="EWethnicCategory" type="EWethnicCategoryStructure"/>
+	<xsd:complexType name="EWethnicCategoryStructure">
+		<xsd:sequence>
+			<xsd:element name="SelectedEthnicCategory" type="EWethnicCategoryType">
+				<xsd:annotation>
+					<xsd:documentation>The Ethnic category selected from the available list</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="OtherSpecifiedEthnicCategory" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="OtherSpecifiedEthnicCategory" type="core:PopulatedStringType">
+		<xsd:annotation>
+			<xsd:documentation>If any of the "Other" categories are selected, then more details should be provided here. As the census (on which this model is based) is a paper form, there is no way to enforce that the person being surveyed actually enters this item, thus it is optional (as opposed to the schema using an alternative model making this mandatory if any of the "other" items were selected)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:simpleType name="EWethnicCategoryType">
+		<xsd:union memberTypes="CommonEthnicCategoryType">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="British"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="CommonEthnicCategoryType">
+		<xsd:annotation>
+			<xsd:documentation>Ethnic categories used by all areas (except Northern Ireland which has completely different list)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Irish"/>
+			<xsd:enumeration value="Other White"/>
+			<xsd:enumeration value="White &amp; Black Caribbean"/>
+			<xsd:enumeration value="White &amp; Black African"/>
+			<xsd:enumeration value="White &amp; Asian"/>
+			<xsd:enumeration value="Other Mixed"/>
+			<xsd:enumeration value="Indian"/>
+			<xsd:enumeration value="Pakistani"/>
+			<xsd:enumeration value="Bangladeshi"/>
+			<xsd:enumeration value="Other Asian"/>
+			<xsd:enumeration value="Caribbean"/>
+			<xsd:enumeration value="African"/>
+			<xsd:enumeration value="Other Black"/>
+			<xsd:enumeration value="Chinese"/>
+			<xsd:enumeration value="Any Other"/>
+			<xsd:enumeration value="NOT STATED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="EWreligion" type="EWreligionStructure"/>
+	<xsd:complexType name="EWreligionStructure">
+		<xsd:sequence>
+			<xsd:element name="SelectedReligion" type="EWreligionType">
+				<xsd:annotation>
+					<xsd:documentation>The Religion selcted from the available list</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="OtherSpecifiedReligion" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="OtherSpecifiedReligion" type="core:PopulatedStringType">
+		<xsd:annotation>
+			<xsd:documentation>If the "Any Other" category is selected, then more details should be provided here. As the census (on which this model is based) is a paper form, there is no way to enforce that the person being surveyed actually enters this item, thus it is optional (as opposed to the schema using an alternative model making this mandatory if any the "Any Other" item was selected)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:simpleType name="EWreligionType">
+		<xsd:union memberTypes="CommonReligionType">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Christian"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:union>
+	</xsd:simpleType>
+	<xsd:simpleType name="CommonReligionType">
+		<xsd:annotation>
+			<xsd:documentation>Religion list used by all areas (except Northern Ireland which has completely different model)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="None"/>
+			<xsd:enumeration value="Buddhist"/>
+			<xsd:enumeration value="Hindu"/>
+			<xsd:enumeration value="Jewish"/>
+			<xsd:enumeration value="Muslim"/>
+			<xsd:enumeration value="Sikh"/>
+			<xsd:enumeration value="Any Other"/>
+			<xsd:enumeration value="NOT STATED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

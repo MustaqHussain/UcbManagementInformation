@@ -1,0 +1,86 @@
+<UserControl x:Class="UcbManagementInformation.Views.Dashboard.ESFTicker" 
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                 xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                 mc:Ignorable="d"
+                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                 xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+                 xmlns:ManCons="clr-namespace:UcbManagementInformation.Controls"
+                 xmlns:layout="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+                 xmlns:viewModels="clr-namespace:UcbManagementInformation.ViewModels"
+                 d:DesignWidth="1024" d:DesignHeight="20"
+                 d:DataContext="{Binding Path=ViewModel, Source={StaticResource viewModelLocator}}"
+    >
+    <UserControl.Resources>
+        <viewModels:ESFTickerViewModelLocator x:Key="viewModelLocator" />
+    </UserControl.Resources>
+    <UserControl.DataContext>
+            <Binding Source="{StaticResource viewModelLocator}"
+                 Path="ViewModel" />
+    </UserControl.DataContext><Grid x:Name="LayoutRoot">
+        <!--<ManCons:ContentTicker Rate="50" Direction="West">
+            <ManCons:ContentTicker.Content>
+                <TextBlock x:Name="sliderText" Text="Chelsea target Andre Villas-Boas is on the verge of becoming the club's new manager.He resigned as Porto boss on Tuesday having guided the club to Europa League success last season. Porto have received the outstanding £13.3m compensation detailed in the termination clause of Villas-Boas's contract, paving the way for a move."
+                           FontSize="11" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center" />
+            </ManCons:ContentTicker.Content>
+        </ManCons:ContentTicker>-->
+
+        <StackPanel Orientation="Horizontal">
+            <Border CornerRadius="5" Padding="2">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="LightBlue" Offset="0"></GradientStop>
+                        <GradientStop Color="LightBlue" Offset="0.5"></GradientStop>
+                        <GradientStop Color="Azure" Offset="0.5"></GradientStop>
+                        <GradientStop Color="Azure" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBlock  Foreground="Black" Text="Latest :" FontWeight="Bold"></TextBlock>
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" Color="White"></DropShadowEffect>
+                </Border.Effect>
+            </Border>
+            <layout:TransitioningContentControl Transition="UpTransition" Content="{Binding Path=CurrentItem}">
+            <layout:TransitioningContentControl.ContentTemplate>
+                <DataTemplate>
+                    <Border CornerRadius="5" Margin="10,0,0,0" Padding="2">
+                        <Border.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="LightBlue" Offset="0"></GradientStop>
+                                    <GradientStop Color="LightBlue" Offset="0.5"></GradientStop>
+                                    <GradientStop Color="Azure" Offset="0.5"></GradientStop>
+                                    <GradientStop Color="Azure" Offset="1"></GradientStop>
+                                </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBlock Foreground="Black" FontWeight="Bold" Text="{Binding}"
+                        />
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="5" Color="White"></DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+                </DataTemplate>
+            </layout:TransitioningContentControl.ContentTemplate>
+
+            <!--<layout:TransitioningContentControl.Content>
+                <TextBlock Text="{Binding}">
+                 
+                    <sys:String>Total claims processed yesterday: 4</sys:String>
+                    <sys:String>ESF spent this week £1000,0000,102</sys:String>
+                    <sys:String>Approved claims this week 35</sys:String>
+                    <sys:String>Rejected claims this week 0</sys:String>
+                    <sys:String>Reports generated this week 54</sys:String>-->
+
+               <!--</TextBlock>-->
+           <!--</layout:TransitioningContentControl.Content>-->
+        </layout:TransitioningContentControl>
+        </StackPanel>
+        <!--<ItemsControl.Items>
+                    
+                </ItemsControl.Items>-->
+        
+        
+    </Grid>
+</UserControl>
