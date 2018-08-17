@@ -1,0 +1,975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UcbManagementInformationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="UcbManagementInformationModelStoreContainer">
+    <EntitySet Name="Alert" EntityType="UcbManagementInformationModel.Store.Alert" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlertUser" EntityType="UcbManagementInformationModel.Store.AlertUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Category" EntityType="UcbManagementInformationModel.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoryLog" EntityType="UcbManagementInformationModel.Store.CategoryLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataCategory" EntityType="UcbManagementInformationModel.Store.DataCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataItem" EntityType="UcbManagementInformationModel.Store.DataItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataModel" EntityType="UcbManagementInformationModel.Store.DataModel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataTable" EntityType="UcbManagementInformationModel.Store.DataTable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataTableJoin" EntityType="UcbManagementInformationModel.Store.DataTableJoin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataTableRelationship" EntityType="UcbManagementInformationModel.Store.DataTableRelationship" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DataTableRelationshipJoin" EntityType="UcbManagementInformationModel.Store.DataTableRelationshipJoin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Filter" EntityType="UcbManagementInformationModel.Store.Filter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InputFileErrors" EntityType="UcbManagementInformationModel.Store.InputFileErrors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InputFileHistory" EntityType="UcbManagementInformationModel.Store.InputFileHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobStep" EntityType="UcbManagementInformationModel.Store.JobStep" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Log" EntityType="UcbManagementInformationModel.Store.Log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProviderOrganisation" EntityType="UcbManagementInformationModel.Store.ProviderOrganisation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Report" EntityType="UcbManagementInformationModel.Store.Report" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportChart" EntityType="UcbManagementInformationModel.Store.ReportChart" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportChartSeries" EntityType="UcbManagementInformationModel.Store.ReportChartSeries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportDataTableJoin" EntityType="UcbManagementInformationModel.Store.ReportDataTableJoin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportDB" EntityType="UcbManagementInformationModel.Store.ReportDB" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportDBLoadHistory" EntityType="UcbManagementInformationModel.Store.ReportDBLoadHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportGroup" EntityType="UcbManagementInformationModel.Store.ReportGroup" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportItem" EntityType="UcbManagementInformationModel.Store.ReportItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Role" EntityType="UcbManagementInformationModel.Store.Role" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemParameter" EntityType="UcbManagementInformationModel.Store.SystemParameter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UploadJobQueue" EntityType="UcbManagementInformationModel.Store.UploadJobQueue" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UploadMonitor" EntityType="UcbManagementInformationModel.Store.UploadMonitor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="UcbManagementInformationModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserReportGroup" EntityType="UcbManagementInformationModel.Store.UserReportGroup" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRole" EntityType="UcbManagementInformationModel.Store.UserRole" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AlertUser_Alert" Association="UcbManagementInformationModel.Store.FK_AlertUser_Alert">
+      <End Role="Alert" EntitySet="Alert" />
+      <End Role="AlertUser" EntitySet="AlertUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AlertUser_User" Association="UcbManagementInformationModel.Store.FK_AlertUser_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="AlertUser" EntitySet="AlertUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryLog_Category" Association="UcbManagementInformationModel.Store.FK_CategoryLog_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="CategoryLog" EntitySet="CategoryLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryLog_Log" Association="UcbManagementInformationModel.Store.FK_CategoryLog_Log">
+      <End Role="Log" EntitySet="Log" />
+      <End Role="CategoryLog" EntitySet="CategoryLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataCategory_DataModel" Association="UcbManagementInformationModel.Store.FK_DataCategory_DataModel">
+      <End Role="DataModel" EntitySet="DataModel" />
+      <End Role="DataCategory" EntitySet="DataCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataItem_DataCategory" Association="UcbManagementInformationModel.Store.FK_DataItem_DataCategory">
+      <End Role="DataCategory" EntitySet="DataCategory" />
+      <End Role="DataItem" EntitySet="DataItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataItem_DataTable" Association="UcbManagementInformationModel.Store.FK_DataItem_DataTable">
+      <End Role="DataTable" EntitySet="DataTable" />
+      <End Role="DataItem" EntitySet="DataItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataTable_DataModel" Association="UcbManagementInformationModel.Store.FK_DataTable_DataModel">
+      <End Role="DataModel" EntitySet="DataModel" />
+      <End Role="DataTable" EntitySet="DataTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataTableJoin_DataModel" Association="UcbManagementInformationModel.Store.FK_DataTableJoin_DataModel">
+      <End Role="DataModel" EntitySet="DataModel" />
+      <End Role="DataTableJoin" EntitySet="DataTableJoin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataTableRelationship_DataTable" Association="UcbManagementInformationModel.Store.FK_DataTableRelationship_DataTable">
+      <End Role="DataTable" EntitySet="DataTable" />
+      <End Role="DataTableRelationship" EntitySet="DataTableRelationship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataTableRelationship_DataTable1" Association="UcbManagementInformationModel.Store.FK_DataTableRelationship_DataTable1">
+      <End Role="DataTable" EntitySet="DataTable" />
+      <End Role="DataTableRelationship" EntitySet="DataTableRelationship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataTableRelationshipJoin_DataTableJoin" Association="UcbManagementInformationModel.Store.FK_DataTableRelationshipJoin_DataTableJoin">
+      <End Role="DataTableJoin" EntitySet="DataTableJoin" />
+      <End Role="DataTableRelationshipJoin" EntitySet="DataTableRelationshipJoin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DataTableRelationshipJoin_DataTableRelationship" Association="UcbManagementInformationModel.Store.FK_DataTableRelationshipJoin_DataTableRelationship">
+      <End Role="DataTableRelationship" EntitySet="DataTableRelationship" />
+      <End Role="DataTableRelationshipJoin" EntitySet="DataTableRelationshipJoin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Filter_ReportItem" Association="UcbManagementInformationModel.Store.FK_Filter_ReportItem">
+      <End Role="ReportItem" EntitySet="ReportItem" />
+      <End Role="Filter" EntitySet="Filter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InputFileErrors_InputFileHistory" Association="UcbManagementInformationModel.Store.FK_InputFileErrors_InputFileHistory">
+      <End Role="InputFileHistory" EntitySet="InputFileHistory" />
+      <End Role="InputFileErrors" EntitySet="InputFileErrors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobStep_UploadJobQueue" Association="UcbManagementInformationModel.Store.FK_JobStep_UploadJobQueue">
+      <End Role="UploadJobQueue" EntitySet="UploadJobQueue" />
+      <End Role="JobStep" EntitySet="JobStep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderOrganisation_InputFileHistory" Association="UcbManagementInformationModel.Store.FK_ProviderOrganisation_InputFileHistory">
+      <End Role="InputFileHistory" EntitySet="InputFileHistory" />
+      <End Role="ProviderOrganisation" EntitySet="ProviderOrganisation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Report_DataModel" Association="UcbManagementInformationModel.Store.FK_Report_DataModel">
+      <End Role="DataModel" EntitySet="DataModel" />
+      <End Role="Report" EntitySet="Report" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Report_ReportGroup" Association="UcbManagementInformationModel.Store.FK_Report_ReportGroup">
+      <End Role="ReportGroup" EntitySet="ReportGroup" />
+      <End Role="Report" EntitySet="Report" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportChart_Report" Association="UcbManagementInformationModel.Store.FK_ReportChart_Report">
+      <End Role="Report" EntitySet="Report" />
+      <End Role="ReportChart" EntitySet="ReportChart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportChart_ReportItem" Association="UcbManagementInformationModel.Store.FK_ReportChart_ReportItem">
+      <End Role="ReportItem" EntitySet="ReportItem" />
+      <End Role="ReportChart" EntitySet="ReportChart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportChartSeries_ReportChart" Association="UcbManagementInformationModel.Store.FK_ReportChartSeries_ReportChart">
+      <End Role="ReportChart" EntitySet="ReportChart" />
+      <End Role="ReportChartSeries" EntitySet="ReportChartSeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportChartSeries_ReportItem" Association="UcbManagementInformationModel.Store.FK_ReportChartSeries_ReportItem">
+      <End Role="ReportItem" EntitySet="ReportItem" />
+      <End Role="ReportChartSeries" EntitySet="ReportChartSeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportDataTableJoin_DataTableJoin" Association="UcbManagementInformationModel.Store.FK_ReportDataTableJoin_DataTableJoin">
+      <End Role="DataTableJoin" EntitySet="DataTableJoin" />
+      <End Role="ReportDataTableJoin" EntitySet="ReportDataTableJoin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportDataTableJoin_Report" Association="UcbManagementInformationModel.Store.FK_ReportDataTableJoin_Report">
+      <End Role="Report" EntitySet="Report" />
+      <End Role="ReportDataTableJoin" EntitySet="ReportDataTableJoin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportGroup_ReportGroup" Association="UcbManagementInformationModel.Store.FK_ReportGroup_ReportGroup">
+      <End Role="ReportGroup" EntitySet="ReportGroup" />
+      <End Role="ReportGroup1" EntitySet="ReportGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportItem_DataItem" Association="UcbManagementInformationModel.Store.FK_ReportItem_DataItem">
+      <End Role="DataItem" EntitySet="DataItem" />
+      <End Role="ReportItem" EntitySet="ReportItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportItem_Report" Association="UcbManagementInformationModel.Store.FK_ReportItem_Report">
+      <End Role="Report" EntitySet="Report" />
+      <End Role="ReportItem" EntitySet="ReportItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UploadMonitor_InputFileHistory" Association="UcbManagementInformationModel.Store.FK_UploadMonitor_InputFileHistory">
+      <End Role="InputFileHistory" EntitySet="InputFileHistory" />
+      <End Role="UploadMonitor" EntitySet="UploadMonitor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserReportGroup_ReportGroup" Association="UcbManagementInformationModel.Store.FK_UserReportGroup_ReportGroup">
+      <End Role="ReportGroup" EntitySet="ReportGroup" />
+      <End Role="UserReportGroup" EntitySet="UserReportGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="UcbManagementInformationModel.Store.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="UcbManagementInformationModel.Store.FK_UserRole_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Alert">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TriggerTable" Type="varchar" MaxLength="50" />
+    <Property Name="TriggerKeyField" Type="varchar" MaxLength="50" />
+    <Property Name="TriggerKeyValue" Type="varchar" MaxLength="50" />
+    <Property Name="TriggerField" Type="varchar" MaxLength="50" />
+    <Property Name="TriggerOperator" Type="varchar" MaxLength="10" />
+    <Property Name="TriggerValue" Type="varchar" MaxLength="50" />
+    <Property Name="TriggerDateTime" Type="datetime" />
+    <Property Name="RelatedEntityCode" Type="uniqueidentifier" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Message" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompletedDate" Type="datetime" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="AlertUser">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AlertCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserMessageStatus" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AcknowledgedDate" Type="datetime" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="CategoryLog">
+    <Key>
+      <PropertyRef Name="CategoryLogID" />
+    </Key>
+    <Property Name="CategoryLogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="LogID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataCategory">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="70" />
+    <Property Name="SortField" Type="int" Nullable="false" />
+    <Property Name="DataModelCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DataItem">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="DataType" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Caption" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="400" />
+    <Property Name="IsGroup" Type="bit" Nullable="false" />
+    <Property Name="LocationOnSystem" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsValueType" Type="bit" Nullable="false" />
+    <Property Name="IsSummable" Type="bit" Nullable="false" />
+    <Property Name="IsCommonTableGrouping" Type="bit" Nullable="false" />
+    <Property Name="DataTableCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataCategoryCode" Type="uniqueidentifier" />
+    <Property Name="IsLink" Type="bit" Nullable="false" />
+    <Property Name="LinkAssociatedField" Type="nvarchar" MaxLength="100" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DataModel">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="DatasourceName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Rowidentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DataTable">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SchemaName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DataModelCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DataTableJoin">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FromTable" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FromField" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ToTable" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ToField" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsOneToOne" Type="bit" Nullable="false" />
+    <Property Name="DefaultJoinType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DataModelCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DataTableRelationship">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JoinInfo" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="DataTableFromCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataTableToCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DataTableRelationshipJoin">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataTableRelationshipCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataTableJoinCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Filter">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Operand" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="FilterValue" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReportItemCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SortField" Type="int" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="InputFileErrors">
+    <Key>
+      <PropertyRef Name="Code" />
+      <PropertyRef Name="InputFileHistoryCode" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ErrorMessage" Type="varchar" Nullable="false" MaxLength="6000" />
+    <Property Name="InputFileHistoryCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RecordKey" Type="varchar" MaxLength="1000" />
+    <Property Name="Category" Type="varchar" MaxLength="30" />
+    <Property Name="ErrorLevel" Type="int" />
+    <Property Name="RecordDateTime" Type="datetime" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="InputFileHistory">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Filename" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="TransferDate" Type="datetime" Nullable="false" />
+    <Property Name="ProviderOrganisationKeyValue" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LoadedBy" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="LoadedDate" Type="datetime" Nullable="false" />
+    <Property Name="ValidatedLoadDate" Type="datetime" />
+    <Property Name="UploadDecision" Type="int" Nullable="false" />
+    <Property Name="NumberOfRecords" Type="int" Nullable="false" />
+    <Property Name="NumberOfValidRecords" Type="int" Nullable="false" />
+    <Property Name="NumberOfErrorRecords" Type="int" Nullable="false" />
+    <Property Name="NumberOfWarningRecords" Type="int" Nullable="false" />
+    <Property Name="NumberOfInformationalRecords" Type="int" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="JobStep">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StepOrder" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="LogText" Type="varchar(max)" />
+    <Property Name="UploadJobQueueCode" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Priority" Type="int" Nullable="false" />
+    <Property Name="Severity" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Timestamp" Type="datetime" Nullable="false" />
+    <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="AppDomainName" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="ProcessID" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="ProcessName" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="ThreadName" Type="nvarchar" MaxLength="512" />
+    <Property Name="Win32ThreadId" Type="nvarchar" MaxLength="128" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1500" />
+    <Property Name="FormattedMessage" Type="ntext" />
+  </EntityType>
+  <EntityType Name="ProviderOrganisation">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="RegionID" Type="char" MaxLength="2" />
+    <Property Name="KeyValue" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="FileType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CurrentValidatedFileCode" Type="uniqueidentifier" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="GroupCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataModelCode" Type="uniqueidentifier" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="CreationUserID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedUserID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsPageOnFirstItem" Type="bit" Nullable="false" />
+    <Property Name="IsAllowDrilldown" Type="bit" Nullable="false" />
+    <Property Name="IsInitialExpanded" Type="bit" Nullable="false" />
+    <Property Name="IsMatrix" Type="bit" Nullable="false" />
+    <Property Name="IsStandard" Type="bit" Nullable="false" />
+    <Property Name="IsDataMapDisplayed" Type="bit" />
+    <Property Name="IsSummaryReport" Type="bit" />
+    <Property Name="IsOuterJoin" Type="bit" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ReportChart">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="ReportCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CategoryReportItemCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="ChartStyle" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
+    <Property Name="ChartType" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ReportChartSeries">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReportChartCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SeriesReportItemCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ReportDataTableJoin">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="JoinType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReportCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataTableJoinCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ReportDB">
+    <Key>
+      <PropertyRef Name="ReportDBKey" />
+    </Key>
+    <Property Name="ReportDBKey" Type="int" Nullable="false" />
+    <Property Name="ReportDBStatus" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="ReportDBLastLoadStarted" Type="datetime" Nullable="false" />
+    <Property Name="ReportDBLastLoadFinished" Type="datetime" />
+    <Property Name="ReportDBLoadCounter" Type="int" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ReportDBLoadHistory">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReportDBLoadNumber" Type="nchar" MaxLength="10" />
+    <Property Name="ReportDBLoadStartTime" Type="datetime" Nullable="false" />
+    <Property Name="ReportDBLoadTriggeredBy" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ReportDBLoadStatus" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="ReportDBLoadEndTime" Type="datetime" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ReportGroup">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentCode" Type="uniqueidentifier" />
+    <Property Name="ParentPath" Type="varchar" MaxLength="150" />
+    <Property Name="PathName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ReportType" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ReportItem">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataItemCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReportCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsField" Type="bit" Nullable="false" />
+    <Property Name="IsParameter" Type="bit" Nullable="false" />
+    <Property Name="IsRowTotal" Type="bit" Nullable="false" />
+    <Property Name="IsColumnTotal" Type="bit" Nullable="false" />
+    <Property Name="IsFilter" Type="bit" Nullable="false" />
+    <Property Name="IsChartField" Type="bit" Nullable="false" />
+    <Property Name="SortField" Type="int" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SystemParameter">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LongName" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="ParameterValue" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Secure" Type="bit" Nullable="false" />
+    <Property Name="BusinessData" Type="varchar" MaxLength="50" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="LastUpdatedUserCode" Type="uniqueidentifier" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="UploadJobQueue">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Position" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="TimeAdded" Type="datetime" Nullable="false" />
+    <Property Name="TimeStarted" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="JobDescription" Type="varchar" MaxLength="100" />
+    <Property Name="JobData" Type="varchar(max)" />
+    <Property Name="UserId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="UploadMonitor">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Position" Type="int" Nullable="false" />
+    <Property Name="InputFileCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TimeOccured" Type="datetime" Nullable="false" />
+    <Property Name="StepDescription" Type="varchar" MaxLength="100" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Forename" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="UserReportGroup">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReportGroupCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccessLevel" Type="int" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RowIdentifier" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="FK_AlertUser_Alert">
+    <End Role="Alert" Type="UcbManagementInformationModel.Store.Alert" Multiplicity="1" />
+    <End Role="AlertUser" Type="UcbManagementInformationModel.Store.AlertUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Alert">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="AlertUser">
+        <PropertyRef Name="AlertCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AlertUser_User">
+    <End Role="User" Type="UcbManagementInformationModel.Store.User" Multiplicity="1" />
+    <End Role="AlertUser" Type="UcbManagementInformationModel.Store.AlertUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="AlertUser">
+        <PropertyRef Name="UserCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryLog_Category">
+    <End Role="Category" Type="UcbManagementInformationModel.Store.Category" Multiplicity="1" />
+    <End Role="CategoryLog" Type="UcbManagementInformationModel.Store.CategoryLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="CategoryLog">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryLog_Log">
+    <End Role="Log" Type="UcbManagementInformationModel.Store.Log" Multiplicity="1" />
+    <End Role="CategoryLog" Type="UcbManagementInformationModel.Store.CategoryLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Log">
+        <PropertyRef Name="LogID" />
+      </Principal>
+      <Dependent Role="CategoryLog">
+        <PropertyRef Name="LogID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataCategory_DataModel">
+    <End Role="DataModel" Type="UcbManagementInformationModel.Store.DataModel" Multiplicity="1" />
+    <End Role="DataCategory" Type="UcbManagementInformationModel.Store.DataCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataModel">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataCategory">
+        <PropertyRef Name="DataModelCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataItem_DataCategory">
+    <End Role="DataCategory" Type="UcbManagementInformationModel.Store.DataCategory" Multiplicity="0..1" />
+    <End Role="DataItem" Type="UcbManagementInformationModel.Store.DataItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataCategory">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataItem">
+        <PropertyRef Name="DataCategoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataItem_DataTable">
+    <End Role="DataTable" Type="UcbManagementInformationModel.Store.DataTable" Multiplicity="1" />
+    <End Role="DataItem" Type="UcbManagementInformationModel.Store.DataItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTable">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataItem">
+        <PropertyRef Name="DataTableCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataTable_DataModel">
+    <End Role="DataModel" Type="UcbManagementInformationModel.Store.DataModel" Multiplicity="1" />
+    <End Role="DataTable" Type="UcbManagementInformationModel.Store.DataTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataModel">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataTable">
+        <PropertyRef Name="DataModelCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataTableJoin_DataModel">
+    <End Role="DataModel" Type="UcbManagementInformationModel.Store.DataModel" Multiplicity="1" />
+    <End Role="DataTableJoin" Type="UcbManagementInformationModel.Store.DataTableJoin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataModel">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataTableJoin">
+        <PropertyRef Name="DataModelCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataTableRelationship_DataTable">
+    <End Role="DataTable" Type="UcbManagementInformationModel.Store.DataTable" Multiplicity="1" />
+    <End Role="DataTableRelationship" Type="UcbManagementInformationModel.Store.DataTableRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTable">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataTableRelationship">
+        <PropertyRef Name="DataTableFromCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataTableRelationship_DataTable1">
+    <End Role="DataTable" Type="UcbManagementInformationModel.Store.DataTable" Multiplicity="1" />
+    <End Role="DataTableRelationship" Type="UcbManagementInformationModel.Store.DataTableRelationship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTable">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataTableRelationship">
+        <PropertyRef Name="DataTableToCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataTableRelationshipJoin_DataTableJoin">
+    <End Role="DataTableJoin" Type="UcbManagementInformationModel.Store.DataTableJoin" Multiplicity="1" />
+    <End Role="DataTableRelationshipJoin" Type="UcbManagementInformationModel.Store.DataTableRelationshipJoin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTableJoin">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataTableRelationshipJoin">
+        <PropertyRef Name="DataTableJoinCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DataTableRelationshipJoin_DataTableRelationship">
+    <End Role="DataTableRelationship" Type="UcbManagementInformationModel.Store.DataTableRelationship" Multiplicity="1" />
+    <End Role="DataTableRelationshipJoin" Type="UcbManagementInformationModel.Store.DataTableRelationshipJoin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTableRelationship">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="DataTableRelationshipJoin">
+        <PropertyRef Name="DataTableRelationshipCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Filter_ReportItem">
+    <End Role="ReportItem" Type="UcbManagementInformationModel.Store.ReportItem" Multiplicity="1" />
+    <End Role="Filter" Type="UcbManagementInformationModel.Store.Filter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportItem">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Filter">
+        <PropertyRef Name="ReportItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InputFileErrors_InputFileHistory">
+    <End Role="InputFileHistory" Type="UcbManagementInformationModel.Store.InputFileHistory" Multiplicity="1" />
+    <End Role="InputFileErrors" Type="UcbManagementInformationModel.Store.InputFileErrors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InputFileHistory">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="InputFileErrors">
+        <PropertyRef Name="InputFileHistoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobStep_UploadJobQueue">
+    <End Role="UploadJobQueue" Type="UcbManagementInformationModel.Store.UploadJobQueue" Multiplicity="1" />
+    <End Role="JobStep" Type="UcbManagementInformationModel.Store.JobStep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UploadJobQueue">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="JobStep">
+        <PropertyRef Name="UploadJobQueueCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderOrganisation_InputFileHistory">
+    <End Role="InputFileHistory" Type="UcbManagementInformationModel.Store.InputFileHistory" Multiplicity="0..1" />
+    <End Role="ProviderOrganisation" Type="UcbManagementInformationModel.Store.ProviderOrganisation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InputFileHistory">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ProviderOrganisation">
+        <PropertyRef Name="CurrentValidatedFileCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Report_DataModel">
+    <End Role="DataModel" Type="UcbManagementInformationModel.Store.DataModel" Multiplicity="0..1" />
+    <End Role="Report" Type="UcbManagementInformationModel.Store.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataModel">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="DataModelCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Report_ReportGroup">
+    <End Role="ReportGroup" Type="UcbManagementInformationModel.Store.ReportGroup" Multiplicity="1" />
+    <End Role="Report" Type="UcbManagementInformationModel.Store.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportGroup">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="GroupCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportChart_Report">
+    <End Role="Report" Type="UcbManagementInformationModel.Store.Report" Multiplicity="1" />
+    <End Role="ReportChart" Type="UcbManagementInformationModel.Store.ReportChart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Report">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportChart">
+        <PropertyRef Name="ReportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportChart_ReportItem">
+    <End Role="ReportItem" Type="UcbManagementInformationModel.Store.ReportItem" Multiplicity="1" />
+    <End Role="ReportChart" Type="UcbManagementInformationModel.Store.ReportChart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportItem">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportChart">
+        <PropertyRef Name="CategoryReportItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportChartSeries_ReportChart">
+    <End Role="ReportChart" Type="UcbManagementInformationModel.Store.ReportChart" Multiplicity="1" />
+    <End Role="ReportChartSeries" Type="UcbManagementInformationModel.Store.ReportChartSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportChart">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportChartSeries">
+        <PropertyRef Name="ReportChartCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportChartSeries_ReportItem">
+    <End Role="ReportItem" Type="UcbManagementInformationModel.Store.ReportItem" Multiplicity="1" />
+    <End Role="ReportChartSeries" Type="UcbManagementInformationModel.Store.ReportChartSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportItem">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportChartSeries">
+        <PropertyRef Name="SeriesReportItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportDataTableJoin_DataTableJoin">
+    <End Role="DataTableJoin" Type="UcbManagementInformationModel.Store.DataTableJoin" Multiplicity="1" />
+    <End Role="ReportDataTableJoin" Type="UcbManagementInformationModel.Store.ReportDataTableJoin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataTableJoin">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportDataTableJoin">
+        <PropertyRef Name="DataTableJoinCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportDataTableJoin_Report">
+    <End Role="Report" Type="UcbManagementInformationModel.Store.Report" Multiplicity="1" />
+    <End Role="ReportDataTableJoin" Type="UcbManagementInformationModel.Store.ReportDataTableJoin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Report">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportDataTableJoin">
+        <PropertyRef Name="ReportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportGroup_ReportGroup">
+    <End Role="ReportGroup" Type="UcbManagementInformationModel.Store.ReportGroup" Multiplicity="0..1" />
+    <End Role="ReportGroup1" Type="UcbManagementInformationModel.Store.ReportGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportGroup">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportGroup1">
+        <PropertyRef Name="ParentCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportItem_DataItem">
+    <End Role="DataItem" Type="UcbManagementInformationModel.Store.DataItem" Multiplicity="1" />
+    <End Role="ReportItem" Type="UcbManagementInformationModel.Store.ReportItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataItem">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportItem">
+        <PropertyRef Name="DataItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportItem_Report">
+    <End Role="Report" Type="UcbManagementInformationModel.Store.Report" Multiplicity="1" />
+    <End Role="ReportItem" Type="UcbManagementInformationModel.Store.ReportItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Report">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ReportItem">
+        <PropertyRef Name="ReportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UploadMonitor_InputFileHistory">
+    <End Role="InputFileHistory" Type="UcbManagementInformationModel.Store.InputFileHistory" Multiplicity="1" />
+    <End Role="UploadMonitor" Type="UcbManagementInformationModel.Store.UploadMonitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InputFileHistory">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="UploadMonitor">
+        <PropertyRef Name="InputFileCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserReportGroup_ReportGroup">
+    <End Role="ReportGroup" Type="UcbManagementInformationModel.Store.ReportGroup" Multiplicity="1" />
+    <End Role="UserReportGroup" Type="UcbManagementInformationModel.Store.UserReportGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportGroup">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="UserReportGroup">
+        <PropertyRef Name="ReportGroupCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="Role" Type="UcbManagementInformationModel.Store.Role" Multiplicity="1" />
+    <End Role="UserRole" Type="UcbManagementInformationModel.Store.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Role="User" Type="UcbManagementInformationModel.Store.User" Multiplicity="1" />
+    <End Role="UserRole" Type="UcbManagementInformationModel.Store.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetReferenceData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DataTableName" Type="varchar" Mode="In" />
+    <Parameter Name="DataFieldName" Type="varchar" Mode="In" />
+    <Parameter Name="DataSourceName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetReferenceData1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DataTableName" Type="varchar" Mode="In" />
+    <Parameter Name="DataTableSchemaName" Type="varchar" Mode="In" />
+    <Parameter Name="DataFieldName" Type="varchar" Mode="In" />
+    <Parameter Name="DataSourceName" Type="varchar" Mode="In" />
+    <Parameter Name="StartsWith" Type="varchar" Mode="In" />
+    <Parameter Name="UserCode" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

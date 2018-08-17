@@ -1,0 +1,8 @@
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.ResourceHelper\bin\Release\UcbManagementInformation.Server.ResourceHelper.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.ResourceHelper\bin\Release\UcbManagementInformation.Server.ResourceHelper.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.ResourceHelper\obj\Release\ResolveAssemblyReference.cache
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.ResourceHelper\obj\Release\UcbManagementInformation.Server.ResourceHelper.ResourceHelperText.resources
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.ResourceHelper\obj\Release\GenerateResource.read.1.tlog
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.ResourceHelper\obj\Release\GenerateResource.write.1.tlog
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.ResourceHelper\obj\Release\UcbManagementInformation.Server.ResourceHelper.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.ResourceHelper\obj\Release\UcbManagementInformation.Server.ResourceHelper.pdb

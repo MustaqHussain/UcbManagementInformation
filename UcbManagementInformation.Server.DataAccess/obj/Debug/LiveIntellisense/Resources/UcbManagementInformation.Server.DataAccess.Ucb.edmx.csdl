@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdepUcbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AdepUcbEntities" annotation:LazyLoadingEnabled="false">
+    <EntitySet Name="Staffs" EntityType="AdepUcbModel.Staff" />
+    <EntitySet Name="StaffAttributes" EntityType="AdepUcbModel.StaffAttribute" />
+    <AssociationSet Name="FK_StaffAttributes_Staff" Association="AdepUcbModel.FK_StaffAttributes_Staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="StaffAttribute" EntitySet="StaffAttributes" />
+    </AssociationSet>
+    <EntitySet Name="Applications" EntityType="AdepUcbModel.Application" />
+    <EntitySet Name="ApplicationAttributes" EntityType="AdepUcbModel.ApplicationAttribute" />
+    <AssociationSet Name="FK_ApplicationAttribute_Application" Association="AdepUcbModel.FK_ApplicationAttribute_Application">
+      <End Role="Application" EntitySet="Applications" />
+      <End Role="ApplicationAttribute" EntitySet="ApplicationAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StaffAttributes_Application" Association="AdepUcbModel.FK_StaffAttributes_Application">
+      <End Role="Application" EntitySet="Applications" />
+      <End Role="StaffAttribute" EntitySet="StaffAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StaffAttributes_ApplicationAttribute" Association="AdepUcbModel.FK_StaffAttributes_ApplicationAttribute">
+      <End Role="ApplicationAttribute" EntitySet="ApplicationAttributes" />
+      <End Role="StaffAttribute" EntitySet="StaffAttributes" />
+    </AssociationSet>
+    <EntitySet Name="ReportCategories" EntityType="AdepUcbModel.ReportCategory" />
+    <EntitySet Name="StandardReports" EntityType="AdepUcbModel.StandardReport" />
+    <AssociationSet Name="FK_StandardReport_ReportCategory" Association="AdepUcbModel.FK_StandardReport_ReportCategory">
+      <End Role="ReportCategory" EntitySet="ReportCategories" />
+      <End Role="StandardReport" EntitySet="StandardReports" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="Guid" Name="Code" Nullable="false" />
+    <Property Type="Guid" Name="SecurityLabel" Nullable="false" />
+    <Property Type="String" Name="StaffNumber" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="GradeCode" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Binary" Name="RowIdentifier" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="StaffAttributes" Relationship="AdepUcbModel.FK_StaffAttributes_Staff" FromRole="Staff" ToRole="StaffAttribute" />
+  </EntityType>
+  <EntityType Name="StaffAttribute">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="Guid" Name="Code" Nullable="false" />
+    <Property Type="Guid" Name="SecurityLabel" Nullable="false" />
+    <Property Type="Guid" Name="StaffCode" Nullable="false" />
+    <Property Type="Guid" Name="ApplicationCode" Nullable="false" />
+    <Property Type="Guid" Name="ApplicationAttributeCode" Nullable="false" />
+    <Property Type="String" Name="LookupValue" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Binary" Name="RowIdentifier" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Staff" Relationship="AdepUcbModel.FK_StaffAttributes_Staff" FromRole="StaffAttribute" ToRole="Staff" />
+    <NavigationProperty Name="Application" Relationship="AdepUcbModel.FK_StaffAttributes_Application" FromRole="StaffAttribute" ToRole="Application" />
+    <NavigationProperty Name="ApplicationAttribute" Relationship="AdepUcbModel.FK_StaffAttributes_ApplicationAttribute" FromRole="StaffAttribute" ToRole="ApplicationAttribute" />
+  </EntityType>
+  <Association Name="FK_StaffAttributes_Staff">
+    <End Type="AdepUcbModel.Staff" Role="Staff" Multiplicity="1" />
+    <End Type="AdepUcbModel.StaffAttribute" Role="StaffAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="StaffAttribute">
+        <PropertyRef Name="StaffCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="Guid" Name="Code" Nullable="false" />
+    <Property Type="Guid" Name="SecurityLabel" Nullable="false" />
+    <Property Type="String" Name="ApplicationName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsSpecificOrganisationAccessRequired" Nullable="false" />
+    <Property Type="Binary" Name="RowIdentifier" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ApplicationAttributes" Relationship="AdepUcbModel.FK_ApplicationAttribute_Application" FromRole="Application" ToRole="ApplicationAttribute" />
+    <NavigationProperty Name="StaffAttributes" Relationship="AdepUcbModel.FK_StaffAttributes_Application" FromRole="Application" ToRole="StaffAttribute" />
+  </EntityType>
+  <EntityType Name="ApplicationAttribute">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="Guid" Name="Code" Nullable="false" />
+    <Property Type="Guid" Name="ApplicationCode" Nullable="false" />
+    <Property Type="String" Name="AttributeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AttributeType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsDataSecurity" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsRole" Nullable="false" />
+    <Property Type="Binary" Name="RowIdentifier" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Application" Relationship="AdepUcbModel.FK_ApplicationAttribute_Application" FromRole="ApplicationAttribute" ToRole="Application" />
+    <NavigationProperty Name="StaffAttributes" Relationship="AdepUcbModel.FK_StaffAttributes_ApplicationAttribute" FromRole="ApplicationAttribute" ToRole="StaffAttribute" />
+  </EntityType>
+  <Association Name="FK_ApplicationAttribute_Application">
+    <End Type="AdepUcbModel.Application" Role="Application" Multiplicity="1" />
+    <End Type="AdepUcbModel.ApplicationAttribute" Role="ApplicationAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="ApplicationAttribute">
+        <PropertyRef Name="ApplicationCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StaffAttributes_Application">
+    <End Type="AdepUcbModel.Application" Role="Application" Multiplicity="1" />
+    <End Type="AdepUcbModel.StaffAttribute" Role="StaffAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="StaffAttribute">
+        <PropertyRef Name="ApplicationCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StaffAttributes_ApplicationAttribute">
+    <End Type="AdepUcbModel.ApplicationAttribute" Role="ApplicationAttribute" Multiplicity="1" />
+    <End Type="AdepUcbModel.StaffAttribute" Role="StaffAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationAttribute">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="StaffAttribute">
+        <PropertyRef Name="ApplicationAttributeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ReportCategory">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="Guid" Name="Code" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Binary" Name="RowIdentifier" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="StandardReports" Relationship="AdepUcbModel.FK_StandardReport_ReportCategory" FromRole="ReportCategory" ToRole="StandardReport" />
+  </EntityType>
+  <EntityType Name="StandardReport">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="Guid" Name="Code" Nullable="false" />
+    <Property Type="String" Name="ReportName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ReportDescription" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="ReportCategoryCode" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="ReportUrl" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsPrintable" Nullable="false" />
+    <Property Type="Boolean" Name="IsExportable" Nullable="false" />
+    <Property Type="Binary" Name="RowIdentifier" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ReportCategory" Relationship="AdepUcbModel.FK_StandardReport_ReportCategory" FromRole="StandardReport" ToRole="ReportCategory" />
+  </EntityType>
+  <Association Name="FK_StandardReport_ReportCategory">
+    <End Type="AdepUcbModel.ReportCategory" Role="ReportCategory" Multiplicity="1" />
+    <End Type="AdepUcbModel.StandardReport" Role="StandardReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCategory">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="StandardReport">
+        <PropertyRef Name="ReportCategoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,11 @@
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\bin\Release\Packages.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\bin\Release\Packages.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\bin\Release\Microsoft.Practices.Unity.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\bin\Release\Microsoft.Practices.Unity.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\bin\Release\Microsoft.Practices.Unity.Interception.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\obj\Release\ResolveAssemblyReference.cache
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\obj\Release\Packages.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages\obj\Release\Packages.pdb

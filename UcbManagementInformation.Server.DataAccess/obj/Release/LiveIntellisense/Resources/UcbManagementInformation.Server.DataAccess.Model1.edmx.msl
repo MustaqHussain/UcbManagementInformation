@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UcbManagementInformationModelStoreContainer" CdmEntityContainer="UcbManagementInformationEntities">
+    <EntitySetMapping Name="DataCategories">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.DataCategory">
+        <MappingFragment StoreEntitySet="DataCategory">
+          <ScalarProperty Name="DataModelCode" ColumnName="DataModelCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SortField" ColumnName="SortField" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataItems">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.DataItem">
+        <MappingFragment StoreEntitySet="DataItem">
+          <ScalarProperty Name="LinkAssociatedField" ColumnName="LinkAssociatedField" />
+          <ScalarProperty Name="IsLink" ColumnName="IsLink" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsGroup" ColumnName="IsGroup" />
+          <ScalarProperty Name="LocationOnSystem" ColumnName="LocationOnSystem" />
+          <ScalarProperty Name="IsValueType" ColumnName="IsValueType" />
+          <ScalarProperty Name="IsSummable" ColumnName="IsSummable" />
+          <ScalarProperty Name="IsCommonTableGrouping" ColumnName="IsCommonTableGrouping" />
+          <ScalarProperty Name="DataTableCode" ColumnName="DataTableCode" />
+          <ScalarProperty Name="DataCategoryCode" ColumnName="DataCategoryCode" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataTables">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.DataTable">
+        <MappingFragment StoreEntitySet="DataTable">
+          <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+          <ScalarProperty Name="DataModelCode" ColumnName="DataModelCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataTableJoins">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.DataTableJoin">
+        <MappingFragment StoreEntitySet="DataTableJoin">
+          <ScalarProperty Name="DataModelCode" ColumnName="DataModelCode" />
+          <ScalarProperty Name="DefaultJoinType" ColumnName="DefaultJoinType" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FromTable" ColumnName="FromTable" />
+          <ScalarProperty Name="FromField" ColumnName="FromField" />
+          <ScalarProperty Name="ToTable" ColumnName="ToTable" />
+          <ScalarProperty Name="ToField" ColumnName="ToField" />
+          <ScalarProperty Name="IsOneToOne" ColumnName="IsOneToOne" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataTableRelationships">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.DataTableRelationship">
+        <MappingFragment StoreEntitySet="DataTableRelationship">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="JoinInfo" ColumnName="JoinInfo" />
+          <ScalarProperty Name="DataTableFromCode" ColumnName="DataTableFromCode" />
+          <ScalarProperty Name="DataTableToCode" ColumnName="DataTableToCode" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataTableRelationshipJoins">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.DataTableRelationshipJoin">
+        <MappingFragment StoreEntitySet="DataTableRelationshipJoin">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="DataTableRelationshipCode" ColumnName="DataTableRelationshipCode" />
+          <ScalarProperty Name="DataTableJoinCode" ColumnName="DataTableJoinCode" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataModels">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.DataModel">
+        <MappingFragment StoreEntitySet="DataModel">
+          <ScalarProperty Name="DatasourceName" ColumnName="DatasourceName" />
+          <ScalarProperty Name="Rowidentifier" ColumnName="Rowidentifier" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Filters">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.Filter">
+        <MappingFragment StoreEntitySet="Filter">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="SortField" ColumnName="SortField" />
+          <ScalarProperty Name="ReportItemCode" ColumnName="ReportItemCode" />
+          <ScalarProperty Name="FilterValue" ColumnName="FilterValue" />
+          <ScalarProperty Name="Operand" ColumnName="Operand" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="IsOuterJoin" ColumnName="IsOuterJoin" />
+          <ScalarProperty Name="IsSummaryReport" ColumnName="IsSummaryReport" />
+          <ScalarProperty Name="IsDataMapDisplayed" ColumnName="IsDataMapDisplayed" />
+          <ScalarProperty Name="IsStandard" ColumnName="IsStandard" />
+          <ScalarProperty Name="IsMatrix" ColumnName="IsMatrix" />
+          <ScalarProperty Name="IsInitialExpanded" ColumnName="IsInitialExpanded" />
+          <ScalarProperty Name="IsAllowDrilldown" ColumnName="IsAllowDrilldown" />
+          <ScalarProperty Name="IsPageOnFirstItem" ColumnName="IsPageOnFirstItem" />
+          <ScalarProperty Name="ModifiedUserID" ColumnName="ModifiedUserID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreationUserID" ColumnName="CreationUserID" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="DataModelCode" ColumnName="DataModelCode" />
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportGroups">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.ReportGroup">
+        <MappingFragment StoreEntitySet="ReportGroup">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="ReportType" ColumnName="ReportType" />
+          <ScalarProperty Name="PathName" ColumnName="PathName" />
+          <ScalarProperty Name="ParentPath" ColumnName="ParentPath" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportItems">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.ReportItem">
+        <MappingFragment StoreEntitySet="ReportItem">
+          <ScalarProperty Name="IsChartField" ColumnName="IsChartField" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="SortField" ColumnName="SortField" />
+          <ScalarProperty Name="IsFilter" ColumnName="IsFilter" />
+          <ScalarProperty Name="IsColumnTotal" ColumnName="IsColumnTotal" />
+          <ScalarProperty Name="IsRowTotal" ColumnName="IsRowTotal" />
+          <ScalarProperty Name="IsParameter" ColumnName="IsParameter" />
+          <ScalarProperty Name="IsField" ColumnName="IsField" />
+          <ScalarProperty Name="ReportCode" ColumnName="ReportCode" />
+          <ScalarProperty Name="DataItemCode" ColumnName="DataItemCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetReferenceData" FunctionName="UcbManagementInformationModel.Store.GetReferenceData" />
+    <EntitySetMapping Name="MCRoles">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.MCRole">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCUsers">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.MCUser">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Forename" ColumnName="Forename" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCUserRoles">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.MCUserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserReportGroups">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.UserReportGroup">
+        <MappingFragment StoreEntitySet="UserReportGroup">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+          <ScalarProperty Name="ReportGroupCode" ColumnName="ReportGroupCode" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportDataTableJoins">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.ReportDataTableJoin">
+        <MappingFragment StoreEntitySet="ReportDataTableJoin">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="DataTableJoinCode" ColumnName="DataTableJoinCode" />
+          <ScalarProperty Name="ReportCode" ColumnName="ReportCode" />
+          <ScalarProperty Name="JoinType" ColumnName="JoinType" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportCharts">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.ReportChart">
+        <MappingFragment StoreEntitySet="ReportChart">
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="ChartType" ColumnName="ChartType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ChartStyle" ColumnName="ChartStyle" />
+          <ScalarProperty Name="CategoryReportItemCode" ColumnName="CategoryReportItemCode" />
+          <ScalarProperty Name="ReportCode" ColumnName="ReportCode" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportChartSeries">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.ReportChartSery">
+        <MappingFragment StoreEntitySet="ReportChartSeries">
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="SeriesReportItemCode" ColumnName="SeriesReportItemCode" />
+          <ScalarProperty Name="ReportChartCode" ColumnName="ReportChartCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetReferenceData1" FunctionName="UcbManagementInformationModel.Store.GetReferenceData1" />
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryLogs">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.CategoryLog">
+        <MappingFragment StoreEntitySet="CategoryLog">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryLogID" ColumnName="CategoryLogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InputFileErrors">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.InputFileError">
+        <MappingFragment StoreEntitySet="InputFileErrors">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="RecordDateTime" ColumnName="RecordDateTime" />
+          <ScalarProperty Name="ErrorLevel" ColumnName="ErrorLevel" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="RecordKey" ColumnName="RecordKey" />
+          <ScalarProperty Name="InputFileHistoryCode" ColumnName="InputFileHistoryCode" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InputFileHistories">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.InputFileHistory">
+        <MappingFragment StoreEntitySet="InputFileHistory">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="NumberOfInformationalRecords" ColumnName="NumberOfInformationalRecords" />
+          <ScalarProperty Name="NumberOfWarningRecords" ColumnName="NumberOfWarningRecords" />
+          <ScalarProperty Name="NumberOfErrorRecords" ColumnName="NumberOfErrorRecords" />
+          <ScalarProperty Name="NumberOfValidRecords" ColumnName="NumberOfValidRecords" />
+          <ScalarProperty Name="NumberOfRecords" ColumnName="NumberOfRecords" />
+          <ScalarProperty Name="UploadDecision" ColumnName="UploadDecision" />
+          <ScalarProperty Name="ValidatedLoadDate" ColumnName="ValidatedLoadDate" />
+          <ScalarProperty Name="LoadedDate" ColumnName="LoadedDate" />
+          <ScalarProperty Name="LoadedBy" ColumnName="LoadedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ProviderOrganisationKeyValue" ColumnName="ProviderOrganisationKeyValue" />
+          <ScalarProperty Name="TransferDate" ColumnName="TransferDate" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="FormattedMessage" ColumnName="FormattedMessage" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Win32ThreadId" ColumnName="Win32ThreadId" />
+          <ScalarProperty Name="ThreadName" ColumnName="ThreadName" />
+          <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+          <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+          <ScalarProperty Name="AppDomainName" ColumnName="AppDomainName" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Severity" ColumnName="Severity" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderOrganisations">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.ProviderOrganisation">
+        <MappingFragment StoreEntitySet="ProviderOrganisation">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="CurrentValidatedFileCode" ColumnName="CurrentValidatedFileCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="KeyValue" ColumnName="KeyValue" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadJobQueues">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.UploadJobQueue">
+        <MappingFragment StoreEntitySet="UploadJobQueue">
+          <ScalarProperty Name="JobData" ColumnName="JobData" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="TimeStarted" ColumnName="TimeStarted" />
+          <ScalarProperty Name="TimeAdded" ColumnName="TimeAdded" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadMonitors">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.UploadMonitor">
+        <MappingFragment StoreEntitySet="UploadMonitor">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="StepDescription" ColumnName="StepDescription" />
+          <ScalarProperty Name="TimeOccured" ColumnName="TimeOccured" />
+          <ScalarProperty Name="InputFileCode" ColumnName="InputFileCode" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportDBs">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.ReportDB">
+        <MappingFragment StoreEntitySet="ReportDB">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="ReportDBLoadCounter" ColumnName="ReportDBLoadCounter" />
+          <ScalarProperty Name="ReportDBLastLoadFinished" ColumnName="ReportDBLastLoadFinished" />
+          <ScalarProperty Name="ReportDBLastLoadStarted" ColumnName="ReportDBLastLoadStarted" />
+          <ScalarProperty Name="ReportDBStatus" ColumnName="ReportDBStatus" />
+          <ScalarProperty Name="ReportDBKey" ColumnName="ReportDBKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportDBLoadHistories">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.ReportDBLoadHistory">
+        <MappingFragment StoreEntitySet="ReportDBLoadHistory">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="ReportDBLoadEndTime" ColumnName="ReportDBLoadEndTime" />
+          <ScalarProperty Name="ReportDBLoadStatus" ColumnName="ReportDBLoadStatus" />
+          <ScalarProperty Name="ReportDBLoadTriggeredBy" ColumnName="ReportDBLoadTriggeredBy" />
+          <ScalarProperty Name="ReportDBLoadStartTime" ColumnName="ReportDBLoadStartTime" />
+          <ScalarProperty Name="ReportDBLoadNumber" ColumnName="ReportDBLoadNumber" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobSteps">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.JobStep">
+        <MappingFragment StoreEntitySet="JobStep">
+          <ScalarProperty Name="StepOrder" ColumnName="StepOrder" />
+          <ScalarProperty Name="UploadJobQueueCode" ColumnName="UploadJobQueueCode" />
+          <ScalarProperty Name="LogText" ColumnName="LogText" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alerts">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.Alert">
+        <MappingFragment StoreEntitySet="Alert">
+          <ScalarProperty Name="RelatedEntityCode" ColumnName="RelatedEntityCode" />
+          <ScalarProperty Name="TriggerField" ColumnName="TriggerField" />
+          <ScalarProperty Name="TriggerKeyValue" ColumnName="TriggerKeyValue" />
+          <ScalarProperty Name="TriggerKeyField" ColumnName="TriggerKeyField" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TriggerDateTime" ColumnName="TriggerDateTime" />
+          <ScalarProperty Name="TriggerValue" ColumnName="TriggerValue" />
+          <ScalarProperty Name="TriggerOperator" ColumnName="TriggerOperator" />
+          <ScalarProperty Name="TriggerTable" ColumnName="TriggerTable" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlertUsers">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.AlertUser">
+        <MappingFragment StoreEntitySet="AlertUser">
+          <ScalarProperty Name="AcknowledgedDate" ColumnName="AcknowledgedDate" />
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="UserMessageStatus" ColumnName="UserMessageStatus" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="AlertCode" ColumnName="AlertCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MCSystemParameters">
+      <EntityTypeMapping TypeName="UcbManagementInformationModel.MCSystemParameter">
+        <MappingFragment StoreEntitySet="SystemParameter">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="LastUpdatedUserCode" ColumnName="LastUpdatedUserCode" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="BusinessData" ColumnName="BusinessData" />
+          <ScalarProperty Name="Secure" ColumnName="Secure" />
+          <ScalarProperty Name="ParameterValue" ColumnName="ParameterValue" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,5 @@
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages.Silverlight\Bin\Debug\Packages.Silverlight.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages.Silverlight\Bin\Debug\Packages.Silverlight.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages.Silverlight\obj\Debug\ResolveAssemblyReference.cache
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages.Silverlight\obj\Debug\Packages.Silverlight.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\Packages.Silverlight\obj\Debug\Packages.Silverlight.pdb

@@ -1,0 +1,7 @@
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Ioc\bin\Debug\UcbManagementInformation.Server.Ioc.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Ioc\bin\Debug\UcbManagementInformation.Server.Ioc.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Ioc\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Ioc\bin\Debug\Microsoft.Practices.Unity.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Ioc\obj\Debug\ResolveAssemblyReference.cache
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Ioc\obj\Debug\UcbManagementInformation.Server.Ioc.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Ioc\obj\Debug\UcbManagementInformation.Server.Ioc.pdb

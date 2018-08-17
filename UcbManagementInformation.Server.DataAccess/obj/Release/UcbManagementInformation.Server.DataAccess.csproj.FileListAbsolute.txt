@@ -1,0 +1,10 @@
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\bin\Release\UcbManagementInformation.Server.DataAccess.dll.config
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\bin\Release\UcbManagementInformation.Server.DataAccess.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\bin\Release\UcbManagementInformation.Server.DataAccess.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\bin\Release\UcbManagementInformation.Server.Ioc.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\bin\Release\Microsoft.Practices.Unity.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\bin\Release\UcbManagementInformation.Server.Ioc.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\obj\Release\ResolveAssemblyReference.cache
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\obj\Release\UcbManagementInformation.Server.DataAccess.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.DataAccess\obj\Release\UcbManagementInformation.Server.DataAccess.pdb

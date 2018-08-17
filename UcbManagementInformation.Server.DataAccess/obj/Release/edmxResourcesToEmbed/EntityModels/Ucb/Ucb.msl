@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdepUcbModelStoreContainer" CdmEntityContainer="AdepUcbEntities">
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="AdepUcbModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="GradeCode" ColumnName="GradeCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="StaffNumber" ColumnName="StaffNumber" />
+          <ScalarProperty Name="SecurityLabel" ColumnName="SecurityLabel" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaffAttributes">
+      <EntityTypeMapping TypeName="AdepUcbModel.StaffAttribute">
+        <MappingFragment StoreEntitySet="StaffAttributes">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LookupValue" ColumnName="LookupValue" />
+          <ScalarProperty Name="ApplicationAttributeCode" ColumnName="ApplicationAttributeCode" />
+          <ScalarProperty Name="ApplicationCode" ColumnName="ApplicationCode" />
+          <ScalarProperty Name="StaffCode" ColumnName="StaffCode" />
+          <ScalarProperty Name="SecurityLabel" ColumnName="SecurityLabel" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="AdepUcbModel.Application">
+        <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="IsSpecificOrganisationAccessRequired" ColumnName="IsSpecificOrganisationAccessRequired" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="SecurityLabel" ColumnName="SecurityLabel" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationAttributes">
+      <EntityTypeMapping TypeName="AdepUcbModel.ApplicationAttribute">
+        <MappingFragment StoreEntitySet="ApplicationAttribute">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="IsRole" ColumnName="IsRole" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDataSecurity" ColumnName="IsDataSecurity" />
+          <ScalarProperty Name="AttributeType" ColumnName="AttributeType" />
+          <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+          <ScalarProperty Name="ApplicationCode" ColumnName="ApplicationCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportCategories">
+      <EntityTypeMapping TypeName="AdepUcbModel.ReportCategory">
+        <MappingFragment StoreEntitySet="ReportCategory">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StandardReports">
+      <EntityTypeMapping TypeName="AdepUcbModel.StandardReport">
+        <MappingFragment StoreEntitySet="StandardReport">
+          <ScalarProperty Name="RowIdentifier" ColumnName="RowIdentifier" />
+          <ScalarProperty Name="IsExportable" ColumnName="IsExportable" />
+          <ScalarProperty Name="IsPrintable" ColumnName="IsPrintable" />
+          <ScalarProperty Name="ReportUrl" ColumnName="ReportUrl" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="ReportCategoryCode" ColumnName="ReportCategoryCode" />
+          <ScalarProperty Name="ReportDescription" ColumnName="ReportDescription" />
+          <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

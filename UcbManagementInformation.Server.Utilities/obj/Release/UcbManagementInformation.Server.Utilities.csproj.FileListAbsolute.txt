@@ -1,0 +1,5 @@
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Utilities\bin\Release\UcbManagementInformation.Server.Utilities.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Utilities\bin\Release\UcbManagementInformation.Server.Utilities.pdb
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Utilities\obj\Release\ResolveAssemblyReference.cache
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Utilities\obj\Release\UcbManagementInformation.Server.Utilities.dll
+C:\DWP_AD_WEB\DWP_ADEP_UCB_New\Main-Rel_1\Source\UcbManagementInformation\UcbManagementInformation.Server.Utilities\obj\Release\UcbManagementInformation.Server.Utilities.pdb
